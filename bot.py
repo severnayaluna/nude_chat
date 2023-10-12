@@ -57,7 +57,7 @@ def get_kb():
 async def cmd_start(message: types.Message):
     await message.reply("Hi, my dear friend", reply_markup=get_kb())
     await message.reply("Уведомления включены")
-
+ 
 '''
 @dp.message_handler(commands='create')
 async def cmd_create(message: types.Message):
@@ -73,7 +73,7 @@ async def load_name(message: types.Message, state: FSMContext):
     await message.reply('Теперь отправьте свой возраст')
     await notes.next()
 '''
-
+ 
 @dp.message_handler(commands=['help'])
 async def cmd_help(message: types.Message):
     await message.answer("Команды бота: \n /help \n /create \n /start \n /urls")
