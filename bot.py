@@ -83,28 +83,28 @@ async def cmd_start(message: types.Message):
             await UserState.ended.set()
 
     if not UserState.ended:
-        await message.reply("Hi, my dear friend.\nType /create to make your profile", reply_markup=get_kb())
+        await message.reply("Приветствую, дорогой друг \nНажми /create для создания профиля", reply_markup=get_kb())
     else:
-        await message.reply("Hi, my dear friend.", reply_markup=get_kb())
+        await message.reply("Приветствую, дорогой друг", reply_markup=get_kb())
  
 
 @dp.message_handler(commands='create')
 async def create_profile(message: types.Message):
-    await message.reply('Давайте создадим Ваш профиль!\nДля начала отправьте свой ник/имя')
+    await message.reply('Давайте создадим Ваш профиль!\nДля начала отправьте свое имя')
     await UserState.name.set()
 
 
 @dp.message_handler(state=UserState.name)
 async def create_profile(message: types.Message):
     print(message.text)
-    await message.reply('Отлично, теперь отправьте свой возраст.')
+    await message.reply('Отправьте свой возраст.')
     await UserState.age.set()
 
 
 @dp.message_handler(state=UserState.age)
 async def create_profile(message: types.Message):
     print(message.text)
-    await message.reply('Отлично, теперь отправьте свое описание.')
+    await message.reply('Теперь отправьте свое описание.')
     await UserState.description.set()
 
 
