@@ -6,3 +6,154 @@ WARNING:aiogram:Updates were skipped successfully.
 INFO:aiogram.dispatcher.dispatcher:Start polling.
 INFO:aiogram.dispatcher.dispatcher:Stop polling...
 WARNING:aiogram:Goodbye!
+[bot_logger](2023-10-12 22:11:20,988) - INFO - Loaded .env.
+[bot_logger](2023-10-12 22:11:21,251) - INFO - Bot and dp was created.
+[bot_logger](2023-10-12 22:11:21,258) - INFO - Bot started polling.
+INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
+WARNING:aiogram:Updates were skipped successfully.
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-10' coro=<Dispatcher._process_polling_updates() done, defined at /home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=AttributeError("'tuple' object has no attribute 'decription'")>
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot.py", line 68, in cmd_start
+    if not user.decription:
+           ^^^^^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'decription'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-14' coro=<Dispatcher._process_polling_updates() done, defined at /home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=AttributeError("'tuple' object has no attribute 'decription'")>
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot.py", line 68, in cmd_start
+    if not user.decription:
+           ^^^^^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'decription'
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
+[bot_logger](2023-10-12 22:13:52,639) - INFO - Loaded .env.
+[bot_logger](2023-10-12 22:13:52,806) - INFO - Bot and dp was created.
+[bot_logger](2023-10-12 22:13:52,811) - INFO - Bot started polling.
+INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
+WARNING:aiogram:Updates were skipped successfully.
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-9' coro=<Dispatcher._process_polling_updates() done, defined at /home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=AttributeError("'tuple' object has no attribute 'decription'")>
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot.py", line 69, in cmd_start
+    if not user.decription:
+           ^^^^^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'decription'
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
+[bot_logger](2023-10-12 22:14:18,108) - INFO - Loaded .env.
+[bot_logger](2023-10-12 22:14:18,282) - INFO - Bot and dp was created.
+[bot_logger](2023-10-12 22:14:18,287) - INFO - Bot started polling.
+INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
+WARNING:aiogram:Updates were skipped successfully.
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-9' coro=<Dispatcher._process_polling_updates() done, defined at /home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=AttributeError("'User' object has no attribute 'decription'")>
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot.py", line 68, in cmd_start
+    if not user.decription:
+           ^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'decription'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-12' coro=<Dispatcher._process_polling_updates() done, defined at /home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=AttributeError("'User' object has no attribute 'decription'")>
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot.py", line 68, in cmd_start
+    if not user.decription:
+           ^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'decription'
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
+[bot_logger](2023-10-12 22:16:14,006) - INFO - Loaded .env.
+[bot_logger](2023-10-12 22:16:14,264) - INFO - Bot and dp was created.
+[bot_logger](2023-10-12 22:16:14,272) - INFO - Bot started polling.
+INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
+WARNING:aiogram:Updates were skipped successfully.
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
+[bot_logger](2023-10-12 22:23:07,670) - INFO - Loaded .env.
+[bot_logger](2023-10-12 22:23:37,185) - INFO - Loaded .env.
+[bot_logger](2023-10-12 22:23:37,551) - INFO - Bot and dp was created.
+[bot_logger](2023-10-12 22:23:37,557) - INFO - Bot started polling.
+INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
+WARNING:aiogram:Updates were skipped successfully.
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
