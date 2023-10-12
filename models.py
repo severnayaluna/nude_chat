@@ -19,7 +19,6 @@ class User(Model):
 
 
 class Room(Model):
-
     first_user_id = ForeignKeyField(
         User,
         on_delete='CASCADE',

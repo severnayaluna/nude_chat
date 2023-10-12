@@ -8,6 +8,8 @@ from aiogram.dispatcher import FSMContext
 
 from models import User, Room
 
+from dotenv import load_dotenv
+
 import os
 
 
@@ -36,7 +38,10 @@ logger.addHandler(handler)
 logger.addHandler(file_handler)
 
 
-bot = Bot(token=os.environ.get("BOT_TOKEN"))
+project_folder = os.path.expanduser(os.getcwd())
+load_dotenv(os.path.join(project_folder, '.env'))
+
+bot = Bot(token=os.getenv("BOT_TOKEN"))
 dp = Dispatcher(bot)
 
 
