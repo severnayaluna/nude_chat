@@ -40,9 +40,11 @@ logger.addHandler(file_handler)
 
 project_folder = os.path.expanduser(os.getcwd())
 load_dotenv(os.path.join(project_folder, '.env'))
+logger.info('Loaded .env.')
 
 bot = Bot(token=os.getenv("BOT_TOKEN"))
 dp = Dispatcher(bot)
+logger.info('Bot and dp was created.')
 
 
 class User_state(StatesGroup):
@@ -85,4 +87,5 @@ async def cmd_help(message: types.Message):
 
 
 if __name__ == '__main__':
+    logger.info('Bot started polling.')
     executor.start_polling(dp, skip_updates=True)
