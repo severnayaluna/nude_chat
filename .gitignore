@@ -20,3 +20,5 @@ media/
 *.db-wal
 
 .pyc
+
+.log
