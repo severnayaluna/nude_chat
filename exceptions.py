@@ -1,0 +1,6 @@
+class BadName(Exception):
+    ...
+
+
+class BadAge(Exception):
+    ...

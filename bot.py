@@ -8,6 +8,8 @@ from aiogram.dispatcher import FSMContext
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
 from models import User, Room
+from services.model_services import *
+
 
 from dotenv import load_dotenv
 
@@ -69,18 +71,6 @@ logger.info('Bot and dp was created.')
 
 @dp.message_handler(commands=['start'])
 async def cmd_start(message: types.Message):
-    user, exists = User.get_or_create(tgid=message.from_user.id)
-
-    if exists:
-        if not user.decription:
-            await UserState.description.set()
-        if not user.age:
-            await UserState.age.set()
-        if not user.name:
-            await UserState.name.set()
-
-        if user.name and user.age and user.description:
-            await UserState.ended.set()
 
     if not UserState.ended:
         await message.reply("Приветствую, дорогой друг \nНажми /create для создания профиля", reply_markup=get_kb())
@@ -90,44 +80,73 @@ async def cmd_start(message: types.Message):
 
 @dp.message_handler(commands='create')
 async def create_profile(message: types.Message):
-    await message.reply('Давайте создадим Ваш профиль!\nДля начала отправьте свое имя')
-    await UserState.name.set()
+    user, exists = User.get_or_create(tgid=message.from_user.id)
+    exists = not exists
+
+    if exists:
+        if user.name:
+            await UserState.age.set()
+            return
+        if user.age:
+            await UserState.description.set()
+            return
+        if user.description:
+            await UserState.ended.set()
+            return
+    else:
+        await UserState.name.set()
+
+    await message.reply(f'Давайте создадим Ваш профиль!\nДля начала отправьте свое имя')
 
 
 @dp.message_handler(state=UserState.name)
 async def create_profile(message: types.Message):
-    print(message.text)
+    user = get_user(message)
+
+    error = user.set_name(message.text)
+    if error:
+        await message.reply(f'Ошибка в имени - {error}')   
+        return
+ 
     await message.reply('Отправьте свой возраст.')
     await UserState.age.set()
 
 
 @dp.message_handler(state=UserState.age)
 async def create_profile(message: types.Message):
-    print(message.text)
-    await message.reply('Теперь отправьте свое описание.')
+    user = get_user(message)
+
+    error = user.set_age(message.text)
+    if error:
+        await message.reply(f'Ошибка в возрасте - {error}')   
+        return
+ 
+    await message.reply('Теперь отправьте описание.')
     await UserState.description.set()
 
 
 @dp.message_handler(state=UserState.description)
 async def create_profile(message: types.Message):
-    print(message.text)
+    user = get_user(message)
+    user.set_description(message.text)
     await message.reply('Профиль создан.')
+    # user.reg = True
+    user.save()
     await UserState.ended.set()
 
 
-'''
-@dp.message_handler(state=notes.name)
-async def load_name(message: types.Message, state: FSMContext):
-    async with state.proxy() as data:
-        data['name'] = message.text
+# @dp.message_handler(commands=['find'])
+# async def cmd_find_room(message: types.Message):
+#     user = get_user(message)
+#     if not user.reg:
+#         await message.reply('Для начала зарегайся /create !')
+#         return
 
-    await message.reply('Теперь отправьте свой возраст')
-    await notes.next()
 
 @dp.message_handler(commands=['help'])
 async def cmd_help(message: types.Message):
     await message.answer("Команды бота: \n /help \n /create \n /start \n /urls")
-'''
+
 
 if __name__ == '__main__':
     logger.info('Bot started polling.')

@@ -1,209 +1,413 @@
-[bot_logger](2023-10-12 21:48:09,315) - INFO - Loaded .env.
-[bot_logger](2023-10-12 21:48:09,514) - INFO - Bot and dp was created.
-[bot_logger](2023-10-12 21:48:09,517) - INFO - Bot started polling.
+[bot_logger](2023-10-13 15:14:41,824) - INFO - Loaded .env.
+[bot_logger](2023-10-13 15:14:41,854) - INFO - Bot and dp was created.
+[bot_logger](2023-10-13 15:14:41,858) - INFO - Bot started polling.
+INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
+WARNING:aiogram:Updates were skipped successfully.
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-9' coro=<Dispatcher._process_polling_updates() done, defined at C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('no such column: t1.reg')>
+Traceback (most recent call last):
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3251, in execute_sql
+    cursor.execute(sql, params or ())
+sqlite3.OperationalError: no such column: t1.reg
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\bot.py", line 83, in create_profile
+    user, exists = User.get_or_create(tgid=message.from_user.id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 6721, in get_or_create
+    return query.get(), False
+           ^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 7136, in get
+    return clone.execute(database)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 1971, in inner
+    return method(self, database, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 2042, in execute
+    return self._execute(database)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 2215, in _execute
+    cursor = database.execute(self)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3259, in execute
+    return self.execute_sql(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3249, in execute_sql
+    with __exception_wrapper__:
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3019, in __exit__
+    reraise(new_type, new_type(exc_value, *exc_args), traceback)
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 192, in reraise
+    raise value.with_traceback(tb)
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3251, in execute_sql
+    cursor.execute(sql, params or ())
+peewee.OperationalError: no such column: t1.reg
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
+[bot_logger](2023-10-13 15:15:05,556) - INFO - Loaded .env.
+[bot_logger](2023-10-13 15:15:05,589) - INFO - Bot and dp was created.
+[bot_logger](2023-10-13 15:15:05,593) - INFO - Bot started polling.
 INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
 WARNING:aiogram:Updates were skipped successfully.
 INFO:aiogram.dispatcher.dispatcher:Start polling.
 INFO:aiogram.dispatcher.dispatcher:Stop polling...
 WARNING:aiogram:Goodbye!
-[bot_logger](2023-10-12 22:11:20,988) - INFO - Loaded .env.
-[bot_logger](2023-10-12 22:11:21,251) - INFO - Bot and dp was created.
-[bot_logger](2023-10-12 22:11:21,258) - INFO - Bot started polling.
+[bot_logger](2023-10-13 15:15:23,668) - INFO - Loaded .env.
+[bot_logger](2023-10-13 15:15:23,702) - INFO - Bot and dp was created.
+[bot_logger](2023-10-13 15:15:23,706) - INFO - Bot started polling.
 INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
 WARNING:aiogram:Updates were skipped successfully.
 INFO:aiogram.dispatcher.dispatcher:Start polling.
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-10' coro=<Dispatcher._process_polling_updates() done, defined at /home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=AttributeError("'tuple' object has no attribute 'decription'")>
+future: <Task finished name='Task-13' coro=<Dispatcher._process_polling_updates() done, defined at C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('no such column: t1.reg')>
 Traceback (most recent call last):
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3251, in execute_sql
+    cursor.execute(sql, params or ())
+sqlite3.OperationalError: no such column: t1.reg
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
     for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
     return await asyncio.gather(*tasks)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
     response = await handler_obj.handler(*args, **partial_data)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
     return await self.message_handlers.notify(update.message)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
     response = await handler_obj.handler(*args, **partial_data)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot.py", line 68, in cmd_start
-    if not user.decription:
-           ^^^^^^^^^^^^^^^
-AttributeError: 'tuple' object has no attribute 'decription'
+  File "C:\python\nude_chat\bot.py", line 83, in create_profile
+    user, exists = User.get_or_create(tgid=message.from_user.id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 6721, in get_or_create
+    return query.get(), False
+           ^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 7136, in get
+    return clone.execute(database)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 1971, in inner
+    return method(self, database, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 2042, in execute
+    return self._execute(database)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 2215, in _execute
+    cursor = database.execute(self)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3259, in execute
+    return self.execute_sql(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3249, in execute_sql
+    with __exception_wrapper__:
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3019, in __exit__
+    reraise(new_type, new_type(exc_value, *exc_args), traceback)
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 192, in reraise
+    raise value.with_traceback(tb)
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3251, in execute_sql
+    cursor.execute(sql, params or ())
+peewee.OperationalError: no such column: t1.reg
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-14' coro=<Dispatcher._process_polling_updates() done, defined at /home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=AttributeError("'tuple' object has no attribute 'decription'")>
+future: <Task finished name='Task-16' coro=<Dispatcher._process_polling_updates() done, defined at C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('no such column: t1.reg')>
 Traceback (most recent call last):
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3251, in execute_sql
+    cursor.execute(sql, params or ())
+sqlite3.OperationalError: no such column: t1.reg
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
     for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
     return await asyncio.gather(*tasks)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
     response = await handler_obj.handler(*args, **partial_data)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
     return await self.message_handlers.notify(update.message)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
     response = await handler_obj.handler(*args, **partial_data)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot.py", line 68, in cmd_start
-    if not user.decription:
-           ^^^^^^^^^^^^^^^
-AttributeError: 'tuple' object has no attribute 'decription'
+  File "C:\python\nude_chat\bot.py", line 83, in create_profile
+    user, exists = User.get_or_create(tgid=message.from_user.id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 6721, in get_or_create
+    return query.get(), False
+           ^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 7136, in get
+    return clone.execute(database)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 1971, in inner
+    return method(self, database, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 2042, in execute
+    return self._execute(database)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 2215, in _execute
+    cursor = database.execute(self)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3259, in execute
+    return self.execute_sql(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3249, in execute_sql
+    with __exception_wrapper__:
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3019, in __exit__
+    reraise(new_type, new_type(exc_value, *exc_args), traceback)
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 192, in reraise
+    raise value.with_traceback(tb)
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3251, in execute_sql
+    cursor.execute(sql, params or ())
+peewee.OperationalError: no such column: t1.reg
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-19' coro=<Dispatcher._process_polling_updates() done, defined at C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('no such column: t1.reg')>
+Traceback (most recent call last):
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3251, in execute_sql
+    cursor.execute(sql, params or ())
+sqlite3.OperationalError: no such column: t1.reg
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\bot.py", line 83, in create_profile
+    user, exists = User.get_or_create(tgid=message.from_user.id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 6721, in get_or_create
+    return query.get(), False
+           ^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 7136, in get
+    return clone.execute(database)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 1971, in inner
+    return method(self, database, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 2042, in execute
+    return self._execute(database)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 2215, in _execute
+    cursor = database.execute(self)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3259, in execute
+    return self.execute_sql(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3249, in execute_sql
+    with __exception_wrapper__:
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3019, in __exit__
+    reraise(new_type, new_type(exc_value, *exc_args), traceback)
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 192, in reraise
+    raise value.with_traceback(tb)
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3251, in execute_sql
+    cursor.execute(sql, params or ())
+peewee.OperationalError: no such column: t1.reg
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-22' coro=<Dispatcher._process_polling_updates() done, defined at C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('no such column: t1.reg')>
+Traceback (most recent call last):
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3251, in execute_sql
+    cursor.execute(sql, params or ())
+sqlite3.OperationalError: no such column: t1.reg
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\bot.py", line 83, in create_profile
+    user, exists = User.get_or_create(tgid=message.from_user.id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 6721, in get_or_create
+    return query.get(), False
+           ^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 7136, in get
+    return clone.execute(database)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 1971, in inner
+    return method(self, database, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 2042, in execute
+    return self._execute(database)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 2215, in _execute
+    cursor = database.execute(self)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3259, in execute
+    return self.execute_sql(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3249, in execute_sql
+    with __exception_wrapper__:
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3019, in __exit__
+    reraise(new_type, new_type(exc_value, *exc_args), traceback)
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 192, in reraise
+    raise value.with_traceback(tb)
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3251, in execute_sql
+    cursor.execute(sql, params or ())
+peewee.OperationalError: no such column: t1.reg
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-33' coro=<Dispatcher._process_polling_updates() done, defined at C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('no such column: t1.reg')>
+Traceback (most recent call last):
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3251, in execute_sql
+    cursor.execute(sql, params or ())
+sqlite3.OperationalError: no such column: t1.reg
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\bot.py", line 83, in create_profile
+    user, exists = User.get_or_create(tgid=message.from_user.id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 6721, in get_or_create
+    return query.get(), False
+           ^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 7136, in get
+    return clone.execute(database)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 1971, in inner
+    return method(self, database, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 2042, in execute
+    return self._execute(database)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 2215, in _execute
+    cursor = database.execute(self)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3259, in execute
+    return self.execute_sql(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3249, in execute_sql
+    with __exception_wrapper__:
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3019, in __exit__
+    reraise(new_type, new_type(exc_value, *exc_args), traceback)
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 192, in reraise
+    raise value.with_traceback(tb)
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 3251, in execute_sql
+    cursor.execute(sql, params or ())
+peewee.OperationalError: no such column: t1.reg
 INFO:aiogram.dispatcher.dispatcher:Stop polling...
 WARNING:aiogram:Goodbye!
-[bot_logger](2023-10-12 22:13:52,639) - INFO - Loaded .env.
-[bot_logger](2023-10-12 22:13:52,806) - INFO - Bot and dp was created.
-[bot_logger](2023-10-12 22:13:52,811) - INFO - Bot started polling.
+[bot_logger](2023-10-13 15:18:50,331) - INFO - Loaded .env.
+[bot_logger](2023-10-13 15:18:50,366) - INFO - Bot and dp was created.
+[bot_logger](2023-10-13 15:18:50,369) - INFO - Bot started polling.
 INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
 WARNING:aiogram:Updates were skipped successfully.
 INFO:aiogram.dispatcher.dispatcher:Start polling.
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-9' coro=<Dispatcher._process_polling_updates() done, defined at /home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=AttributeError("'tuple' object has no attribute 'decription'")>
+future: <Task finished name='Task-50' coro=<Dispatcher._process_polling_updates() done, defined at C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=UserDoesNotExist('<Model: User> instance matching query does not exist:\nSQL: SELECT "t1"."id", "t1"."name", "t1"."tgid", "t1"."description", "t1"."age" FROM "user" AS "t1" WHERE ("t1"."tgid" = ?) LIMIT ? OFFSET ?\nParams: [5622540767, 1, 0]')>
 Traceback (most recent call last):
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 7136, in get
+    return clone.execute(database)[0]
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 4486, in __getitem__
+    return self.row_cache[item]
+           ~~~~~~~~~~~~~~^^^^^^
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
     for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
     return await asyncio.gather(*tasks)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
     response = await handler_obj.handler(*args, **partial_data)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
     return await self.message_handlers.notify(update.message)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+  File "C:\python\nude_chat\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
     response = await handler_obj.handler(*args, **partial_data)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot.py", line 69, in cmd_start
-    if not user.decription:
-           ^^^^^^^^^^^^^^^
-AttributeError: 'tuple' object has no attribute 'decription'
+  File "C:\python\nude_chat\bot.py", line 104, in create_profile
+    user = get_user(message)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\services\model_services.py", line 4, in get_user
+    user: User = User.get(tgid=message.from_user.id)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 6688, in get
+    return sq.get()
+           ^^^^^^^^
+  File "C:\python\nude_chat\venv\Lib\site-packages\peewee.py", line 7139, in get
+    raise self.model.DoesNotExist('%s instance matching query does '
+models.UserDoesNotExist: <Model: User> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."name", "t1"."tgid", "t1"."description", "t1"."age" FROM "user" AS "t1" WHERE ("t1"."tgid" = ?) LIMIT ? OFFSET ?
+Params: [5622540767, 1, 0]
 INFO:aiogram.dispatcher.dispatcher:Stop polling...
 WARNING:aiogram:Goodbye!
-[bot_logger](2023-10-12 22:14:18,108) - INFO - Loaded .env.
-[bot_logger](2023-10-12 22:14:18,282) - INFO - Bot and dp was created.
-[bot_logger](2023-10-12 22:14:18,287) - INFO - Bot started polling.
-INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-9' coro=<Dispatcher._process_polling_updates() done, defined at /home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=AttributeError("'User' object has no attribute 'decription'")>
-Traceback (most recent call last):
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot.py", line 68, in cmd_start
-    if not user.decription:
-           ^^^^^^^^^^^^^^^
-AttributeError: 'User' object has no attribute 'decription'
-ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-12' coro=<Dispatcher._process_polling_updates() done, defined at /home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=AttributeError("'User' object has no attribute 'decription'")>
-Traceback (most recent call last):
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot.py", line 68, in cmd_start
-    if not user.decription:
-           ^^^^^^^^^^^^^^^
-AttributeError: 'User' object has no attribute 'decription'
-INFO:aiogram.dispatcher.dispatcher:Stop polling...
-WARNING:aiogram:Goodbye!
-[bot_logger](2023-10-12 22:16:14,006) - INFO - Loaded .env.
-[bot_logger](2023-10-12 22:16:14,264) - INFO - Bot and dp was created.
-[bot_logger](2023-10-12 22:16:14,272) - INFO - Bot started polling.
+[bot_logger](2023-10-13 15:23:28,786) - INFO - Loaded .env.
+[bot_logger](2023-10-13 15:23:28,817) - INFO - Bot and dp was created.
+[bot_logger](2023-10-13 15:23:28,820) - INFO - Bot started polling.
 INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
 WARNING:aiogram:Updates were skipped successfully.
 INFO:aiogram.dispatcher.dispatcher:Start polling.
 INFO:aiogram.dispatcher.dispatcher:Stop polling...
 WARNING:aiogram:Goodbye!
-[bot_logger](2023-10-12 22:23:07,670) - INFO - Loaded .env.
-[bot_logger](2023-10-12 22:23:37,185) - INFO - Loaded .env.
-[bot_logger](2023-10-12 22:23:37,551) - INFO - Bot and dp was created.
-[bot_logger](2023-10-12 22:23:37,557) - INFO - Bot started polling.
-INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:aiogram.dispatcher.dispatcher:Stop polling...
-WARNING:aiogram:Goodbye!
-[bot_logger](2023-10-12 22:53:17,434) - INFO - Loaded .env.
-[bot_logger](2023-10-12 22:53:17,486) - INFO - Bot and dp was created.
-[bot_logger](2023-10-12 22:53:17,489) - INFO - Bot started polling.
-INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-9' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\versh\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=AttributeError("'User' object has no attribute 'decription'")>
-Traceback (most recent call last):
-  File "C:\Users\versh\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\versh\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\versh\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\versh\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\versh\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\python\nude_chat\bot.py", line 75, in cmd_start
-    if not user.decription:
-           ^^^^^^^^^^^^^^^
-AttributeError: 'User' object has no attribute 'decription'
-ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-110' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\versh\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=AttributeError("'User' object has no attribute 'decription'")>
-Traceback (most recent call last):
-  File "C:\Users\versh\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\versh\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\versh\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\versh\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\versh\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\python\nude_chat\bot.py", line 75, in cmd_start
-    if not user.decription:
-           ^^^^^^^^^^^^^^^
-AttributeError: 'User' object has no attribute 'decription'
