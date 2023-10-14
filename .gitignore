@@ -19,6 +19,6 @@ media/
 *.db-shm
 *.db-wal
 
-.pyc
+*.pyc
 
-.log
+*.log
