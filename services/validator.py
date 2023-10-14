@@ -1,4 +1,4 @@
-from exceptions import *
+from .exceptions import *
 
 def validate_name(name):
     if len(name) < 2 or len(name) > 256:

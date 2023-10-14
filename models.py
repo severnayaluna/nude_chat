@@ -1,7 +1,7 @@
 from peewee import *
-from exceptions import *
+from services.exceptions import *
 from services.validator import *
-from services.base_state import BaseState
+from services.custom_state.base_state import BaseState
 
 
 db = SqliteDatabase(
@@ -12,7 +12,6 @@ db = SqliteDatabase(
 
 
 class User(Model):
-
     class State(BaseState):
         name: str = 'name'
         age: str = 'age'
@@ -36,6 +35,10 @@ class User(Model):
     def get_by_msg(cls, message):
         return cls.get(tgid=message.from_user.id)
 
+    def set_state(self, state: State):
+        self.state = state
+        self.save()
+
     def set_name(self, name):
         try:
             validate_name(name)
@@ -58,20 +61,9 @@ class User(Model):
         self.description = text
         self.save()
     
-    @staticmethod
-    def state_requiered(req_state: BaseState):
-        def decorator(func: callable):
-            def wrapper(*args, **kwargs):
-                if User.get_or_create_by_msg(args[0])[0].state == req_state:
-                    res = func(*args)
-                    return res
-                else:
-                    async def none():
-                        return None
-                    return none()
-            return wrapper
-        return decorator
-
+    def set_reg(self, reg: bool):
+        self.reg = reg
+        self.save()
 
     class Meta:
         database = db
