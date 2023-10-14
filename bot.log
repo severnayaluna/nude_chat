@@ -271,3 +271,426 @@ bot_logger ~$ [ INFO ](2023-10-14 15:22:33,327) - Bot and dp was created.
 bot_logger ~$ [ INFO ](2023-10-14 15:22:33,331) - Bot started polling.
 INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
 INFO:aiogram.dispatcher.dispatcher:Start polling.
+bot_logger ~$ [ INFO ](2023-10-14 15:25:58,240) - Loaded .env.
+bot_logger ~$ [ INFO ](2023-10-14 15:25:58,378) - Bot and dp was created.
+bot_logger ~$ [ INFO ](2023-10-14 15:25:58,381) - Bot started polling.
+INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
+bot_logger ~$ [ INFO ](2023-10-14 15:33:14,045) - Loaded .env.
+bot_logger ~$ [ INFO ](2023-10-14 15:33:14,340) - Bot and dp was created.
+bot_logger ~$ [ INFO ](2023-10-14 15:33:14,348) - Bot started polling.
+INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
+bot_logger ~$ [ INFO ](2023-10-14 15:33:51,304) - Loaded .env.
+bot_logger ~$ [ INFO ](2023-10-14 15:33:51,535) - Bot and dp was created.
+bot_logger ~$ [ INFO ](2023-10-14 15:33:51,540) - Bot started polling.
+INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-16' coro=<Dispatcher._process_polling_updates() done, defined at /home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=TypeError("only_ended() got an unexpected keyword argument 'state'")>
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/services/base_state.py", line 18, in wrapper
+    res = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+TypeError: only_ended() got an unexpected keyword argument 'state'
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
+bot_logger ~$ [ INFO ](2023-10-14 15:35:22,694) - Loaded .env.
+bot_logger ~$ [ INFO ](2023-10-14 15:35:22,899) - Bot and dp was created.
+bot_logger ~$ [ INFO ](2023-10-14 15:35:22,902) - Bot started polling.
+INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at /home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=TypeError("only_ended() got an unexpected keyword argument 'state'")>
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/services/base_state.py", line 18, in wrapper
+    res = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+TypeError: only_ended() got an unexpected keyword argument 'state'
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
+bot_logger ~$ [ INFO ](2023-10-14 15:35:47,771) - Loaded .env.
+bot_logger ~$ [ INFO ](2023-10-14 15:35:47,974) - Bot and dp was created.
+bot_logger ~$ [ INFO ](2023-10-14 15:35:47,986) - Bot started polling.
+INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at /home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=TypeError("only_ended() got an unexpected keyword argument 'state'")>
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/services/base_state.py", line 18, in wrapper
+    res = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+TypeError: only_ended() got an unexpected keyword argument 'state'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-10' coro=<Dispatcher._process_polling_updates() done, defined at /home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=TypeError("only_ended() got an unexpected keyword argument 'state'")>
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/services/base_state.py", line 18, in wrapper
+    res = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+TypeError: only_ended() got an unexpected keyword argument 'state'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-13' coro=<Dispatcher._process_polling_updates() done, defined at /home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=TypeError("only_ended() got an unexpected keyword argument 'state'")>
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/services/base_state.py", line 18, in wrapper
+    res = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+TypeError: only_ended() got an unexpected keyword argument 'state'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-16' coro=<Dispatcher._process_polling_updates() done, defined at /home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=TypeError("only_ended() got an unexpected keyword argument 'state'")>
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/services/base_state.py", line 18, in wrapper
+    res = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+TypeError: only_ended() got an unexpected keyword argument 'state'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-19' coro=<Dispatcher._process_polling_updates() done, defined at /home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=TypeError("only_ended() got an unexpected keyword argument 'state'")>
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/services/base_state.py", line 18, in wrapper
+    res = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+TypeError: only_ended() got an unexpected keyword argument 'state'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-27' coro=<Dispatcher._process_polling_updates() done, defined at /home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=TypeError("only_ended() got an unexpected keyword argument 'state'")>
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/services/base_state.py", line 18, in wrapper
+    res = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+TypeError: only_ended() got an unexpected keyword argument 'state'
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
+bot_logger ~$ [ INFO ](2023-10-14 15:37:09,344) - Loaded .env.
+bot_logger ~$ [ INFO ](2023-10-14 15:37:09,484) - Bot and dp was created.
+bot_logger ~$ [ INFO ](2023-10-14 15:37:09,487) - Bot started polling.
+INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at /home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=TypeError("only_ended() got an unexpected keyword argument 'state'")>
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/services/base_state.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+TypeError: only_ended() got an unexpected keyword argument 'state'
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
+bot_logger ~$ [ INFO ](2023-10-14 15:37:45,315) - Loaded .env.
+bot_logger ~$ [ INFO ](2023-10-14 15:37:45,479) - Bot and dp was created.
+bot_logger ~$ [ INFO ](2023-10-14 15:37:45,483) - Bot started polling.
+INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at /home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=TypeError("only_ended() got an unexpected keyword argument 'raw_state'")>
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/services/base_state.py", line 20, in wrapper
+    res = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+TypeError: only_ended() got an unexpected keyword argument 'raw_state'
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
+bot_logger ~$ [ INFO ](2023-10-14 15:38:36,178) - Loaded .env.
+bot_logger ~$ [ INFO ](2023-10-14 15:38:36,478) - Bot and dp was created.
+bot_logger ~$ [ INFO ](2023-10-14 15:38:36,484) - Bot started polling.
+INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at /home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=TypeError("only_ended() got an unexpected keyword argument 'state'")>
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/services/base_state.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+TypeError: only_ended() got an unexpected keyword argument 'state'
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
+bot_logger ~$ [ INFO ](2023-10-14 15:39:45,377) - Loaded .env.
+bot_logger ~$ [ INFO ](2023-10-14 15:39:45,518) - Bot and dp was created.
+bot_logger ~$ [ INFO ](2023-10-14 15:39:55,604) - Loaded .env.
+bot_logger ~$ [ INFO ](2023-10-14 15:39:55,757) - Bot and dp was created.
+bot_logger ~$ [ INFO ](2023-10-14 15:39:55,760) - Bot started polling.
+INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at /home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=TypeError("only_ended() got an unexpected keyword argument 'state'")>
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/services/base_state.py", line 18, in wrapper
+    res = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+TypeError: only_ended() got an unexpected keyword argument 'state'
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
+bot_logger ~$ [ INFO ](2023-10-14 15:40:20,315) - Loaded .env.
+bot_logger ~$ [ INFO ](2023-10-14 15:40:20,475) - Bot and dp was created.
+bot_logger ~$ [ INFO ](2023-10-14 15:40:20,478) - Bot started polling.
+INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
+bot_logger ~$ [ INFO ](2023-10-14 15:41:11,767) - Loaded .env.
+bot_logger ~$ [ INFO ](2023-10-14 15:41:12,030) - Bot and dp was created.
+bot_logger ~$ [ INFO ](2023-10-14 15:41:12,046) - Bot started polling.
+INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
+bot_logger ~$ [ INFO ](2023-10-14 15:41:41,621) - Loaded .env.
+bot_logger ~$ [ INFO ](2023-10-14 15:41:41,777) - Bot and dp was created.
+bot_logger ~$ [ INFO ](2023-10-14 15:41:41,780) - Bot started polling.
+INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
+bot_logger ~$ [ INFO ](2023-10-14 15:41:52,660) - Loaded .env.
+bot_logger ~$ [ INFO ](2023-10-14 15:41:52,845) - Bot and dp was created.
+bot_logger ~$ [ INFO ](2023-10-14 15:41:52,849) - Bot started polling.
+INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-7' coro=<Dispatcher._process_polling_updates() done, defined at /home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=TypeError("only_ended() got an unexpected keyword argument 'state'")>
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/services/base_state.py", line 18, in wrapper
+    res = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+TypeError: only_ended() got an unexpected keyword argument 'state'
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
+bot_logger ~$ [ INFO ](2023-10-14 15:42:35,776) - Loaded .env.
+bot_logger ~$ [ INFO ](2023-10-14 15:42:36,136) - Bot and dp was created.
+bot_logger ~$ [ INFO ](2023-10-14 15:42:36,143) - Bot started polling.
+INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
+bot_logger ~$ [ INFO ](2023-10-14 15:45:54,392) - Loaded .env.
+bot_logger ~$ [ INFO ](2023-10-14 15:45:54,539) - Bot and dp was created.
+bot_logger ~$ [ INFO ](2023-10-14 15:46:06,219) - Loaded .env.
+bot_logger ~$ [ INFO ](2023-10-14 15:46:06,364) - Bot and dp was created.
+bot_logger ~$ [ INFO ](2023-10-14 15:46:21,007) - Loaded .env.
+bot_logger ~$ [ INFO ](2023-10-14 15:46:21,145) - Bot and dp was created.
+bot_logger ~$ [ INFO ](2023-10-14 15:46:21,148) - Bot started polling.
+INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-12' coro=<Dispatcher._process_polling_updates() done, defined at /home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=TypeError("object NoneType can't be used in 'await' expression")>
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object NoneType can't be used in 'await' expression
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
+bot_logger ~$ [ INFO ](2023-10-14 15:47:34,248) - Loaded .env.
+bot_logger ~$ [ INFO ](2023-10-14 15:47:34,401) - Bot and dp was created.
+bot_logger ~$ [ INFO ](2023-10-14 15:47:34,403) - Bot started polling.
+INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!

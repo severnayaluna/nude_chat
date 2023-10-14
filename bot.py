@@ -165,7 +165,8 @@ async def set_ended(message: types.Message):
     await message.reply(f'State is {user.state}')
 
 
-@dp.message_handler(User.state_is_ended)
+@dp.message_handler()
+@User.state_requiered(req_state=User.State.ended)
 async def only_ended(message: types.Message):
     await message.reply('Ended')
 

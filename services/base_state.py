@@ -1,5 +1,4 @@
 class BaseState:
-
     @classmethod
     @property
     def choices(cls):

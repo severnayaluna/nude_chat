@@ -28,15 +28,6 @@ class User(Model):
     state = TextField(choices=State.choices, null=True)
 
 
-    state_is_name =\
-        lambda msg: User.get_or_create_by_msg(msg)[0].state == User.State.name
-    state_is_age =\
-        lambda msg: User.get_or_create_by_msg(msg)[0].state == User.State.age
-    state_is_description =\
-        lambda msg: User.get_or_create_by_msg(msg)[0].state == User.State.description
-    state_is_ended =\
-        lambda msg: User.get_or_create_by_msg(msg)[0].state == User.State.ended
-
     @classmethod
     def get_or_create_by_msg(cls, message):
         return tuple(cls.get_or_create(tgid=message.from_user.id))
@@ -66,6 +57,20 @@ class User(Model):
     def set_description(self, text):
         self.description = text
         self.save()
+    
+    @staticmethod
+    def state_requiered(req_state: BaseState):
+        def decorator(func: callable):
+            def wrapper(*args, **kwargs):
+                if User.get_or_create_by_msg(args[0])[0].state == req_state:
+                    res = func(*args)
+                    return res
+                else:
+                    async def none():
+                        return None
+                    return none()
+            return wrapper
+        return decorator
 
 
     class Meta:
