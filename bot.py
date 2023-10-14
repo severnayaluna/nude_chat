@@ -8,7 +8,7 @@ from aiogram.dispatcher import FSMContext
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
 from models import User, Room
-from services.custom_state.lambdas import state_requiered
+from services.decorators import my_msg_handler
 from services.decorators import send_user_to_foo_by_msg
 
 from dotenv import load_dotenv
@@ -56,8 +56,20 @@ dp = Dispatcher(bot)
 logger.info('Bot and dp was created.')
 
 
+async def err(message: types.Message, something):
+    await message.reply('Not age: ' + str(something))
 
-@dp.message_handler(commands=['start'])
+@my_msg_handler(
+    dp,
+    commands=['some'],
+    state=User.State.ended,
+    err_callback=err,
+    something='some text')
+async def some(message):
+    await message.reply('Some')
+
+
+@my_msg_handler(dp, commands=['start'])
 @send_user_to_foo_by_msg
 async def cmd_start(message: types.Message, user: User, exists: bool):
     if not user.state == User.State.ended:
@@ -67,7 +79,7 @@ async def cmd_start(message: types.Message, user: User, exists: bool):
  
 
 
-@dp.message_handler(commands='create')
+@my_msg_handler(dp, commands='create')
 @send_user_to_foo_by_msg
 async def create_profile(message: types.Message, user: User, exists: bool):
     logger.info(f'User {user.tgid} exists: {exists}!')
@@ -90,11 +102,7 @@ async def create_profile(message: types.Message, user: User, exists: bool):
     logger.info(f'User {user.tgid} name!')
 
 
-@dp.message_handler(
-    lambda msg:
-    state_requiered(
-        msg=msg,
-        req_state=User.State.name))
+@my_msg_handler(dp, state=User.State.name)
 @send_user_to_foo_by_msg
 async def create_profile(message: types.Message, user: User, exists: bool):
     error = user.set_name(message.text)
@@ -106,11 +114,7 @@ async def create_profile(message: types.Message, user: User, exists: bool):
     await message.reply('Отправьте свой возраст.')
 
 
-@dp.message_handler(
-    lambda msg:
-    state_requiered(
-        msg=msg,
-        req_state=User.State.age))
+@my_msg_handler(dp, state=User.State.age)
 @send_user_to_foo_by_msg
 async def create_profile(message: types.Message, user: User, exists: bool):
     error = user.set_age(message.text)
@@ -122,11 +126,7 @@ async def create_profile(message: types.Message, user: User, exists: bool):
     await message.reply('Теперь отправьте описание.')
 
 
-@dp.message_handler(
-    lambda msg:
-    state_requiered(
-        msg=msg,
-        req_state=User.State.description))
+@my_msg_handler(dp, state=User.State.description)
 @send_user_to_foo_by_msg
 async def create_profile(message: types.Message, user: User, exists: bool):
     user.set_description(message.text)
@@ -135,18 +135,15 @@ async def create_profile(message: types.Message, user: User, exists: bool):
     await message.reply('Профиль создан.')
 
 
-async def profile_not_reg_error(errcbk_msg: types.Message):
-    await errcbk_msg.reply(f'Профиль еще не создан!')
+async def profile_not_reg_error(message: types.Message):
+    await message.reply(f'Профиль еще не создан!')
 
 
-@dp.message_handler(
-    lambda msg:
-    state_requiered(
-        msg=msg,
-        req_state=User.State.ended,
-        err_callback=profile_not_reg_error,
-        errcbk_msg=msg),
-        commands=['profile'])
+@my_msg_handler(
+    dp,
+    commands=['profile'],
+    state=User.State.ended,
+    err_callback=profile_not_reg_error)
 @send_user_to_foo_by_msg
 async def send_profile(message: types.Message, user: User, exists: bool):
     await message.reply(f'Ваш профиль:\n\

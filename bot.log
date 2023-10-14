@@ -4,9 +4,12 @@ INFO:root:Bot started polling.
 INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
 WARNING:aiogram:Updates were skipped successfully.
 INFO:aiogram.dispatcher.dispatcher:Start polling.
+INFO:root:User 2021855860 exists: True!
+INFO:root:User 2021855860 name!
 INFO:aiogram.dispatcher.dispatcher:Stop polling...
 WARNING:aiogram:Goodbye!
-NG ](2023-10-14 21:29:52,802) - Updates were skipped successfully.
-aiogram.dispatcher.dispatcher ~$ [ INFO ](2023-10-14 21:29:52,803) - Start polling.
-aiogram.dispatcher.dispatcher ~$ [ INFO ](2023-10-14 21:30:00,952) - Stop polling...
-aiogram ~$ [ WARNING ](2023-10-14 21:30:00,954) - Goodbye!
+am.dispatcher.dispatcher ~$ [ INFO ](2023-10-14 23:39:51,288) - Start polling.
+root ~$ [ INFO ](2023-10-14 23:39:59,748) - User 2021855860 exists: True!
+root ~$ [ INFO ](2023-10-14 23:39:59,947) - User 2021855860 name!
+aiogram.dispatcher.dispatcher ~$ [ INFO ](2023-10-14 23:40:33,948) - Stop polling...
+aiogram ~$ [ WARNING ](2023-10-14 23:40:33,951) - Goodbye!
