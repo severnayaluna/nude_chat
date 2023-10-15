@@ -14,6 +14,19 @@ def my_msg_handler(
     run_task = None,
     err_callback: callable = None,
     **err_callback_kwargs):
+    """Функция хэндлинга сообщений.
+    Реализует бд-стэйты, коллбэк-функции и сендинг юзера в функцию.
+
+    Args:
+        dispatcher (_type_): диспетчер бота
+        commands (_type_, optional): комманды/ы. Defaults to None.
+        regexp (_type_, optional): регексп. Defaults to None.
+        content_types (_type_, optional): ... . Defaults to None.
+        state (User.State, optional): стэйт доступа к функции. при несовпадении со стэйтом юзера зовет err_callback. Defaults to None.
+        send_user (bool, optional): отсылать ли юзера в функцию(сокращение запросов в бд + меньше кода). Defaults to False.
+        run_task (_type_, optional): _description_. Defaults to None.
+        err_callback (callable, optional): функция которая вызывается в случае несовпадения стэйта юзера с запрошенным. Defaults to None.
+    """    
     def decorator(foo: callable):
 
         nonlocalarg: Optional[Any] = None

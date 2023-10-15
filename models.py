@@ -13,29 +13,48 @@ db = SqliteDatabase(
 
 class User(Model):
     class State(BaseState):
-        name: str = 'name'
-        age: str = 'age'
-        description: str = 'description'
-        ended: str = 'ended'
+        """
+        Стэйт
+        """        
+        name: str = 'name' # стэйт ожидания имя юзера
+        age: str = 'age' # стэйт ожидания возраста юзера
+        description: str = 'description' # стэйт ожидания БИО юзера
+        ended: str = 'ended' # стэйт законченной регистрации
 
 
-    name = CharField(max_length=256, null=True)
-    tgid = IntegerField(unique=True)
-    description = TextField(null=True)
-    age = IntegerField(null=True)
-    reg = BooleanField(default=False)
-    state = TextField(choices=State.choices, null=True)
+    name = CharField(max_length=256, null=True) # имя юзера
+    tgid = IntegerField(unique=True) # телеграм айди юзера
+    description = TextField(null=True) # БИО юзера
+    age = IntegerField(null=True) # возраст юзера
+    reg = BooleanField(default=False) # зарегистрирован ли юзер
+    state = TextField(choices=State.choices, null=True) # стэйт юзера
 
 
     @classmethod
     def get_or_create_by_msg(cls, message):
+        """Функция, которая создает и возвращает юзера по сообщению.
+
+        Args:
+            message (types.Message): сообщение от юзера
+
+        Returns:
+            tuple[User, bool]: кортеж (юзер, существовал-ли-до)
+        """        
         return tuple(cls.get_or_create(tgid=message.from_user.id))
 
     @classmethod
     def get_by_msg(cls, message):
+        """Функция, которая возвращает юзера по сообщению.
+
+        Args:
+            message (types.Message): сообщение от юзера
+
+        Returns:
+            User: юзер
+        """          
         return cls.get(tgid=message.from_user.id)
 
-    def set_state(self, state: State):
+    def set_state(self, state: State):    
         self.state = state
         self.save()
 

@@ -54,7 +54,8 @@ bot = Bot(token=os.getenv("BOT_TOKEN"))
 dp = Dispatcher(bot)
 logger.info('Bot and dp was created.')
 
-
+'''
+# Тестовые функции
 async def err(message: types.Message, something):
     await message.reply('Not age: ' + str(something))
 
@@ -66,11 +67,17 @@ async def err(message: types.Message, something):
     something='some text')
 async def some(message):
     await message.reply('Some')
-
+'''
 
 @my_msg_handler(dp, commands=['start'], send_user=True)
 async def cmd_start(message: types.Message, user: User, exists: bool):
-    print(user, exists)
+    """Старт функция.
+
+    Args:
+        message (types.Message): сообщение пользователя
+        user (User): юзер который передается @my_msg_handler
+        exists (bool): сущетсвовал ли юзер до вызова функции
+    """    
     if not user.state == User.State.ended:
         await message.reply("Приветствую, дорогой друг \nНажми /create для создания профиля", reply_markup=get_kb())
     else:
@@ -80,6 +87,14 @@ async def cmd_start(message: types.Message, user: User, exists: bool):
 
 @my_msg_handler(dp, commands=['create'], send_user=True)
 async def create_profile(message: types.Message, user: User, exists: bool):
+    """Функция создания пользователя.
+    Ветвление по стэйтам.
+
+    Args:
+        message (types.Message): сообщение пользователя
+        user (User): юзер который передается @my_msg_handler
+        exists (bool): сущетсвовал ли юзер до вызова функции
+    """    
     logger.info(f'User {user.tgid} exists: {exists}!')
     if exists:
         if user.reg:
@@ -102,6 +117,13 @@ async def create_profile(message: types.Message, user: User, exists: bool):
 
 @my_msg_handler(dp, state=User.State.name, send_user=True)
 async def create_profile(message: types.Message, user: User, exists: bool):
+    """Функция создания профиля юзера. Требует нэйм-стэйт
+
+    Args:
+        message (types.Message): сообщение пользователя
+        user (User): юзер который передается @my_msg_handler
+        exists (bool): сущетсвовал ли юзер до вызова функции
+    """    
     error = user.set_name(message.text)
     if error:
         await message.reply(f'Ошибка в имени - {error}')   
@@ -113,6 +135,13 @@ async def create_profile(message: types.Message, user: User, exists: bool):
 
 @my_msg_handler(dp, state=User.State.age, send_user=True)
 async def create_profile(message: types.Message, user: User, exists: bool):
+    """Функция создания профиля юзера. Требует эйдж-стэйт
+
+    Args:
+        message (types.Message): сообщение пользователя
+        user (User): юзер который передается @my_msg_handler
+        exists (bool): сущетсвовал ли юзер до вызова функции
+    """    
     error = user.set_age(message.text)
     if error:
         await message.reply(f'Ошибка в возрасте - {error}')   
@@ -124,6 +153,13 @@ async def create_profile(message: types.Message, user: User, exists: bool):
 
 @my_msg_handler(dp, state=User.State.description, send_user=True)
 async def create_profile(message: types.Message, user: User, exists: bool):
+    """Функция создания профиля юзера. Требует дескрипшн-стэйт
+
+    Args:
+        message (types.Message): сообщение пользователя
+        user (User): юзер который передается @my_msg_handler
+        exists (bool): сущетсвовал ли юзер до вызова функции
+    """    
     user.set_description(message.text)
     user.set_reg(True)
     user.set_state(User.State.ended)
@@ -131,6 +167,11 @@ async def create_profile(message: types.Message, user: User, exists: bool):
 
 
 async def profile_not_reg_error(message: types.Message):
+    """Вывод ошибки отсутствия профиля.
+
+    Args:
+        message (types.Message): сообщение пользователя
+    """    
     await message.reply(f'Профиль еще не создан!')
 
 
@@ -141,6 +182,14 @@ async def profile_not_reg_error(message: types.Message):
     err_callback=profile_not_reg_error,
     send_user=True)
 async def send_profile(message: types.Message, user: User, exists: bool):
+    """Функция вывода профиля.
+    При отсутствии полного профиля зовет profile_not_reg_error.
+
+    Args:
+        message (types.Message): сообщение пользователя
+        user (User): юзер который передается @my_msg_handler
+        exists (bool): сущетсвовал ли юзер до вызова функции
+    """    
     await message.reply(f'Ваш профиль:\n\
     Имя: {user.name}\n\
     Возраст: {user.age}\n\
@@ -148,9 +197,19 @@ async def send_profile(message: types.Message, user: User, exists: bool):
     ')
 
 
-@dp.message_handler(commands=['help'])
+@my_msg_handler(dp, commands=['help'])
 async def cmd_help(message: types.Message):
-    await message.answer("Команды бота: \n /help \n /create \n /start \n /urls")
+    """Функция вывода комманд.
+
+    Args:
+        message (types.Message): сообщение пользователя
+    """    
+    await message.answer(
+        "Команды бота:\n\
+            /help - Комманды бота\n\
+            /create - Создание профиля\n\
+            /start - Старт\n\
+            /profile - Вывод профиля")
 
 
 if __name__ == '__main__':

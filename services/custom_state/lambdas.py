@@ -14,6 +14,17 @@ def state_requiered(
     err_callback: Optional[callable] = None,
     *args,
     **kwargs):
+    """Возвращает - True если юзер-стэйт слвпадает с запрошенным, иначе - False.
+
+    Args:
+        msg (types.Message): ... 
+        req_state (User.State): ... 
+        send_user (tuple[bool, Any], optional): ... . Defaults to (False, None).
+        err_callback (Optional[callable], optional): ... . Defaults to None.
+
+    Returns:
+        _type_: _description_
+    """    
     user, exists = User.get_or_create_by_msg(msg)
     if send_user[0]:
         send_user[1].user = user
