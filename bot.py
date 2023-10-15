@@ -9,7 +9,6 @@ from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
 from models import User, Room
 from services.decorators import my_msg_handler
-from services.decorators import send_user_to_foo_by_msg
 
 from dotenv import load_dotenv
 
@@ -69,9 +68,9 @@ async def some(message):
     await message.reply('Some')
 
 
-@my_msg_handler(dp, commands=['start'])
-@send_user_to_foo_by_msg
+@my_msg_handler(dp, commands=['start'], send_user=True)
 async def cmd_start(message: types.Message, user: User, exists: bool):
+    print(user, exists)
     if not user.state == User.State.ended:
         await message.reply("Приветствую, дорогой друг \nНажми /create для создания профиля", reply_markup=get_kb())
     else:
@@ -79,8 +78,7 @@ async def cmd_start(message: types.Message, user: User, exists: bool):
  
 
 
-@my_msg_handler(dp, commands='create')
-@send_user_to_foo_by_msg
+@my_msg_handler(dp, commands=['create'], send_user=True)
 async def create_profile(message: types.Message, user: User, exists: bool):
     logger.info(f'User {user.tgid} exists: {exists}!')
     if exists:
@@ -102,8 +100,7 @@ async def create_profile(message: types.Message, user: User, exists: bool):
     logger.info(f'User {user.tgid} name!')
 
 
-@my_msg_handler(dp, state=User.State.name)
-@send_user_to_foo_by_msg
+@my_msg_handler(dp, state=User.State.name, send_user=True)
 async def create_profile(message: types.Message, user: User, exists: bool):
     error = user.set_name(message.text)
     if error:
@@ -114,8 +111,7 @@ async def create_profile(message: types.Message, user: User, exists: bool):
     await message.reply('Отправьте свой возраст.')
 
 
-@my_msg_handler(dp, state=User.State.age)
-@send_user_to_foo_by_msg
+@my_msg_handler(dp, state=User.State.age, send_user=True)
 async def create_profile(message: types.Message, user: User, exists: bool):
     error = user.set_age(message.text)
     if error:
@@ -126,8 +122,7 @@ async def create_profile(message: types.Message, user: User, exists: bool):
     await message.reply('Теперь отправьте описание.')
 
 
-@my_msg_handler(dp, state=User.State.description)
-@send_user_to_foo_by_msg
+@my_msg_handler(dp, state=User.State.description, send_user=True)
 async def create_profile(message: types.Message, user: User, exists: bool):
     user.set_description(message.text)
     user.set_reg(True)
@@ -143,8 +138,8 @@ async def profile_not_reg_error(message: types.Message):
     dp,
     commands=['profile'],
     state=User.State.ended,
-    err_callback=profile_not_reg_error)
-@send_user_to_foo_by_msg
+    err_callback=profile_not_reg_error,
+    send_user=True)
 async def send_profile(message: types.Message, user: User, exists: bool):
     await message.reply(f'Ваш профиль:\n\
     Имя: {user.name}\n\

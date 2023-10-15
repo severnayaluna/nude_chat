@@ -4,16 +4,22 @@ import asyncio
 
 from aiogram import types
 
-from typing import Optional
+from typing import Optional, Any
 
 
 def state_requiered(
     msg: types.Message,
     req_state: User.State,
+    send_user: tuple[bool, Any] = (False, None),
     err_callback: Optional[callable] = None,
     *args,
     **kwargs):
-    if User.get_or_create_by_msg(msg)[0].state == req_state:
+    user, exists = User.get_or_create_by_msg(msg)
+    if send_user[0]:
+        send_user[1].user = user
+        send_user[1].exists = not exists
+    
+    if user.state == req_state:
         return True
     else:
         if err_callback:
