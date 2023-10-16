@@ -3,10 +3,6 @@ import logging
 from aiogram import Bot, Dispatcher, types
 from aiogram.utils import executor
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup, KeyboardButton
-from aiogram.dispatcher.filters.state import StatesGroup, State
-from aiogram.dispatcher import FSMContext
-from aiogram.contrib.fsm_storage.memory import MemoryStorage
-
 from models import User, Room
 from services.decorators import my_msg_handler
 
@@ -78,7 +74,7 @@ async def cmd_start(message: types.Message, user: User, exists: bool):
         user (User): юзер который передается @my_msg_handler
         exists (bool): сущетсвовал ли юзер до вызова функции
     """    
-    if not user.state == User.State.ended:
+    if not user.reg_state == User.RegState.ended:
         await message.reply("Приветствую, дорогой друг \nНажми /create для создания профиля", reply_markup=get_kb())
     else:
         await message.reply("Приветствую, дорогой друг", reply_markup=get_kb())
@@ -98,23 +94,23 @@ async def create_profile(message: types.Message, user: User, exists: bool):
     logger.info(f'User {user.tgid} exists: {exists}!')
     if exists:
         if user.reg:
-            user.set_state(User.State.ended)
+            user.set_state('reg_state', User.RegState.ended)
             await message.reply('Ваш профиль уже создан!')
             return
         if user.name:
-            user.set_state(User.State.age)
+            user.set_state('reg_state', User.RegState.age)
             logger.info(f'User {user.tgid} age!')
             return
         if user.age:
-            user.set_state(User.State.description)
+            user.set_state('reg_state', User.RegState.description)
             logger.info(f'User {user.tgid} desc!')
             return
 
     await message.reply(f'Давайте создадим Ваш профиль!\nДля начала отправьте свое имя')
-    user.set_state(User.State.name)
+    user.set_state('reg_state', User.RegState.name)
     logger.info(f'User {user.tgid} name!')
 
-
+@state_requiered(reg_state=User.RegState.ended, find_state=User.FindState.waiting, filter=all)
 @my_msg_handler(dp, state=User.State.name, send_user=True)
 async def create_profile(message: types.Message, user: User, exists: bool):
     """Функция создания профиля юзера. Требует нэйм-стэйт

@@ -1,15 +1,44 @@
-from models import User
-from .custom_state.lambdas import state_requiered
+# from models import User
+# from .custom_state.lambdas import state_requiered
 
 from typing import Any, Optional
 
+# @state_requiered(reg_state=User.RegState.ended, find_state=User.FindState.waiting, filter=all)
+# @my_msg_handler(dp, send_user=True)
+
+
+def state_requiered(filter: callable = any, **states):
+    def decorator(foo: callable):
+        def wrapper(*args, **kwargs):
+            return foo(state_filter=filter)
+        return wrapper
+    return decorator
+
+
+# @state_requiered(filter=lambda: True)
+def dp_handler(state_filter: callable):
+    print(state_filter)
+    def decorator(foo: callable):
+        def wrapper(*args, **kwargs):
+            return foo(*args)
+        return wrapper
+    return decorator
+
+
+@state_requiered(filter=lambda: True)
+@dp_handler()
+def print10():
+    print(10)
+
+
+print10()
 
 def my_msg_handler(
     dispatcher,
     commands = None,
     regexp = None,
     content_types = None,
-    state: User.State = None,
+    state_filter: callable = None,
     send_user: bool = False,
     run_task = None,
     err_callback: callable = None,

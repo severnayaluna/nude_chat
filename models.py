@@ -1,7 +1,10 @@
 from peewee import *
+
 from services.exceptions import *
 from services.validator import *
 from services.custom_state.base_state import BaseState
+
+from typing import Union
 
 
 db = SqliteDatabase(
@@ -12,9 +15,9 @@ db = SqliteDatabase(
 
 
 class User(Model):
-    class State(BaseState):
+    class RegState(BaseState):
         """
-        Стэйт
+        Регистрационный стэйт
         """        
         name: str = 'name' # стэйт ожидания имя юзера
         age: str = 'age' # стэйт ожидания возраста юзера
@@ -26,8 +29,7 @@ class User(Model):
     tgid = IntegerField(unique=True) # телеграм айди юзера
     description = TextField(null=True) # БИО юзера
     age = IntegerField(null=True) # возраст юзера
-    reg = BooleanField(default=False) # зарегистрирован ли юзер
-    state = TextField(choices=State.choices, null=True) # стэйт юзера
+    reg_state = TextField(choices=RegState.choices, null=True) # стэйт юзера
 
 
     @classmethod
@@ -54,8 +56,8 @@ class User(Model):
         """          
         return cls.get(tgid=message.from_user.id)
 
-    def set_state(self, state: State):    
-        self.state = state
+    def set_state(self, state_name: str, state: Union[RegState, None]):    
+        self.__setattr__(state_name, state)
         self.save()
 
     def set_name(self, name):
