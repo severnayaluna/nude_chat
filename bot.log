@@ -6,7 +6,7 @@ WARNING:aiogram:Updates were skipped successfully.
 INFO:aiogram.dispatcher.dispatcher:Start polling.
 INFO:aiogram.dispatcher.dispatcher:Stop polling...
 WARNING:aiogram:Goodbye!
-NG ](2023-10-15 23:06:11,703) - Updates were skipped successfully.
-aiogram.dispatcher.dispatcher ~$ [ INFO ](2023-10-15 23:06:11,704) - Start polling.
-aiogram.dispatcher.dispatcher ~$ [ INFO ](2023-10-15 23:06:39,371) - Stop polling...
-aiogram ~$ [ WARNING ](2023-10-15 23:06:39,373) - Goodbye!
+NG ](2023-10-19 21:12:14,360) - Updates were skipped successfully.
+aiogram.dispatcher.dispatcher ~$ [ INFO ](2023-10-19 21:12:14,361) - Start polling.
+aiogram.dispatcher.dispatcher ~$ [ INFO ](2023-10-19 21:12:51,576) - Stop polling...
+aiogram ~$ [ WARNING ](2023-10-19 21:12:51,578) - Goodbye!

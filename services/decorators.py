@@ -38,7 +38,7 @@ def my_msg_handler(
     commands = None,
     regexp = None,
     content_types = None,
-    state_filter: callable = None,
+    state_filter: Optional[dict] = None,
     send_user: bool = False,
     run_task = None,
     err_callback: callable = None,
@@ -51,7 +51,6 @@ def my_msg_handler(
         commands (_type_, optional): комманды/ы. Defaults to None.
         regexp (_type_, optional): регексп. Defaults to None.
         content_types (_type_, optional): ... . Defaults to None.
-        state (User.State, optional): стэйт доступа к функции. при несовпадении со стэйтом юзера зовет err_callback. Defaults to None.
         send_user (bool, optional): отсылать ли юзера в функцию(сокращение запросов в бд + меньше кода). Defaults to False.
         run_task (_type_, optional): _description_. Defaults to None.
         err_callback (callable, optional): функция которая вызывается в случае несовпадения стэйта юзера с запрошенным. Defaults to None.
@@ -65,13 +64,13 @@ def my_msg_handler(
             nonlocalarg = nonlocal_arg()
 
         custom_state_filter = lambda msg: True
-        if state:
+        if state_filter:
             def custom_state_filter(msg):
                 # nonlocal nonlocalarg
                 return \
                 state_requiered(
                     msg=msg,
-                    req_state=state,
+                    state_filter=state_filter,
                     send_user=(send_user, nonlocalarg),
                     err_callback=err_callback,
                     message=msg,
@@ -86,7 +85,7 @@ def my_msg_handler(
         def wrapper(*args, **kwargs):
             # nonlocal nonlocalarg
             if send_user:
-                if state:
+                if state_filter:
                     return foo(*args, user=nonlocalarg.user, exists=nonlocalarg.exists)
                 user, exists = User.get_or_create_by_msg(args[0])
                 exists = not exists

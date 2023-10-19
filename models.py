@@ -2,7 +2,7 @@ from peewee import *
 
 from services.exceptions import *
 from services.validator import *
-from services.custom_state.base_state import BaseState
+from services.custom_state.base_state import BaseState, State
 
 from typing import Union
 
@@ -19,17 +19,22 @@ class User(Model):
         """
         Регистрационный стэйт
         """        
-        name: str = 'name' # стэйт ожидания имя юзера
-        age: str = 'age' # стэйт ожидания возраста юзера
-        description: str = 'description' # стэйт ожидания БИО юзера
-        ended: str = 'ended' # стэйт законченной регистрации
+        name: State = State('name') # стэйт ожидания имя юзера
+        age: State = State('age') # стэйт ожидания возраста юзера
+        description: State = State('description') # стэйт ожидания БИО юзера
+        ended: State = State('ended') # стэйт законченной регистрации
+    
+    class FindState(BaseState):
+        in_find: State = State('in_find')
+        not_in_find: State = State('not_in_find')
 
 
     name = CharField(max_length=256, null=True) # имя юзера
     tgid = IntegerField(unique=True) # телеграм айди юзера
     description = TextField(null=True) # БИО юзера
     age = IntegerField(null=True) # возраст юзера
-    reg_state = TextField(choices=RegState.choices, null=True) # стэйт юзера
+    reg_state = TextField(null=True) # стэйт юзера
+    find_state = TextField(null=True) # стэйт юзера
 
 
     @classmethod
@@ -56,8 +61,15 @@ class User(Model):
         """          
         return cls.get(tgid=message.from_user.id)
 
-    def set_state(self, state_name: str, state: Union[RegState, None]):    
-        self.__setattr__(state_name, state)
+    def get_state(self, name: str):
+        return State(getattr(self, name))
+
+    def set_state(self, name: str, state: State):
+        setattr(self, name, state.state)
+        self.save()
+
+    def set_state(self, name: str, state: State):
+        setattr(self, name, state.state)
         self.save()
 
     def set_name(self, name):

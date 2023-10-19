@@ -3,8 +3,12 @@ import logging
 from aiogram import Bot, Dispatcher, types
 from aiogram.utils import executor
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup, KeyboardButton
+from aiogram.dispatcher import FSMContext
+from aiogram.contrib.fsm_storage.memory import MemoryStorage
+
 from models import User, Room
 from services.decorators import my_msg_handler
+from services.custom_state.base_state import State
 
 from dotenv import load_dotenv
 
@@ -58,13 +62,13 @@ async def err(message: types.Message, something):
 @my_msg_handler(
     dp,
     commands=['some'],
-    state=User.State.ended,
+    state=User.RegState.ended,
     err_callback=err,
     something='some text')
 async def some(message):
     await message.reply('Some')
 '''
-
+'''
 @my_msg_handler(dp, commands=['start'], send_user=True)
 async def cmd_start(message: types.Message, user: User, exists: bool):
     """Старт функция.
@@ -74,7 +78,7 @@ async def cmd_start(message: types.Message, user: User, exists: bool):
         user (User): юзер который передается @my_msg_handler
         exists (bool): сущетсвовал ли юзер до вызова функции
     """    
-    if not user.reg_state == User.RegState.ended:
+    if not user.state == User.RegState.ended:
         await message.reply("Приветствую, дорогой друг \nНажми /create для создания профиля", reply_markup=get_kb())
     else:
         await message.reply("Приветствую, дорогой друг", reply_markup=get_kb())
@@ -94,24 +98,24 @@ async def create_profile(message: types.Message, user: User, exists: bool):
     logger.info(f'User {user.tgid} exists: {exists}!')
     if exists:
         if user.reg:
-            user.set_state('reg_state', User.RegState.ended)
+            user.set_state(User.RegState.ended)
             await message.reply('Ваш профиль уже создан!')
             return
         if user.name:
-            user.set_state('reg_state', User.RegState.age)
+            user.set_state(User.RegState.age)
             logger.info(f'User {user.tgid} age!')
             return
         if user.age:
-            user.set_state('reg_state', User.RegState.description)
+            user.set_state(User.RegState.description)
             logger.info(f'User {user.tgid} desc!')
             return
 
     await message.reply(f'Давайте создадим Ваш профиль!\nДля начала отправьте свое имя')
-    user.set_state('reg_state', User.RegState.name)
+    user.set_state(User.RegState.name)
     logger.info(f'User {user.tgid} name!')
 
-@state_requiered(reg_state=User.RegState.ended, find_state=User.FindState.waiting, filter=all)
-@my_msg_handler(dp, state=User.State.name, send_user=True)
+
+@my_msg_handler(dp, state=User.RegState.name, send_user=True)
 async def create_profile(message: types.Message, user: User, exists: bool):
     """Функция создания профиля юзера. Требует нэйм-стэйт
 
@@ -125,11 +129,11 @@ async def create_profile(message: types.Message, user: User, exists: bool):
         await message.reply(f'Ошибка в имени - {error}')   
         return
  
-    user.set_state(User.State.age)
+    user.set_state(User.RegState.age)
     await message.reply('Отправьте свой возраст.')
 
 
-@my_msg_handler(dp, state=User.State.age, send_user=True)
+@my_msg_handler(dp, state=User.RegState.age, send_user=True)
 async def create_profile(message: types.Message, user: User, exists: bool):
     """Функция создания профиля юзера. Требует эйдж-стэйт
 
@@ -143,11 +147,11 @@ async def create_profile(message: types.Message, user: User, exists: bool):
         await message.reply(f'Ошибка в возрасте - {error}')   
         return
  
-    user.set_state(User.State.description)
+    user.set_state(User.RegState.description)
     await message.reply('Теперь отправьте описание.')
 
 
-@my_msg_handler(dp, state=User.State.description, send_user=True)
+@my_msg_handler(dp, state=User.RegState.description, send_user=True)
 async def create_profile(message: types.Message, user: User, exists: bool):
     """Функция создания профиля юзера. Требует дескрипшн-стэйт
 
@@ -158,9 +162,9 @@ async def create_profile(message: types.Message, user: User, exists: bool):
     """    
     user.set_description(message.text)
     user.set_reg(True)
-    user.set_state(User.State.ended)
+    user.set_state(User.RegState.ended)
     await message.reply('Профиль создан.')
-
+'''
 
 async def profile_not_reg_error(message: types.Message):
     """Вывод ошибки отсутствия профиля.
@@ -174,7 +178,10 @@ async def profile_not_reg_error(message: types.Message):
 @my_msg_handler(
     dp,
     commands=['profile'],
-    state=User.State.ended,
+    state_filter={
+        'reg_state': User.RegState.ended | User.RegState.name,
+        'find_state': ~User.FindState.in_find,
+        },
     err_callback=profile_not_reg_error,
     send_user=True)
 async def send_profile(message: types.Message, user: User, exists: bool):
