@@ -4,23 +4,36 @@ from .exceptions import NoPairsInQueue, DuplicateUser
 
 
 class Room:
-    __last_room_id = 0
+    __rooms = {}
+    @classmethod
+    def cascade_create(cls, id1, id2):
+        room1 = {str(id1): str(id2)}
+        room2 = {str(id2): str(id1)}
+
+        cls.__rooms.update(room1)
+        cls.__rooms.update(room2)
 
     @classmethod
-    def create_room_id(cls):
-        cls.__last_room_id += 1
-        return cls.__last_room_id
+    def cascade_delete(cls, id):
+        id2 = cls.__rooms[str(id)]
+        
+        cls.__rooms.pop(str(id))
+        cls.__rooms.pop(str(id2))
 
 
     def __init__(self, first_user: int, second_user: int):
         if first_user == second_user:
             raise DuplicateUser
         
-        self.users = {
-            'room_id': self.__class__.create_room_id(),
-            'user_1': first_user,
-            'user_2': second_user,
-        }
+        self.__class__.cascade_create(first_user, second_user)
+    
+    @classmethod
+    def redirect_from(cls, id):
+        return cls.__rooms[str(id)]
+    
+    @classmethod
+    def in_room(cls, id):
+        return str(id) in cls.__rooms
 
 
 class Queue:

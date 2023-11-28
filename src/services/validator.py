@@ -1,5 +1,6 @@
 from .exceptions import *
 
+
 def validate_name(name):
     if len(name) < 2 or len(name) > 256:
         raise BadName('Длина имени должна быть от 2 до 256 символов!')
