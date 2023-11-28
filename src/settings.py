@@ -20,7 +20,7 @@ logging.basicConfig(
 formatter = logging.Formatter(
     '%(name)s ~$ [ %(levelname)s ](%(asctime)s) - %(message)s')
 
-logger = logging.getLogger()
+logger = logging.getLogger(__name__)
 
 handler = logging.StreamHandler()
 file_handler = logging.FileHandler(

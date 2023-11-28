@@ -1,3 +1,4 @@
+from typing import Any
 from aiogram import Bot, Dispatcher, types
 
 import settings
@@ -9,6 +10,9 @@ from services import auth, rooms
 from models import User
 
 from services.query import Room
+from services.msg_parser import parse_content
+
+from templates import exceptions
 
 
 Renderer = settings.RENDERER
@@ -21,18 +25,15 @@ logger = settings.logger
 
 @dp.message_handler(commands=['start'])
 async def start(message: types.Message):
+    rendered_text = auth.reg_or_login(message)
+    await message.reply(rendered_text)
+
     await message.reply(
         Renderer(
             message.from_user.username,
             settings.BOT_NAME,
             settings.HELP_COMMAND,
             text = greets.greet_text))
-
-
-@dp.message_handler(commands=['reg'])
-async def reg(message: types.Message):
-    rendered_text = auth.reg_or_login(message)
-    await message.reply(rendered_text)
 
 
 @dp.message_handler(commands=['find'])
@@ -51,23 +52,47 @@ async def find_room(message: types.Message):
             user1.tgid,
             Renderer(
                 user1.name,
-                text = greets.in_room
-            ))
+                text = greets.in_room))
 
         await bot.send_message(
             user2.tgid,
             Renderer(
                 user2.name,
-                text = greets.in_room
-            ))
+                text = greets.in_room))
 
-@dp.message_handler()
-async def default_message(message: types.Message):
+
+@dp.message_handler(commands=['leave'])
+async def leave_room(message: types.Message):
     user = message.from_user
 
     if Room.in_room(user.id):
-        await bot.send_message(
+
+        user2 = Room.redirect_from(user.id)
+        await message.reply('You leaved room!')
+        await bot.send_message(user2, 'Your opponent leaved room!')
+
+        Room.cascade_delete(user.id)
+    else:
+        await message.reply(
+            Renderer(
+                'You aren\'t in room yet!',
+                text = exceptions.exception_text))
+
+
+@dp.message_handler(content_types=['any'])
+async def default_message(message: types.Message):
+    user = message.from_user
+
+    file_id, foo_name = parse_content(message)
+    resend = getattr(bot, foo_name)
+
+    logger.info(f'{resend}; {file_id}')
+
+    if Room.in_room(user.id):
+        logger.info(f'{user.username} sended {message.text} to {Room.redirect_from(user.id)}')
+
+        await resend(
             Room.redirect_from(user.id),
-            message.text)
+            file_id)
     else:
         await message.reply('You aren\'t in room yet!')
