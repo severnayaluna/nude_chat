@@ -24,3 +24,6 @@ media/
 *.log
 
 bot.log
+
+*.db
+*.env
