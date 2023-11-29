@@ -2,7 +2,7 @@ from aiogram import types
 
 import settings
 
-from .exceptions import DuplicateUser, NoPairsInQueue
+from .exceptions import DuplicateUser, NoPairsInQueue, NoSuchUser
 
 from .query import Rooms, Queue
 
@@ -27,7 +27,54 @@ def add_user_to_queue(message: types.Message):
     
     except Exception as ex:
         logger.error(ex)
-        return f'We are running into an Unbound error:\n{ex.text}'  
+        return f'We are running into an Unbound error:\n{ex.text}'
+
+
+def remove_user_from_queue(message: types.Message):
+    user = message.from_user
+
+    if user.is_bot:
+        return f'Sorry, {user.first_name}, but you can\'t remove bot from queue!'
+            
+    user_id = user.id
+
+    try:
+        Queue.remove(user_id)
+        return f'{user.first_name}, you aren\'t in queue now.'
+    
+    except NoSuchUser as ex:
+        return f'{user.first_name}, you aren\'t in queue!'
+    
+    except Exception as ex:
+        logger.error(ex)
+        return f'We are running into an Unbound error:\n{ex.text}'
+
+
+
+def remove_user_from_room(message: types.Message):
+    user = message.from_user
+
+    if user.is_bot:
+        return f'Sorry, {user.first_name}, but you can\'t remove bot from queue!'
+
+    if Rooms.in_room(user.id):
+        user2 = Rooms.redirect_from(user.id)
+        Rooms.cascade_delete(user.id)
+        return (
+            f'{user.first_name}, you aren\'t in room now.',
+            f'{user2.name}, your opponent leaved room.',
+            user.id,
+            user2.tgid
+            )
+
+    else:
+        return (
+            'You aren\'t in room yet!',
+            None,
+            None,
+            None
+            )
+
 
 def add_to_room_if_can():
     try:

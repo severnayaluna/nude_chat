@@ -9,24 +9,25 @@ BASE_DIR = os.getcwd().rstrip('/').replace('src', '')
 
 logging.basicConfig(
     filename = 'bot.log',
-    filemode = 'w',
+    filemode = 'a',
     level = logging.INFO,
     datefmt = '%m/%d/%Y %I:%M:%S %p')
+
+
+logger = logging.Logger(__name__, level=logging.INFO)
 
 formatter = logging.Formatter(
     '%(name)s ~$ [ %(levelname)s ](%(asctime)s) - %(message)s')
 
-logger = logging.getLogger(__name__)
-
-handler = logging.StreamHandler()
+stream_handler = logging.StreamHandler()
 file_handler = logging.FileHandler(
     filename = 'bot.log',
     mode = 'a')
 
 file_handler.setFormatter(formatter)
-handler.setFormatter(formatter)
+stream_handler.setFormatter(formatter)
 
-logger.addHandler(handler)
+logger.addHandler(stream_handler)
 logger.addHandler(file_handler)
 
 

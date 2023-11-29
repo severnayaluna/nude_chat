@@ -12,3 +12,6 @@ class NoPairsInQueue(Exception):
 
 class DuplicateUser(Exception):
     ...
+
+class NoSuchUser(Exception):
+    ...

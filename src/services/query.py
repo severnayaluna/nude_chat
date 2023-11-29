@@ -1,6 +1,6 @@
-from typing import Optional, Union
+from typing import Union
 
-from .exceptions import NoPairsInQueue, DuplicateUser
+from .exceptions import NoPairsInQueue, DuplicateUser, NoSuchUser
 
 
 class Rooms:
@@ -60,3 +60,10 @@ class Queue:
         if user in cls.__users:
             raise DuplicateUser
         cls.__users.append(user)
+
+    @classmethod
+    def remove(cls, user: int) -> None:
+        if user not in cls.__users:
+            raise NoSuchUser
+        
+        return cls.__users.remove(user)
