@@ -1,8 +1,8 @@
 # This is no-nude chat-roulette bot.
 
 > [!IMPORTANT]
-> **.env file requiered**
->
+> **.env file requiered!**
+> 
 > example:
 > ```
 > export BOT_TOKEN=1234567890
