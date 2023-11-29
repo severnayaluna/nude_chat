@@ -1,7 +1,7 @@
 # This is no-nude chat-roulette bot.
 
 > [!IMPORTANT]
-> **.env file requiered!**(put into a root directory)
+> **.env file requiered!**
 > 
 > **~/.../nude_chat/.env**:
 > ```
