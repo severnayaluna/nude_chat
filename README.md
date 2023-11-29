@@ -3,7 +3,7 @@
 > [!IMPORTANT]
 > **.env file requiered!**(put into a root directory)
 > 
-> example:
+> **~/.../nude_chat/.env**:
 > ```
 > export BOT_TOKEN=1234567890
 > ```
