@@ -2,6 +2,10 @@
 
 > [!IMPORTANT]
 > **.env file requiered**
+> example:
+> ```.env
+> export BOT_TOKEN=1234567890
+> ```
 
 # Installing
 
