@@ -1,12 +1,6 @@
 # This is no-nude chat-roulette bot.
 
-> [!IMPORTANT]
-> **.env file requiered!**
-> 
-> **~/.../nude_chat/.env**:
-> ```
-> export BOT_TOKEN=1234567890
-> ```
+A telegram-based chat-roulette bot, that filters content via neural-nework.
 
 # Installing
 
@@ -31,6 +25,14 @@ pip install -r requirements.txt
 ```
 
 # Running
+
+> [!IMPORTANT]
+> **.env file requiered!**
+> 
+> **~/.../nude_chat/.env**:
+> ```
+> export BOT_TOKEN=1234567890
+> ```
 
 ## Linux
 
