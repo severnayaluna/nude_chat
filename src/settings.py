@@ -4,10 +4,6 @@ import os
 
 from dotenv import load_dotenv
 
-from templates import templater
-
-from services import query
-
 
 BASE_DIR = os.getcwd().rstrip('/').replace('src', '')
 
@@ -42,8 +38,3 @@ BOT_TOKEN=os.getenv("BOT_TOKEN")
 BOT_NAME = 'NoNudeBot'
 
 HELP_COMMAND = '/help'
-
-RENDERER = templater.Render()
-
-
-QUEUE = query.Queue()

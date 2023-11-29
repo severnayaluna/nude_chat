@@ -3,8 +3,9 @@ from typing import Optional, Union
 from .exceptions import NoPairsInQueue, DuplicateUser
 
 
-class Room:
+class Rooms:
     __rooms = {}
+    
     @classmethod
     def cascade_create(cls, id1, id2):
         room1 = {str(id1): str(id2)}
@@ -19,7 +20,6 @@ class Room:
         
         cls.__rooms.pop(str(id))
         cls.__rooms.pop(str(id2))
-
 
     def __init__(self, first_user: int, second_user: int):
         if first_user == second_user:
@@ -37,29 +37,26 @@ class Room:
 
 
 class Queue:
-    @property
-    def queue(self) -> list[int]:
-        return self.__users
+    __users = []
 
-    def __init__(self, users: Optional[list[int]] = None) -> None:
-        if users:
-            if sorted(set(users)) != sorted(users):
-                raise DuplicateUser
-            self.__users: list[int] = users
-        else:
-            self.__users: list[int] = []
+    @classmethod
+    @property
+    def queue(cls) -> list[int]:
+        return cls.__users
     
-    def get_pair(self) -> Union[NoPairsInQueue, tuple[int, int]]:
+    @classmethod
+    def get_pair(cls) -> Union[NoPairsInQueue, tuple[int, int]]:
         try:
-            first_user: int = self.__users[0]
-            second_user: int = self.__users[1]
-            self.__users.remove(first_user)
-            self.__users.remove(second_user)
+            first_user: int = cls.__users[0]
+            second_user: int = cls.__users[1]
+            cls.__users.remove(first_user)
+            cls.__users.remove(second_user)
         except IndexError:
             raise NoPairsInQueue
         return first_user, second_user
     
-    def put(self, user: int) -> None:
-        if user in self.__users:
+    @classmethod
+    def put(cls, user: int) -> None:
+        if user in cls.__users:
             raise DuplicateUser
-        self.__users.append(user)
+        cls.__users.append(user)

@@ -4,10 +4,6 @@ from models import User
 
 import settings
 
-from templates import exceptions, greets
-
-
-Renderer = settings.RENDERER
 
 logger = settings.logger
 
@@ -15,32 +11,25 @@ logger = settings.logger
 def reg_or_login(message: types.Message):
     user = message.from_user
     if user.is_bot:
-        return Renderer(
-            'You cannot registarte a bot!',
-            text = exceptions.exception_text
-        )
+        return 'You cannot registarte a bot!'
     
     user_id = user.id
-    username = user.username
+    username = user.first_name
     description = 'Without BIO'
     age = 18
 
     try:
-        bd_user, _ = User.get_or_create(
+        db_user, wasnt_in_db = User.get_or_create(
             name = username,
             tgid = user_id,
             description = description,
             age = age)
         
-        return Renderer(
-            bd_user.name,
-            text = greets.successful_auth
-        )
+        if wasnt_in_db:
+            return f'Hey, {db_user.name}, you successfully registrated in bot!'
+        else:
+            return f'Hey, {db_user.name}, you successfully logined in bot!'
 
     except Exception as ex:
         logger.error(ex)
-        return Renderer(
-            'Unbound error!',
-            text = exceptions.exception_text
-        )
-    
+        return f'We are running into an Unbound error:\n{ex.text}'    

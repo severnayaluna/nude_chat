@@ -4,6 +4,9 @@ A telegram-based chat-roulette bot, that filters content via neural-nework.
 
 # Installing
 
+> [!WARNING]
+> **You must have python >= 3.10**
+
 ## Linux
 
 ```shell
