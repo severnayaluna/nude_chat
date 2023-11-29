@@ -1,17 +1,7 @@
-INFO:root:Loaded .env.
-INFO:root:Bot started polling.
+INFO:settings:Loaded .env.
+INFO:settings:Bot started polling.
 INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
 WARNING:aiogram:Updates were skipped successfully.
 INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:[2021855860]
-INFO:root:False, [2021855860]
-INFO:root:[2021855860, 696941814]
-INFO:root:(2021855860, 696941814), []
 INFO:aiogram.dispatcher.dispatcher:Stop polling...
 WARNING:aiogram:Goodbye!
-[ INFO ](2023-11-28 21:21:34,638) - [2021855860]
-root ~$ [ INFO ](2023-11-28 21:21:34,639) - False, [2021855860]
-root ~$ [ INFO ](2023-11-28 21:22:20,036) - [2021855860, 696941814]
-root ~$ [ INFO ](2023-11-28 21:22:20,036) - (2021855860, 696941814), []
-aiogram.dispatcher.dispatcher ~$ [ INFO ](2023-11-28 21:23:30,994) - Stop polling...
-aiogram ~$ [ WARNING ](2023-11-28 21:23:30,996) - Goodbye!

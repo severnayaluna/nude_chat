@@ -9,7 +9,7 @@ from templates import templater
 from services import query
 
 
-BASE_DIR = '/home/imcocos/Documents/Director/Git_projects/Nude_Chat/'
+BASE_DIR = os.getcwd().rstrip('/').replace('src', '')
 
 logging.basicConfig(
     filename = 'bot.log',

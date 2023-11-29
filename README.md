@@ -1,7 +1,7 @@
 # This is no-nude chat-roulette bot.
 
 > [!IMPORTANT]
-> **.env file requiered!**
+> **.env file requiered!**(put into a root directory)
 > 
 > example:
 > ```
@@ -18,7 +18,6 @@ cd nude_chat
 python3 -m venv env
 source env/bin/activate
 pip install -r requirements.txt
-python src/main.py
 ```
 
 ## Windows
@@ -29,5 +28,20 @@ cd nude_chat
 python3 -m venv env
 .\env\Scripts\activate
 pip install -r requirements.txt
+```
+
+# Running
+
+## Linux
+
+```shell
+source env/bin/activate
+python src/main.py
+```
+
+## Windows
+
+```shell
+.\env\Scripts\activate
 python src/main.py
 ```
