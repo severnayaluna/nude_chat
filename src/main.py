@@ -1,16 +1,16 @@
 from aiogram.utils import executor
 
-import settings
+from log import get_logger, log_exceptions
 
 import handlers
 
 
-logger = settings.logger
+logger = get_logger(__name__)
+
+@log_exceptions(logger)
+def main():
+    executor.start_polling(handlers.dp, skip_updates=True)
 
 
 if __name__ == '__main__':
-    logger.info('Bot started polling.')
-    try:
-        executor.start_polling(handlers.dp, skip_updates=True)
-    except Exception as ex:
-        logger.error(ex)
+    main()

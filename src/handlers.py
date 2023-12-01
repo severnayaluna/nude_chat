@@ -1,5 +1,3 @@
-from typing import Any
-
 from aiogram import Bot, Dispatcher, types
 
 import settings
@@ -7,19 +5,21 @@ import settings
 from models import User
 
 from services import auth, rooms
-from services.query import Rooms, Queue
+from services.query import Rooms
 from services.msg_parser import parse_content
+
+from log import get_logger, log_exceptions
 
 
 bot = Bot(settings.BOT_TOKEN)
 dp = Dispatcher(bot)
 
-logger = settings.logger.getChild(__name__)
+logger = get_logger(__name__)
 
 
 @dp.message_handler(commands=['start'])
 async def start(message: types.Message):
-    logger.info(f'User {message.from_user.first_name} started bot.')
+    logger.info(f'User {message.from_user.id} started bot.')
     
     rendered_text = auth.reg_or_login(message)
     
@@ -29,7 +29,7 @@ async def start(message: types.Message):
 
 @dp.message_handler(commands=['find'])
 async def find_room(message: types.Message):
-    logger.info(f'User {message.from_user.first_name} tried to add to queue.')
+    logger.info(f'User {message.from_user.id} tried to add to queue.')
 
     text = rooms.add_user_to_queue(message)
     await message.reply(text)
@@ -39,15 +39,15 @@ async def find_room(message: types.Message):
     if pair:
         user1, user2 = User.get(tgid=pair[0]), User.get(tgid=pair[1])
         
-        await bot.send_message(f'Hey, {user1.name}, you are in room with {user2.name} now!')
-        await bot.send_message(f'Hey, {user2.name}, you are in room with {user1.name} now!')
+        await bot.send_message(user1.tgid, text=f'Hey, {user1.name}, you are in room with {user2.name} now!')
+        await bot.send_message(user2.tgid, text=f'Hey, {user2.name}, you are in room with {user1.name} now!')
 
 
 @dp.message_handler(commands=['leave'])
 async def leave_room(message: types.Message):
     user = message.from_user
 
-    logger.info(f'User {user.first_name} tried to leave room.')
+    logger.info(f'User {user.id} tried to leave room.')
 
     user1_text, user2_text, user1_id, user2_id = rooms.remove_user_from_room(message)
 
@@ -61,7 +61,7 @@ async def leave_room(message: types.Message):
 
 @dp.message_handler(commands=['exit'])
 async def exit_queue(message: types.Message):
-    logger.info(f'User {message.from_user.first_name} tried to leave queue.')
+    logger.info(f'User {message.from_user.id} tried to leave queue.')
 
     text = rooms.remove_user_from_queue(message)
     await message.reply(text)
@@ -75,8 +75,13 @@ async def default_message(message: types.Message):
     resend = getattr(bot, foo_name)
 
     if Rooms.in_room(user.id):
+        reciever = Rooms.redirect_from(user.id)
+
+        logger.info(f'User {user.first_name} tried to {foo_name} - {file_id}, to {reciever["name"]}.')
+
+        await bot.send_message(reciever['id'], text=user.first_name + ':')
         await resend(
-            Rooms.redirect_from(user.id),
+            reciever['id'],
             file_id)
     else:
         await message.reply('You aren\'t in room yet!')

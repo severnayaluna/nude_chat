@@ -6,10 +6,13 @@ from .exceptions import DuplicateUser, NoPairsInQueue, NoSuchUser
 
 from .query import Rooms, Queue
 
+from log import get_logger, log_exceptions
 
-logger = settings.logger
+
+logger = get_logger(__name__)
 
 
+@log_exceptions(logger)
 def add_user_to_queue(message: types.Message):
     user = message.from_user
 
@@ -30,6 +33,7 @@ def add_user_to_queue(message: types.Message):
         return f'We are running into an Unbound error:\n{ex.text}'
 
 
+@log_exceptions(logger)
 def remove_user_from_queue(message: types.Message):
     user = message.from_user
 
@@ -50,7 +54,7 @@ def remove_user_from_queue(message: types.Message):
         return f'We are running into an Unbound error:\n{ex.text}'
 
 
-
+@log_exceptions(logger)
 def remove_user_from_room(message: types.Message):
     user = message.from_user
 
@@ -76,6 +80,7 @@ def remove_user_from_room(message: types.Message):
             )
 
 
+@log_exceptions(logger)
 def add_to_room_if_can():
     try:
         pair = Queue.get_pair()
@@ -87,4 +92,4 @@ def add_to_room_if_can():
     
     except Exception as ex:
         logger.error(ex)
-        return f'We are running into an Unbound error:\n{ex.text}'
+        return f'We are running into an Unbound error:\n{ex}'

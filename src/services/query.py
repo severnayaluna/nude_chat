@@ -2,14 +2,35 @@ from typing import Union
 
 from .exceptions import NoPairsInQueue, DuplicateUser, NoSuchUser
 
+from log import get_logger
+
+from models import User
+
+
+logger = get_logger(__name__)
 
 class Rooms:
     __rooms = {}
     
     @classmethod
     def cascade_create(cls, id1, id2):
-        room1 = {str(id1): str(id2)}
-        room2 = {str(id2): str(id1)}
+
+        user1, user2 = User.get(tgid=int(id1)), User.get(tgid=int(id2))
+
+        room1 = {
+            str(id1):{
+                'id': str(id2),
+                'name': user2.name,
+            }
+        }
+
+        room2 = {
+            str(id2):{
+                'id': str(id1),
+                'name': user1.name,
+            }
+        }
+
 
         cls.__rooms.update(room1)
         cls.__rooms.update(room2)
