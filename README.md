@@ -10,7 +10,7 @@ A telegram-based chat-roulette bot, that filters content via neural-nework.
 ## Linux
 
 ```shell
-git clone https://github.com/severnayaluna/nude_chat.git
+git clone --branch dev https://github.com/severnayaluna/nude_chat.git
 cd nude_chat
 touch .env
 python3 -m venv env
@@ -21,7 +21,7 @@ pip install -r requirements.txt
 ## Windows
 
 ```shell
-git clone https://github.com/severnayaluna/nude_chat.git
+git clone --branch dev https://github.com/severnayaluna/nude_chat.git
 cd nude_chat
 copy NUL .env
 python3 -m venv env
