@@ -1,6 +1,7 @@
 from aiogram.utils import executor
 
-from log import get_logger, log_exceptions
+from log import get_logger, log_exceptions, clear_logs
+clear_logs()
 
 import handlers
 

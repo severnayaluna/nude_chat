@@ -1,65 +1,52 @@
 from aiogram import types
 
-import settings
+from services.validator import validate_msg
 
-from .exceptions import DuplicateUser, NoPairsInQueue, NoSuchUser
+from .exceptions import *
 
 from .query import Rooms, Queue
 
-from log import get_logger, log_exceptions
+from log import get_logger
 
 
 logger = get_logger(__name__)
 
 
-@log_exceptions(logger)
 def add_user_to_queue(message: types.Message):
+    validate_msg(message)
+
     user = message.from_user
 
     if user.is_bot:
-        return f'Sorry, {user.first_name}, but you can\'t add bot in queue!'
+        raise UserIsBot(f'Sorry, {user.first_name}, but you can\'t add bot in queue!')
             
     user_id = user.id
 
-    try:
-        Queue.put(user_id)
-        return f'{user.first_name}, you are in queue now.\nWait for free room...\nTo exit queue type /exit'
-    
-    except DuplicateUser as ex:
-        return f'{user.first_name}, you are already in queue!'
-    
-    except Exception as ex:
-        logger.error(ex)
-        return f'We are running into an Unbound error:\n{ex.text}'
+    Queue.put(user_id)
+    return f'{user.first_name}, you are in queue now.\nWait for free room...\nTo exit queue type /exit'
 
 
-@log_exceptions(logger)
 def remove_user_from_queue(message: types.Message):
+    validate_msg(message)
+
     user = message.from_user
 
     if user.is_bot:
-        return f'Sorry, {user.first_name}, but you can\'t remove bot from queue!'
+        raise UserIsBot(f'Can\'t remove bot from queue!')
             
     user_id = user.id
 
-    try:
-        Queue.remove(user_id)
-        return f'{user.first_name}, you aren\'t in queue now.'
-    
-    except NoSuchUser as ex:
-        return f'{user.first_name}, you aren\'t in queue!'
-    
-    except Exception as ex:
-        logger.error(ex)
-        return f'We are running into an Unbound error:\n{ex.text}'
+    Queue.remove(user_id)
+    return f'{user.first_name}, you aren\'t in queue now.'
 
 
-@log_exceptions(logger)
 def remove_user_from_room(message: types.Message):
+    validate_msg(message)
+
     user = message.from_user
 
     if user.is_bot:
-        return f'Sorry, {user.first_name}, but you can\'t remove bot from queue!'
+        raise UserIsBot(f'Can\'t remove bot from room!')
 
     if Rooms.in_room(user.id):
         user2 = Rooms.redirect_from(user.id)
@@ -80,16 +67,11 @@ def remove_user_from_room(message: types.Message):
             )
 
 
-@log_exceptions(logger)
 def add_to_room_if_can():
     try:
         pair = Queue.get_pair()
         Rooms(*pair)
         return pair
 
-    except NoPairsInQueue as ex:
+    except NoPairsInQueue:
         return False
-    
-    except Exception as ex:
-        logger.error(ex)
-        return f'We are running into an Unbound error:\n{ex}'

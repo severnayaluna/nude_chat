@@ -2,20 +2,24 @@ from aiogram import types
 
 from models import User
 
-from log import get_logger, log_exceptions
+from log import get_logger
 
+from .exceptions import *
+from services.validator import validate_msg
 
 logger = get_logger(__name__)
 
 
-@log_exceptions(logger)
 def reg_or_login(message: types.Message):
+    validate_msg(message)
+
     user = message.from_user
     logger.info(f'User {user.id} tried to log/reg.')
 
     if user.is_bot:
-        logger.warning(f'User {user.id} was bot.')
-        return 'You cannot registarte a bot!'
+        ex = UserIsBot(f'You can\'t registrate/login a bot!')
+        ex.log_me(logger)
+        raise ex
     
     user_id = user.id
     username = user.first_name
@@ -37,5 +41,6 @@ def reg_or_login(message: types.Message):
             return f'Hey, {db_user.name}, you successfully logined in bot!'
 
     except Exception as ex:
-        logger.error(ex)
-        return f'We are running into an Unbound error:\n{ex.text}'    
+        ex = UnboundError(ex.args[0])
+        ex.log_me(logger)
+        raise ex

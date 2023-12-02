@@ -34,6 +34,11 @@ def log_exceptions(logger: logging.Logger):
             try:
                 return foo(*args, **kwargs)
             except Exception as ex:
-                logger.error(f'Exception:\n{ex}\n\nFroo: {foo.__name__}\n\nArgs: {args}\nKwargs: {kwargs}')
+                logger.error(f'Exception:\n{ex}\n\nFoo: {foo.__name__}\n\nArgs: {args}\nKwargs: {kwargs}')
+                raise ex
         return decorator
     return wrapper
+
+def clear_logs():
+    with open('bot.log', 'w') as f:
+        ...

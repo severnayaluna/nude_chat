@@ -1,6 +1,6 @@
 from typing import Union
 
-from .exceptions import NoPairsInQueue, DuplicateUser, NoSuchUser
+from .exceptions import *
 
 from log import get_logger
 
@@ -14,8 +14,12 @@ class Rooms:
     
     @classmethod
     def cascade_create(cls, id1, id2):
-
-        user1, user2 = User.get(tgid=int(id1)), User.get(tgid=int(id2))
+        try:
+            user1, user2 = User.get(tgid=int(id1)), User.get(tgid=int(id2))
+        except Exception as ex:
+            ex = UnboundError(ex.args[0])
+            ex.log_me(logger)
+            raise ex
 
         room1 = {
             str(id1):{
@@ -44,7 +48,9 @@ class Rooms:
 
     def __init__(self, first_user: int, second_user: int):
         if first_user == second_user:
-            raise DuplicateUser
+            ex = SameUserError(f'Can\'t create room with 2 same users!')
+            ex.log_me(logger)
+            raise ex
         
         self.__class__.cascade_create(first_user, second_user)
     
@@ -73,18 +79,25 @@ class Queue:
             cls.__users.remove(first_user)
             cls.__users.remove(second_user)
         except IndexError:
-            raise NoPairsInQueue
+            ex = NoPairsInQueue(f'There are no free pair in queue!')
+            ex.log_me(logger)
+            raise ex
+
         return first_user, second_user
     
     @classmethod
     def put(cls, user: int) -> None:
         if user in cls.__users:
-            raise DuplicateUser
+            ex = DuplicateUser(f'You are already in queu!')
+            ex.log_me(logger)
+            raise ex
         cls.__users.append(user)
 
     @classmethod
     def remove(cls, user: int) -> None:
         if user not in cls.__users:
-            raise NoSuchUser
+            ex = NoSuchUser(f'No such user in queue!')
+            ex.log_me(logger)
+            raise ex
         
         return cls.__users.remove(user)

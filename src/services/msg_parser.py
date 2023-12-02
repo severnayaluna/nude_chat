@@ -1,25 +1,25 @@
 from aiogram import types
 
-from log import get_logger, log_exceptions
+from log import get_logger
+
+from .exceptions import *
+from services.validator import validate_msg
 
 
 logger = get_logger(__name__)
 
-
-@log_exceptions(logger)
 def parse_content(message: types.Message):
-    try:
-        ctype = str(message.content_type)
-        foo_name = f'send_{ctype}'
+    validate_msg(message)
 
-        if ctype == 'text':
-            return message.text, 'send_message'
+    ctype = str(message.content_type)
+    foo_name = f'send_{ctype}'
 
-        unparsed_content = getattr(message, str(ctype))
+    if ctype == 'text':
+        return message.text, 'send_message'
 
-        if type(unparsed_content) is not list:
-            unparsed_content = [unparsed_content]
+    unparsed_content = getattr(message, str(ctype))
 
-        return unparsed_content[-1]['file_id'], foo_name
-    except Exception as ex:
-        logger.error(ex)
+    if type(unparsed_content) is not list:
+        unparsed_content = [unparsed_content]
+
+    return unparsed_content[-1]['file_id'], foo_name

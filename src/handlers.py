@@ -8,7 +8,9 @@ from services import auth, rooms
 from services.query import Rooms
 from services.msg_parser import parse_content
 
-from log import get_logger, log_exceptions
+from log import get_logger
+
+from services.exceptions import handle_exceptions, UserIsBot
 
 
 bot = Bot(settings.BOT_TOKEN)
@@ -18,6 +20,7 @@ logger = get_logger(__name__)
 
 
 @dp.message_handler(commands=['start'])
+@handle_exceptions(logger)
 async def start(message: types.Message):
     logger.info(f'User {message.from_user.id} started bot.')
     
@@ -28,6 +31,7 @@ async def start(message: types.Message):
 
 
 @dp.message_handler(commands=['find'])
+@handle_exceptions(logger)
 async def find_room(message: types.Message):
     logger.info(f'User {message.from_user.id} tried to add to queue.')
 
@@ -44,6 +48,7 @@ async def find_room(message: types.Message):
 
 
 @dp.message_handler(commands=['leave'])
+@handle_exceptions(logger)
 async def leave_room(message: types.Message):
     user = message.from_user
 
@@ -60,6 +65,7 @@ async def leave_room(message: types.Message):
 
 
 @dp.message_handler(commands=['exit'])
+@handle_exceptions(logger)
 async def exit_queue(message: types.Message):
     logger.info(f'User {message.from_user.id} tried to leave queue.')
 
@@ -68,6 +74,7 @@ async def exit_queue(message: types.Message):
 
 
 @dp.message_handler(content_types=['any'])
+@handle_exceptions(logger)
 async def default_message(message: types.Message):
     user = message.from_user
 
