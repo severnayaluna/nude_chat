@@ -5,6 +5,12 @@ clear_logs()
 
 import handlers
 
+from models import db, User
+
+import settings
+
+
+settings.MAIN_DB.create_tables([User,])
 
 logger = get_logger(__name__)
 

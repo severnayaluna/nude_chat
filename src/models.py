@@ -1,11 +1,6 @@
 from peewee import *
 
-
-db = SqliteDatabase(
-    'users.db',
-    pragmas={
-        'journal_mode': 'wal',
-        'cache_size': -32*1000})
+import settings
 
 
 class User(Model):
@@ -15,7 +10,4 @@ class User(Model):
     age = IntegerField(null=True) # возраст юзера
 
     class Meta:
-        database = db
-
-
-db.create_tables([User,])
+        database = settings.MAIN_DB
