@@ -5,7 +5,7 @@ clear_logs()
 
 import handlers
 
-from models import db, User
+from models import User
 
 import settings
 
