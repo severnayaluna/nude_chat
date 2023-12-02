@@ -9,16 +9,19 @@ from peewee import SqliteDatabase
 
 logger = get_logger(__name__)
 
+
 BASE_DIR = os.getcwd().rstrip('/').replace('src', '')
 
 load_dotenv(os.path.join(BASE_DIR, '.env'))
 logger.info('Loaded .env.')
 
-BOT_TOKEN=os.getenv("BOT_TOKEN")
 
+BOT_TOKEN=os.getenv("BOT_TOKEN")
 BOT_NAME = 'NoNudeBot'
 
+
 HELP_COMMAND = '/help'
+
 
 MAIN_DB = SqliteDatabase(
     'users.db',
