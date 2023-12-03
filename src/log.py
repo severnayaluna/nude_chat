@@ -1,7 +1,8 @@
 import logging
+from typing import Any, Callable
 
 
-def get_logger(name: str):
+def get_logger(name: str) -> logging.Logger:
     """
     Возвращает сконфигурированный логер по имени name.
     """
@@ -12,13 +13,13 @@ def get_logger(name: str):
         datefmt = '%m/%d/%Y %I:%M:%S %p')
 
 
-    logger = logging.Logger(name, level=logging.INFO)
+    logger: logging.Logger = logging.Logger(name, level=logging.INFO)
 
-    formatter = logging.Formatter(
+    formatter: logging.Formatter = logging.Formatter(
         '%(name)s ~$ [ %(levelname)s ](%(asctime)s) - %(message)s')
 
-    stream_handler = logging.StreamHandler()
-    file_handler = logging.FileHandler(
+    stream_handler: logging.Handler = logging.StreamHandler()
+    file_handler: logging.Handler = logging.FileHandler(
         filename = 'bot.log',
         mode = 'a')
 
@@ -31,14 +32,14 @@ def get_logger(name: str):
     return logger
 
 
-def log_exceptions(logger: logging.Logger):
+def log_exceptions(logger: logging.Logger) -> Callable:
     """
     Декоратор, который
     Отлавливает -> Логирует -> Вызывает,
     исключения возникшие в функции к кторой он был применен.
     """
-    def wrapper(foo: callable):
-        def decorator(*args, **kwargs):
+    def wrapper(foo: Callable) -> Callable:
+        def decorator(*args, **kwargs) -> Any:
             try:
                 return foo(*args, **kwargs)
             except Exception as ex:
@@ -47,7 +48,7 @@ def log_exceptions(logger: logging.Logger):
         return decorator
     return wrapper
 
-def clear_logs():
+def clear_logs() -> None:
     """
     Чистит файл логов.
     """

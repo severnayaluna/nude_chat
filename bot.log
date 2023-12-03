@@ -1,0 +1,15 @@
+settings ~$ [ INFO ](2023-12-03 18:15:43,813) - Loaded .env.
+INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
+WARNING:aiogram:Updates were skipped successfully.
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+handlers ~$ [ INFO ](2023-12-03 18:15:47,367) - User 2021855860 started bot.
+services.auth ~$ [ INFO ](2023-12-03 18:15:47,369) - User 2021855860 tried to log/reg.
+services.auth ~$ [ INFO ](2023-12-03 18:15:47,484) - User 2021855860 successfully registrated.
+handlers ~$ [ INFO ](2023-12-03 18:15:50,267) - User 2021855860 started bot.
+services.auth ~$ [ INFO ](2023-12-03 18:15:50,268) - User 2021855860 tried to log/reg.
+services.auth ~$ [ INFO ](2023-12-03 18:15:50,271) - User 2021855860 successfully logined.
+handlers ~$ [ INFO ](2023-12-03 18:16:05,420) - User 2021855860 tried to add to queue.
+services.query ~$ [ ERROR ](2023-12-03 18:16:05,548) - There are no free pair in queue!
+handlers ~$ [ INFO ](2023-12-03 18:16:11,432) - User 2021855860 tried to leave queue.
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!

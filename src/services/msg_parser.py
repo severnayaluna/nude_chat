@@ -1,22 +1,26 @@
+from typing import Union
+
 from aiogram import types
 
 from log import get_logger
 
 from .exceptions import *
+
 from services.validator import validate_msg
 
 
-logger = get_logger(__name__)
+logger: logging.Logger = get_logger(__name__)
 
-def parse_content(message: types.Message):
+
+def parse_content(message: types.Message) -> tuple[str, str]:
     """
     Парсит aiogram-класс сообщения. Ищет медиа.
     Возвращает айди-медиа и имя функции которую надо вызвать чтобы отправить это медиа.
     """
     validate_msg(message)
 
-    ctype = str(message.content_type)
-    foo_name = f'send_{ctype}'
+    ctype: str = str(message.content_type)
+    foo_name: str = f'send_{ctype}'
 
     if ctype == 'text':
         return message.text, 'send_message'
