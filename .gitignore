@@ -25,3 +25,9 @@ media/
 *.pyc
 
 *.log
+
+.obsidian
+*.obsidian
+
+.trash
+*.trash
