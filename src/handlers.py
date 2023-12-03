@@ -22,6 +22,12 @@ logger = get_logger(__name__)
 @dp.message_handler(commands=['start'])
 @handle_exceptions(logger)
 async def start(message: types.Message):
+    """
+    Хэндлер команды /start.
+
+    Логика:
+        - Вызывает в себе auth.reg_or_login.
+    """
     logger.info(f'User {message.from_user.id} started bot.')
     
     rendered_text = auth.reg_or_login(message)
@@ -33,6 +39,14 @@ async def start(message: types.Message):
 @dp.message_handler(commands=['find'])
 @handle_exceptions(logger)
 async def find_room(message: types.Message):
+    """
+    Хэндлер команды /find.
+
+    Логика:
+        - Вызывает в себе rooms.add_user_to_queue.
+        - Вызывает в себе rooms.add_to_room_if_can.
+        - Вызывает в себе User.get 2 раза.
+    """
     logger.info(f'User {message.from_user.id} tried to add to queue.')
 
     text = rooms.add_user_to_queue(message)
@@ -50,6 +64,12 @@ async def find_room(message: types.Message):
 @dp.message_handler(commands=['leave'])
 @handle_exceptions(logger)
 async def leave_room(message: types.Message):
+    """
+    Хэндлер команды /leave.
+
+    Логика:
+        - Вызывает в себе rooms.remove_user_from_room.
+    """
     user = message.from_user
 
     logger.info(f'User {user.id} tried to leave room.')
@@ -67,6 +87,12 @@ async def leave_room(message: types.Message):
 @dp.message_handler(commands=['exit'])
 @handle_exceptions(logger)
 async def exit_queue(message: types.Message):
+    """
+    Хэндлер команды /exit.
+
+    Логика:
+        - Вызывает в себе rooms.remove_user_from_queue.
+    """
     logger.info(f'User {message.from_user.id} tried to leave queue.')
 
     text = rooms.remove_user_from_queue(message)
@@ -76,6 +102,13 @@ async def exit_queue(message: types.Message):
 @dp.message_handler(content_types=['any'])
 @handle_exceptions(logger)
 async def default_message(message: types.Message):
+    """
+    Хэндлер любого сообщения не являющегося командой.
+
+    Логика:
+        - Вызывает в себе parse_content.
+        - Вызывает в себе Rooms.redirect_from.
+    """
     user = message.from_user
 
     file_id, foo_name = parse_content(message)

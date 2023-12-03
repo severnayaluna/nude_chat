@@ -9,6 +9,10 @@ from services.validator import validate_msg
 logger = get_logger(__name__)
 
 def parse_content(message: types.Message):
+    """
+    Парсит aiogram-класс сообщения. Ищет медиа.
+    Возвращает айди-медиа и имя функции которую надо вызвать чтобы отправить это медиа.
+    """
     validate_msg(message)
 
     ctype = str(message.content_type)

@@ -1,4 +1,8 @@
 def handle_exceptions(logger):
+    """
+    Декоратор для отлавливания ошибок в хэндлерах.
+    Логирует ошибки и отправляет юзеру удобоваримый ответ.
+    """
     def decorator(foo: callable):
         async def wrapper(*args, **_):
             try:
@@ -14,7 +18,13 @@ def handle_exceptions(logger):
 
 
 class MyBaseException(Exception):
+    """
+    Базовый класс exception, от него надо наследовать все кастомные ошибки.
+    """
     def json(self: Exception):
+        """
+        Конвертирует ошибку в json.
+        """
         return {
             'name': self.__class__.__name__,
             'text': self.args[0],
