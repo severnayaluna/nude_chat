@@ -1,15 +1,19 @@
-settings ~$ [ INFO ](2023-12-03 18:15:43,813) - Loaded .env.
-INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-handlers ~$ [ INFO ](2023-12-03 18:15:47,367) - User 2021855860 started bot.
-services.auth ~$ [ INFO ](2023-12-03 18:15:47,369) - User 2021855860 tried to log/reg.
-services.auth ~$ [ INFO ](2023-12-03 18:15:47,484) - User 2021855860 successfully registrated.
-handlers ~$ [ INFO ](2023-12-03 18:15:50,267) - User 2021855860 started bot.
-services.auth ~$ [ INFO ](2023-12-03 18:15:50,268) - User 2021855860 tried to log/reg.
-services.auth ~$ [ INFO ](2023-12-03 18:15:50,271) - User 2021855860 successfully logined.
-handlers ~$ [ INFO ](2023-12-03 18:16:05,420) - User 2021855860 tried to add to queue.
-services.query ~$ [ ERROR ](2023-12-03 18:16:05,548) - There are no free pair in queue!
-handlers ~$ [ INFO ](2023-12-03 18:16:11,432) - User 2021855860 tried to leave queue.
-INFO:aiogram.dispatcher.dispatcher:Stop polling...
-WARNING:aiogram:Goodbye!
+settings ~$ [ INFO ](2023-12-03 21:04:50,908) - Loaded .env.
+settings ~$ [ INFO ](2023-12-03 21:05:02,077) - Loaded .env.
+settings ~$ [ INFO ](2023-12-03 21:08:01,417) - Loaded .env.
+settings ~$ [ INFO ](2023-12-03 21:08:31,033) - Loaded .env.
+settings ~$ [ INFO ](2023-12-03 21:10:26,288) - Loaded .env.
+settings ~$ [ INFO ](2023-12-03 21:11:06,193) - Loaded .env.
+settings ~$ [ INFO ](2023-12-03 21:11:45,063) - Loaded .env.
+settings ~$ [ INFO ](2023-12-03 21:13:27,289) - Loaded .env.
+settings ~$ [ INFO ](2023-12-03 21:13:53,838) - Loaded .env.
+settings ~$ [ INFO ](2023-12-03 21:14:18,141) - Loaded .env.
+settings ~$ [ INFO ](2023-12-03 21:14:31,970) - Loaded .env.
+settings ~$ [ INFO ](2023-12-03 21:14:42,939) - Loaded .env.
+settings ~$ [ INFO ](2023-12-03 21:14:50,103) - Loaded .env.
+settings ~$ [ INFO ](2023-12-03 21:15:18,339) - Loaded .env.
+settings ~$ [ INFO ](2023-12-03 21:16:07,729) - Loaded .env.
+settings ~$ [ INFO ](2023-12-03 21:16:33,284) - Loaded .env.
+settings ~$ [ INFO ](2023-12-03 21:17:41,131) - Loaded .env.
+settings ~$ [ INFO ](2023-12-03 21:19:42,144) - Loaded .env.
+settings ~$ [ INFO ](2023-12-03 21:20:20,993) - Loaded .env.
