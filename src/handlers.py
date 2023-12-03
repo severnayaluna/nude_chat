@@ -1,3 +1,7 @@
+from typing import Union
+
+import logging
+
 from aiogram import Bot, Dispatcher, types
 
 import settings
@@ -7,16 +11,18 @@ from models import User
 from services import auth, rooms
 from services.query import Rooms
 from services.msg_parser import parse_content
+from services.exceptions import UnboundError, handle_exceptions, UserIsBot
 
 from log import get_logger
 
-from services.exceptions import handle_exceptions, UserIsBot
 
+if settings.BOT_TOKEN:
+    bot = Bot(settings.BOT_TOKEN)
+    dp = Dispatcher(bot)
+else:
+    raise UnboundError(f'There are no BOT_TOKEN!')
 
-bot = Bot(settings.BOT_TOKEN)
-dp = Dispatcher(bot)
-
-logger = get_logger(__name__)
+logger: logging.Logger = get_logger(__name__)
 
 
 @dp.message_handler(commands=['start'])
@@ -30,7 +36,7 @@ async def start(message: types.Message):
     """
     logger.info(f'User {message.from_user.id} started bot.')
     
-    rendered_text = auth.reg_or_login(message)
+    rendered_text: str = auth.reg_or_login(message)
     
     await message.reply(rendered_text)
     await message.reply(f'Hello, {message.from_user.first_name}.\nThis is NoNudesChatRoulette bot.')
@@ -49,12 +55,14 @@ async def find_room(message: types.Message):
     """
     logger.info(f'User {message.from_user.id} tried to add to queue.')
 
-    text = rooms.add_user_to_queue(message)
+    text: str = rooms.add_user_to_queue(message)
     await message.reply(text)
 
-    pair = rooms.add_to_room_if_can()
+    pair: Union[tuple[int, int], bool] = rooms.add_to_room_if_can()
 
     if pair:
+        user1: User
+        user2: User
         user1, user2 = User.get(tgid=pair[0]), User.get(tgid=pair[1])
         
         await bot.send_message(user1.tgid, text=f'Hey, {user1.name}, you are in room with {user2.name} now!')
@@ -70,13 +78,13 @@ async def leave_room(message: types.Message):
     Логика:
         - Вызывает в себе rooms.remove_user_from_room.
     """
-    user = message.from_user
+    user: types.User = message.from_user
 
     logger.info(f'User {user.id} tried to leave room.')
 
     user1_text, user2_text, user1_id, user2_id = rooms.remove_user_from_room(message)
 
-    if user2_text:
+    if user1_id and user2_id and user1_text and user2_text:
         await bot.send_message(user1_id, user1_text)
         await bot.send_message(user2_id, user2_text)
     else:
@@ -95,7 +103,7 @@ async def exit_queue(message: types.Message):
     """
     logger.info(f'User {message.from_user.id} tried to leave queue.')
 
-    text = rooms.remove_user_from_queue(message)
+    text: str = rooms.remove_user_from_queue(message)
     await message.reply(text)
 
 
@@ -109,13 +117,16 @@ async def default_message(message: types.Message):
         - Вызывает в себе parse_content.
         - Вызывает в себе Rooms.redirect_from.
     """
-    user = message.from_user
+    user: types.User = message.from_user
 
+    file_id: str
+    foo_name: str
     file_id, foo_name = parse_content(message)
+    
     resend = getattr(bot, foo_name)
 
     if Rooms.in_room(user.id):
-        reciever = Rooms.redirect_from(user.id)
+        reciever: dict = Rooms.redirect_from(user.id)
 
         logger.info(f'User {user.first_name} tried to {foo_name} - {file_id}, to {reciever["name"]}.')
 

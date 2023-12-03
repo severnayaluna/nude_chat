@@ -1,19 +1,29 @@
-def handle_exceptions(logger):
+from typing import Any, Callable
+
+import logging
+
+
+def handle_exceptions(logger: logging.Logger) -> Callable:
     """
     Декоратор для отлавливания ошибок в хэндлерах.
     Логирует ошибки и отправляет юзеру удобоваримый ответ.
     """
-    def decorator(foo: callable):
-        async def wrapper(*args, **_):
+    def decorator(foo: Callable) -> Callable:
+        async def wrapper(*args, **_) -> Any:
             try:
                 return await foo(*args)
+            
             except Exception as ex:
+                ex: MyBaseException
                 logger.error(ex)
-                json_ex = ex.json()
+
+                json_ex: dict = ex.json()
                 await args[0].reply(
                     f'Error - {json_ex["name"]}:\n{json_ex["text"]}'
                 )
+
         return wrapper
+    
     return decorator
 
 
@@ -21,7 +31,7 @@ class MyBaseException(Exception):
     """
     Базовый класс exception, от него надо наследовать все кастомные ошибки.
     """
-    def json(self: Exception):
+    def json(self: Exception) -> dict:
         """
         Конвертирует ошибку в json.
         """
@@ -30,7 +40,7 @@ class MyBaseException(Exception):
             'text': self.args[0],
         }
     
-    def log_me(self, logger):
+    def log_me(self, logger: logging.Logger) -> None:
         logger.error(self)
 
 

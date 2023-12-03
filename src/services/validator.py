@@ -1,4 +1,5 @@
 from typing import Any
+
 from aiogram import types
 
 from .exceptions import *
@@ -6,9 +7,9 @@ from .exceptions import *
 from log import get_logger
 
 
-logger = get_logger(__name__)
+logger: logging.Logger = get_logger(__name__)
 
-def validate_msg(message: Any):
+def validate_msg(message: Any) -> None:
     """
     Проверяет, является ли переменная message классом aiogram.types.Message,
     если нет - возвращает исключение WrongType.

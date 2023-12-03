@@ -1,4 +1,6 @@
-from typing import Union
+from typing import Optional, Union
+
+from peewee import OP
 
 from .exceptions import *
 
@@ -7,7 +9,8 @@ from log import get_logger
 from models import User
 
 
-logger = get_logger(__name__)
+logger: logging.Logger = get_logger(__name__)
+
 
 class Rooms:
     """
@@ -29,39 +32,43 @@ class Rooms:
         }
 
     """
-    __rooms = {}
+    __rooms: dict = {}
 
     @classmethod
-    def check_in_room(cls, id):
+    def check_in_room(cls, id: Union[int, str]) -> None:
         """
         Если в комнатах не имеется такового юзер-айди,
         возвращает исключение NoSuchUser.
         """
         if not(cls.in_room(id)):
-            ex = NoSuchUser(f'No such user in rooms!')
+            ex: MyBaseException = NoSuchUser(f'No such user in rooms!')
             ex.log_me(logger)
             raise ex
+        
     
     @classmethod
-    def cascade_create(cls, id1, id2):
+    def cascade_create(cls, id1: Union[int, str], id2: Union[int, str]) -> None:
         """
         Создает связанные словари(комнаты) по двум айди.
         """
         try:
+            user1: User
+            user2: User            
             user1, user2 = User.get(tgid=int(id1)), User.get(tgid=int(id2))
+
         except Exception as ex:
-            ex = UnboundError(ex.args[0])
+            ex: MyBaseException = UnboundError(ex.args[0])
             ex.log_me(logger)
             raise ex
 
-        room1 = {
+        room1: dict = {
             str(id1):{
                 'id': str(id2),
                 'name': user2.name,
             }
         }
 
-        room2 = {
+        room2: dict = {
             str(id2):{
                 'id': str(id1),
                 'name': user1.name,
@@ -71,6 +78,7 @@ class Rooms:
 
         cls.__rooms.update(room1)
         cls.__rooms.update(room2)
+
 
     @classmethod
     def cascade_delete(cls, id):
@@ -84,7 +92,7 @@ class Rooms:
         cls.__rooms.pop(str(id))
         cls.__rooms.pop(str(id2))
 
-    def __init__(self, first_user: int, second_user: int):
+    def __init__(self, first_user: int, second_user: int) -> None:
         """
         Вызывает cascade_create для пары юзер-айди.
 
@@ -95,19 +103,19 @@ class Rooms:
         возвращает исключение DuplicateUser.
         """
         if first_user == second_user:
-            ex = SameUserError(f'Can\'t create room with 2 same users!')
+            ex: MyBaseException = SameUserError(f'Can\'t create room with 2 same users!')
             ex.log_me(logger)
             raise ex
         
         if self.__class__.in_room(first_user) or self.__class__.in_room(second_user):
-            ex = DuplicateUser(f'first_user or second_user already in rooms!')
+            ex: MyBaseException = DuplicateUser(f'first_user or second_user already in rooms!')
             ex.log_me(logger)
             raise ex
         
         self.__class__.cascade_create(first_user, second_user)
     
     @classmethod
-    def redirect_from(cls, id):
+    def redirect_from(cls, id: Union[str, int]) -> dict:
         """
         Возвращает айди юзера 2, к которому нужно редиректить сообщения, от юзера 1.
         """
@@ -116,7 +124,7 @@ class Rooms:
         return cls.__rooms[str(id)]
     
     @classmethod
-    def in_room(cls, id):
+    def in_room(cls, id: Union[str, int]) -> bool:
         """
         Проверяет есть ли юзер с данным айди в комнатах
         (Проверяет является данное айди ключом одной из комнат).
@@ -129,10 +137,9 @@ class Queue:
     Класс очереди.
     Хранит айди юзеров.
     """
-    __users = []
+    __users: list[int] = []
 
     @classmethod
-    @property
     def queue(cls) -> list[int]:
         """
         Возвращает все айди юзеров хранящиеся в очереди на данный момент.
@@ -141,18 +148,19 @@ class Queue:
         return cls.__users
     
     @classmethod
-    def get_pair(cls) -> Union[NoPairsInQueue, tuple[int, int]]:
+    def get_pair(cls) -> tuple[int, int]:
         """
         Возвращает первую пару юзер-айди если таковая имеется в очереди,
         иначе возвращает исключение NoPairsInQueue.
         """
         try:
-            first_user: int = cls.__users[0]
-            second_user: int = cls.__users[1]
+            first_user: int = int(cls.__users[0])
+            second_user: int = int(cls.__users[1])
             cls.__users.remove(first_user)
             cls.__users.remove(second_user)
+
         except IndexError:
-            ex = NoPairsInQueue(f'There are no free pair in queue!')
+            ex: MyBaseException = NoPairsInQueue(f'There are no free pair in queue!')
             ex.log_me(logger)
             raise ex
 
