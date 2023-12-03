@@ -2,6 +2,9 @@ import logging
 
 
 def get_logger(name: str):
+    """
+    Возвращает сконфигурированный логер по имени name.
+    """
     logging.basicConfig(
         filename = 'bot.log',
         filemode = 'a',
@@ -29,6 +32,11 @@ def get_logger(name: str):
 
 
 def log_exceptions(logger: logging.Logger):
+    """
+    Декоратор, который
+    Отлавливает -> Логирует -> Вызывает,
+    исключения возникшие в функции к кторой он был применен.
+    """
     def wrapper(foo: callable):
         def decorator(*args, **kwargs):
             try:
@@ -40,5 +48,8 @@ def log_exceptions(logger: logging.Logger):
     return wrapper
 
 def clear_logs():
+    """
+    Чистит файл логов.
+    """
     with open('bot.log', 'w') as f:
         ...

@@ -7,12 +7,15 @@ from log import get_logger
 from .exceptions import *
 from services.validator import validate_msg
 
+
 logger = get_logger(__name__)
 
 
 def reg_or_login(message: types.Message):
     """
-    Doci
+    Регает(добавляет в бд)/логинит(ничего не делает) юзера по айди из сообщения.
+
+    Если юзер - бот - возвращает исключение UserIsBot.
     """
     validate_msg(message)
 

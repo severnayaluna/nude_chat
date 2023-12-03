@@ -13,6 +13,11 @@ logger = get_logger(__name__)
 
 
 def add_user_to_queue(message: types.Message):
+    """
+    Добавляет юзера в очередь.
+
+    Если юзер - бот - возвращает исключение UserIsBot.
+    """
     validate_msg(message)
 
     user = message.from_user
@@ -27,6 +32,11 @@ def add_user_to_queue(message: types.Message):
 
 
 def remove_user_from_queue(message: types.Message):
+    """
+    Удаляет юзера из очереди.
+
+    Если юзер - бот - возвращает исключение UserIsBot.
+    """
     validate_msg(message)
 
     user = message.from_user
@@ -41,6 +51,11 @@ def remove_user_from_queue(message: types.Message):
 
 
 def remove_user_from_room(message: types.Message):
+    """
+    Удаляет юзера из комнаты.
+
+    Если юзер - бот - возвращает исключение UserIsBot.
+    """
     validate_msg(message)
 
     user = message.from_user
@@ -68,6 +83,10 @@ def remove_user_from_room(message: types.Message):
 
 
 def add_to_room_if_can():
+    """
+    Создает комнату для пары юзеров елси может,
+    в противном случае возвращает исключение NoPairsInQueue.
+    """
     try:
         pair = Queue.get_pair()
         Rooms(*pair)
