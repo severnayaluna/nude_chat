@@ -11,7 +11,7 @@ from models import User
 from services import auth, rooms
 from services.query import Rooms
 from services.msg_parser import parse_content
-from services.exceptions import UnboundError, handle_exceptions, UserIsBot
+from services.exceptions import UnboundError, handle_exceptions
 
 from log import get_logger
 
