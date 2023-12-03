@@ -11,6 +11,9 @@ logger = get_logger(__name__)
 
 
 def reg_or_login(message: types.Message):
+    """
+    Doci
+    """
     validate_msg(message)
 
     user = message.from_user
