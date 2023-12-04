@@ -86,10 +86,6 @@ def add_to_room_if_can() -> Union[tuple[int, int], bool]:
     Создает комнату для пары юзеров елси может,
     в противном случае возвращает исключение NoPairsInQueue.
     """
-    try:
-        pair: tuple[int, int] = Queue.get_pair()
-        Rooms(*pair)
-        return pair
-
-    except NoPairsInQueue:
-        return False
+    pair: tuple[int, int] = Queue.get_pair()
+    Rooms(*pair)
+    return pair

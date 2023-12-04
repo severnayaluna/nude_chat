@@ -26,7 +26,7 @@ def reg_or_login(message: types.Message) -> str:
     logger.info(f'User {user.id} tried to log/reg.')
 
     if user.is_bot:
-        ex: MyBaseException = UserIsBot(f'You can\'t registrate/login a bot!')
+        ex: MyBaseException = UserIsBot(f'You can\'t registrate/login a bot!', notification_level=SendFullErrorLevel)
         ex.log_me(logger)
         raise ex
     
@@ -53,6 +53,6 @@ def reg_or_login(message: types.Message) -> str:
             return f'Hey, {db_user.name}, you successfully logined in bot!'
 
     except Exception as ex:
-        ex: MyBaseException = UnboundError(ex.args[0])
+        ex: MyBaseException = UnboundError(ex.args[0], notification_level=SendFullErrorLevel)
         ex.log_me(logger)
         raise ex
