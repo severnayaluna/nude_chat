@@ -15,11 +15,13 @@ logger: logging.Logger = get_logger(__name__)
 
 BASE_DIR: str = os.getcwd().rstrip('/').replace('src', '')
 
+
 load_dotenv(os.path.join(BASE_DIR, '.env'))
 logger.info('Loaded .env.')
 
 
 BOT_TOKEN: Optional[str] = os.getenv("BOT_TOKEN") or os.environ['BOT_TOKEN']
+
 
 BOT_NAME: str = 'NoNudeBot'
 
