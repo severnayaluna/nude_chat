@@ -8,14 +8,13 @@ def handle_exceptions(logger: logging.Logger) -> Callable:
     Декоратор для отлавливания ошибок в хэндлерах.
     Логирует ошибки и отправляет юзеру удобоваримый ответ.
     """
-    def decorator(foo: Callable) -> Callable:
+    def decorator(function: Callable) -> Callable:
         async def wrapper(*args, **_) -> Any:
             try:
-                return await foo(*args)
-            
-            except Exception as ex:
-                ex: MyBaseException
-                logger.error(ex)
+                return await function(*args)
+
+            except MyBaseException as ex:
+                logger.log(ex.logging_level, ex)
 
                 json_ex: dict = ex.json()
                 await args[0].reply(
@@ -23,14 +22,51 @@ def handle_exceptions(logger: logging.Logger) -> Callable:
                 )
 
         return wrapper
-    
+
     return decorator
 
 
+<<<<<<< HEAD
+=======
+class BaseExceptionNotificationLevel:
+    ...
+
+class NotSendAtAllLevel(BaseExceptionNotificationLevel):
+    @classmethod
+    def get_error_text(cls, _) -> None:
+        return None
+
+class SendUnboundErrorLevel(BaseExceptionNotificationLevel):
+    @classmethod
+    def get_error_text(cls, _) -> str:
+        return 'Извините, что-то пошло не так.\nПожалуйста, попробуйте еще раз позже.'
+
+class SendFullErrorLevel(BaseExceptionNotificationLevel):
+    @classmethod
+    def get_error_text(cls, exception) -> str:
+        json_ex = exception.json()
+        return f'Error - {json_ex["name"]}:\n{json_ex["text"]}'
+
+class SendOnlyTextLevel(BaseExceptionNotificationLevel):
+    @classmethod
+    def get_error_text(cls, exception) -> str:
+        return exception.json()["text"]
+
+
+>>>>>>> eba9c80 (logging level for custom exceptions)
 class MyBaseException(Exception):
     """
     Базовый класс exception, от него надо наследовать все кастомные ошибки.
     """
+<<<<<<< HEAD
+=======
+    def __init__(
+        self, notification_level: BaseExceptionNotificationLevel = NotSendAtAllLevel,
+        logging_level = logging.ERROR) -> None:
+        self.notification_level: BaseExceptionNotificationLevel = notification_level
+        self.logging_level = logging_level
+
+>>>>>>> eba9c80 (logging level for custom exceptions)
     def json(self: Exception) -> dict:
         """
         Конвертирует ошибку в json.

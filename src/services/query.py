@@ -41,7 +41,7 @@ class Rooms:
         возвращает исключение NoSuchUser.
         """
         if not(cls.in_room(id)):
-            ex: MyBaseException = NoSuchUser(f'No such user in rooms!')
+            ex: MyBaseException = NoSuchUser(f'No such user in rooms!', notification_level=SendFullErrorLevel, logging_level=logging.ERROR)
             ex.log_me(logger)
             raise ex
         
@@ -57,7 +57,7 @@ class Rooms:
             user1, user2 = User.get(tgid=int(id1)), User.get(tgid=int(id2))
 
         except Exception as ex:
-            ex: MyBaseException = UnboundError(ex.args[0])
+            ex: MyBaseException = UnboundError(notification_level=SendFullErrorLevel, logging_level=logging.WARNING)
             ex.log_me(logger)
             raise ex
 
@@ -103,12 +103,12 @@ class Rooms:
         возвращает исключение DuplicateUser.
         """
         if first_user == second_user:
-            ex: MyBaseException = SameUserError(f'Can\'t create room with 2 same users!')
+            ex: MyBaseException = SameUserError(f'Can\'t create room with 2 same users!', notification_level=SendFullErrorLevel, logging_level=logging.ERROR)
             ex.log_me(logger)
             raise ex
         
         if self.__class__.in_room(first_user) or self.__class__.in_room(second_user):
-            ex: MyBaseException = DuplicateUser(f'first_user or second_user already in rooms!')
+            ex: MyBaseException = DuplicateUser(f'first_user or second_user already in rooms!', notification_level=SendFullErrorLevel, logging_level=logging.WARNING)
             ex.log_me(logger)
             raise ex
         
@@ -160,7 +160,7 @@ class Queue:
             cls.__users.remove(second_user)
 
         except IndexError:
-            ex: MyBaseException = NoPairsInQueue(f'There are no free pair in queue!')
+            ex: MyBaseException = NoPairsInQueue(f'There are no free pair in queue!', notification_level=NotSendAtAllLevel, logging_level=logging.DEBUG)
             ex.log_me(logger)
             raise ex
 
@@ -175,7 +175,7 @@ class Queue:
         возвращает исключение DuplicateUser.
         """
         if user in cls.__users:
-            ex = DuplicateUser(f'You are already in queu!')
+            ex = DuplicateUser(f'You are already in queue!', notification_level=SendOnlyTextLevel, logging_level=logging.DEBUG)
             ex.log_me(logger)
             raise ex
         cls.__users.append(user)
@@ -187,7 +187,7 @@ class Queue:
         в противном случае возвращает исключение NoSuchUser.
         """
         if user not in cls.__users:
-            ex = NoSuchUser(f'No such user in queue!')
+            ex = NoSuchUser(f'No such user in queue!', logging_level=logging.DEBUG)
             ex.log_me(logger)
             raise ex
         

@@ -15,4 +15,4 @@ def validate_msg(message: Any) -> None:
     если нет - возвращает исключение WrongType.
     """
     if not (mtype:=type(message)) is types.Message:
-        raise WrongType(f'You must pass types.Message type, not {mtype}!')
+        raise WrongType(f'You must pass types.Message type, not {mtype}!', logging_level=logging.ERROR)
