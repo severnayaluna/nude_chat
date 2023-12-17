@@ -48,6 +48,7 @@ def log_exceptions(logger: logging.Logger) -> Callable:
         return decorator
     return wrapper
 
+
 def clear_logs() -> None:
     """
     Чистит файл логов.
