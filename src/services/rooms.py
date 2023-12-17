@@ -25,7 +25,7 @@ def add_user_to_queue(message: types.Message) -> str:
     user: types.User = message.from_user
 
     if user.is_bot:
-        raise UserIsBot(f'Sorry, {user.first_name}, but you can\'t add bot in queue!')
+        raise UserIsBot(f'Sorry, {user.first_name}, but you can\'t add bot in queue!', logging_level=logging.WARNING)
 
     Queue.put(user.id)
     return f'{user.first_name}, you are in queue now.\nWait for free room...\nTo exit queue type /exit'
@@ -42,7 +42,7 @@ def remove_user_from_queue(message: types.Message) -> str:
     user: types.User = message.from_user
 
     if user.is_bot:
-        raise UserIsBot(f'Can\'t remove bot from queue!')
+        raise UserIsBot(f'Can\'t remove bot from queue!', logging_level=logging.WARNING)
 
     Queue.remove(user.id)
     return f'{user.first_name}, you aren\'t in queue now.'
@@ -59,7 +59,7 @@ def remove_user_from_room(message: types.Message) -> tuple[str, Optional[str], O
     user: types.User = message.from_user
 
     if user.is_bot:
-        raise UserIsBot(f'Can\'t remove bot from room!')
+        raise UserIsBot(f'Can\'t remove bot from room!', logging_level=logging.WARNING)
 
     try:
         user2: dict = Rooms.redirect_from(user.id)

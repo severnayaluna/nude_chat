@@ -10,19 +10,18 @@ def handle_exceptions(logger: logging.Logger) -> Callable:
     Декоратор для отлавливания ошибок в хэндлерах.
     Логирует ошибки и отправляет юзеру удобоваримый ответ.
     """
-    def decorator(foo: Callable) -> Callable:
+    def decorator(function: Callable) -> Callable:
         async def wrapper(*args, **_) -> Any:
             try:
-                return await foo(*args)
-            
-            except Exception as ex:
-                ex: MyBaseException
-                logger.error(ex)
+                return await function(*args)
+
+            except MyBaseException as ex:
+                logger.log(ex.logging_level, ex)
 
                 await ex.send_to_user(args[0])
 
         return wrapper
-    
+
     return decorator
 
 
@@ -31,12 +30,12 @@ class BaseExceptionNotificationLevel:
 
 class NotSendAtAllLevel(BaseExceptionNotificationLevel):
     @classmethod
-    def get_error_text(cls, exception) -> None:
+    def get_error_text(cls, _) -> None:
         return None
 
 class SendUnboundErrorLevel(BaseExceptionNotificationLevel):
     @classmethod
-    def get_error_text(cls, exception) -> str:
+    def get_error_text(cls, _) -> str:
         return 'Извините, что-то пошло не так.\nПожалуйста, попробуйте еще раз позже.'
 
 class SendFullErrorLevel(BaseExceptionNotificationLevel):
@@ -55,8 +54,11 @@ class MyBaseException(Exception):
     """
     Базовый класс exception, от него надо наследовать все кастомные ошибки.
     """
-    def __init__(self, *args, notification_level: BaseExceptionNotificationLevel = NotSendAtAllLevel, **kwargs) -> None:
+    def __init__(
+        self, notification_level: BaseExceptionNotificationLevel = NotSendAtAllLevel,
+        logging_level = logging.ERROR) -> None:
         self.notification_level: BaseExceptionNotificationLevel = notification_level
+        self.logging_level = logging_level
 
     def json(self: Exception) -> dict:
         """
