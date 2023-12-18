@@ -26,8 +26,6 @@ def handle_exceptions(logger: logging.Logger) -> Callable:
     return decorator
 
 
-<<<<<<< HEAD
-=======
 class BaseExceptionNotificationLevel:
     ...
 
@@ -53,20 +51,16 @@ class SendOnlyTextLevel(BaseExceptionNotificationLevel):
         return exception.json()["text"]
 
 
->>>>>>> eba9c80 (logging level for custom exceptions)
 class MyBaseException(Exception):
     """
     Базовый класс exception, от него надо наследовать все кастомные ошибки.
     """
-<<<<<<< HEAD
-=======
     def __init__(
         self, notification_level: BaseExceptionNotificationLevel = NotSendAtAllLevel,
         logging_level = logging.ERROR) -> None:
         self.notification_level: BaseExceptionNotificationLevel = notification_level
         self.logging_level = logging_level
 
->>>>>>> eba9c80 (logging level for custom exceptions)
     def json(self: Exception) -> dict:
         """
         Конвертирует ошибку в json.
