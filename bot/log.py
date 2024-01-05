@@ -1,5 +1,4 @@
 import logging
-from typing import Any, Callable
 
 
 def get_logger(name: str) -> logging.Logger:
@@ -30,28 +29,3 @@ def get_logger(name: str) -> logging.Logger:
     logger.addHandler(file_handler)
 
     return logger
-
-
-def log_exceptions(logger: logging.Logger) -> Callable:
-    """
-    Декоратор, который
-    Отлавливает -> Логирует -> Вызывает,
-    исключения возникшие в функции к кторой он был применен.
-    """
-    def wrapper(foo: Callable) -> Callable:
-        def decorator(*args, **kwargs) -> Any:
-            try:
-                return foo(*args, **kwargs)
-            except Exception as ex:
-                logger.error(f'Exception:\n{ex}\n\nFoo: {foo.__name__}\n\nArgs: {args}\nKwargs: {kwargs}')
-                raise ex
-        return decorator
-    return wrapper
-
-
-def clear_logs() -> None:
-    """
-    Чистит файл логов.
-    """
-    with open('bot.log', 'w') as f:
-        ...

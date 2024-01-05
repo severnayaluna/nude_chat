@@ -1,12 +1,17 @@
-settings ~$ [ INFO ](2023-12-04 19:03:30,468) - Loaded .env.
-INFO:aiogram:Bot: NudeChat [@nn_chat_roulete_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-handlers ~$ [ INFO ](2023-12-04 19:03:33,928) - User 2021855860 tried to add to queue.
-services.query ~$ [ ERROR ](2023-12-04 19:03:34,062) - There are no free pair in queue!
-handlers ~$ [ ERROR ](2023-12-04 19:03:34,063) - There are no free pair in queue!
-handlers ~$ [ INFO ](2023-12-04 19:03:35,602) - User 2021855860 tried to add to queue.
-services.query ~$ [ ERROR ](2023-12-04 19:03:35,602) - You are already in queue!
-handlers ~$ [ ERROR ](2023-12-04 19:03:35,603) - You are already in queue!
-INFO:aiogram.dispatcher.dispatcher:Stop polling...
-WARNING:aiogram:Goodbye!
+config ~$ [ INFO ](2024-01-05 18:07:46,404) - .env file was loaded successfully
+config ~$ [ ERROR ](2024-01-05 18:07:46,404) - BOT_TOKEN was not founded in .env file!
+config ~$ [ INFO ](2024-01-05 18:08:05,372) - .env file was loaded successfully
+config ~$ [ ERROR ](2024-01-05 18:08:05,372) - BOT_TOKEN was not founded in .env file!
+config ~$ [ INFO ](2024-01-05 18:17:25,603) - .env file was loaded successfully
+config ~$ [ ERROR ](2024-01-05 18:17:25,604) - BOT_TOKEN was not founded in .env file!
+config ~$ [ INFO ](2024-01-05 18:17:42,073) - .env file was loaded successfully
+__main__ ~$ [ INFO ](2024-01-05 18:17:42,267) - Bot was created successfully
+config ~$ [ INFO ](2024-01-05 18:18:48,170) - .env file was loaded successfully
+__main__ ~$ [ INFO ](2024-01-05 18:18:48,310) - Bot was created successfully
+INFO:aiogram.dispatcher:Start polling
+INFO:aiogram.dispatcher:Run polling for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.event:Update id=25804848 is handled. Duration 801 ms by bot id=6208787170
+INFO:aiogram.event:Update id=25804849 is not handled. Duration 0 ms by bot id=6208787170
+WARNING:aiogram.dispatcher:Received SIGINT signal
+INFO:aiogram.dispatcher:Polling stopped for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.dispatcher:Polling stopped
