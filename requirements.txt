@@ -13,5 +13,6 @@ peewee==3.17.0
 pydantic==2.5.3
 pydantic_core==2.14.6
 python-dotenv==1.0.0
+redis==5.0.1
 typing_extensions==4.9.0
 yarl==1.9.4

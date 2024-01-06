@@ -15,3 +15,32 @@ INFO:aiogram.event:Update id=25804849 is not handled. Duration 0 ms by bot id=62
 WARNING:aiogram.dispatcher:Received SIGINT signal
 INFO:aiogram.dispatcher:Polling stopped for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
 INFO:aiogram.dispatcher:Polling stopped
+bot.config ~$ [ INFO ](2024-01-06 13:21:51,472) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:22:06,033) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:22:30,368) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:22:38,578) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:23:07,711) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:23:33,512) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:23:49,285) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:23:53,089) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:23:54,191) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:23:55,266) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:23:56,401) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:24:02,855) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:24:04,679) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:24:12,302) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:24:14,613) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:24:33,424) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:27:15,102) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:28:05,136) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:28:23,605) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:28:31,004) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:28:51,440) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:28:57,569) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:50:35,108) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:50:56,541) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:51:59,743) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:52:03,219) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:52:04,795) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:52:09,611) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-06 13:52:27,556) - .env file was loaded successfully

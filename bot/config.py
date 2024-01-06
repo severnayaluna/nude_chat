@@ -3,7 +3,7 @@ from typing import Any
 
 import dotenv
 
-from log import get_logger
+from bot.log import get_logger
 
 
 logger = get_logger(__name__)
@@ -28,3 +28,6 @@ logger.info('.env file was loaded successfully')
 
 
 BOT_TOKEN = load('BOT_TOKEN', True)
+
+REDIS_HOST = load('REDIS_HOST', True)
+REDIS_PORT = load('REDIS_PORT', True)
