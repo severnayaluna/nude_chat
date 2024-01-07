@@ -3,7 +3,8 @@ from typing import Any
 
 import dotenv
 
-from log import get_logger
+from .log import get_logger
+# from bot.log import get_logger
 
 
 logger = get_logger(__name__)

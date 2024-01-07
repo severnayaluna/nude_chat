@@ -3308,3 +3308,1555 @@ INFO:aiogram.event:Update id=25804978 is handled. Duration 138 ms by bot id=6208
 WARNING:aiogram.dispatcher:Received SIGINT signal
 INFO:aiogram.dispatcher:Polling stopped for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
 INFO:aiogram.dispatcher:Polling stopped
+config ~$ [ INFO ](2024-01-07 22:28:35,732) - .env file was loaded successfully
+__main__ ~$ [ INFO ](2024-01-07 22:28:35,812) - Redis running on localhost:6379
+__main__ ~$ [ INFO ](2024-01-07 22:28:36,007) - Bot was created successfully
+__main__ ~$ [ INFO ](2024-01-07 22:28:36,383) - Starting polling
+INFO:aiogram.dispatcher:Start polling
+INFO:aiogram.dispatcher:Run polling for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+WARNING:aiogram.dispatcher:Received SIGINT signal
+INFO:aiogram.dispatcher:Polling stopped for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.dispatcher:Polling stopped
+config ~$ [ INFO ](2024-01-07 22:29:47,953) - .env file was loaded successfully
+__main__ ~$ [ INFO ](2024-01-07 22:29:49,716) - Redis running on localhost:6379
+__main__ ~$ [ INFO ](2024-01-07 22:29:49,885) - Bot was created successfully
+__main__ ~$ [ INFO ](2024-01-07 22:29:50,632) - Starting polling
+INFO:aiogram.dispatcher:Start polling
+INFO:aiogram.dispatcher:Run polling for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.event:Update id=25804998 is not handled. Duration 59 ms by bot id=6208787170
+ERROR:aiogram.event:Cause exception while process update id=25804998 by bot id=6208787170
+StopAsyncIteration: 
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/fsm/middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/handlers/user_commands.py", line 27, in start
+    pair = await room.try_create_room(queue=queue)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 46, in try_create_room
+    pair = await queue.get_pair()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 20, in get_pair
+    user1, user2 = await anext(pair_iterator), await anext(pair_iterator)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopAsyncIteration
+INFO:aiogram.event:Update id=25804999 is handled. Duration 1278 ms by bot id=6208787170
+INFO:aiogram.event:Update id=25805000 is not handled. Duration 351 ms by bot id=6208787170
+ERROR:aiogram.event:Cause exception while process update id=25805000 by bot id=6208787170
+StopAsyncIteration: 
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/fsm/middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/handlers/user_commands.py", line 27, in start
+    pair = await room.try_create_room(queue=queue)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 46, in try_create_room
+    pair = await queue.get_pair()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 20, in get_pair
+    user1, user2 = await anext(pair_iterator), await anext(pair_iterator)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopAsyncIteration
+INFO:aiogram.event:Update id=25805001 is not handled. Duration 179 ms by bot id=6208787170
+ERROR:aiogram.event:Cause exception while process update id=25805001 by bot id=6208787170
+StopAsyncIteration: 
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/fsm/middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/handlers/user_commands.py", line 27, in start
+    pair = await room.try_create_room(queue=queue)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 46, in try_create_room
+    pair = await queue.get_pair()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 20, in get_pair
+    user1, user2 = await anext(pair_iterator), await anext(pair_iterator)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopAsyncIteration
+WARNING:aiogram.dispatcher:Received SIGINT signal
+INFO:aiogram.dispatcher:Polling stopped for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.dispatcher:Polling stopped
+config ~$ [ INFO ](2024-01-07 22:32:10,408) - .env file was loaded successfully
+__main__ ~$ [ INFO ](2024-01-07 22:32:10,566) - Redis running on localhost:6379
+__main__ ~$ [ INFO ](2024-01-07 22:32:10,727) - Bot was created successfully
+__main__ ~$ [ INFO ](2024-01-07 22:32:10,935) - Starting polling
+INFO:aiogram.dispatcher:Start polling
+INFO:aiogram.dispatcher:Run polling for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.event:Update id=25805002 is not handled. Duration 2 ms by bot id=6208787170
+ERROR:aiogram.event:Cause exception while process update id=25805002 by bot id=6208787170
+TypeError: object async_generator can't be used in 'await' expression
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/fsm/middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/handlers/user_commands.py", line 27, in find
+    pair = await room.try_create_room(queue=queue)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 46, in try_create_room
+    pair = await queue.get_pair()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 18, in get_pair
+    pair_iterator = await self.storage.scan_iter(count=2, match='user_*')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object async_generator can't be used in 'await' expression
+INFO:aiogram.event:Update id=25805003 is not handled. Duration 327 ms by bot id=6208787170
+ERROR:aiogram.event:Cause exception while process update id=25805003 by bot id=6208787170
+TypeError: object async_generator can't be used in 'await' expression
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/fsm/middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/handlers/user_commands.py", line 27, in find
+    pair = await room.try_create_room(queue=queue)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 46, in try_create_room
+    pair = await queue.get_pair()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 18, in get_pair
+    pair_iterator = await self.storage.scan_iter(count=2, match='user_*')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object async_generator can't be used in 'await' expression
+INFO:aiogram.event:Update id=25805004 is not handled. Duration 81 ms by bot id=6208787170
+ERROR:aiogram.event:Cause exception while process update id=25805004 by bot id=6208787170
+TypeError: object async_generator can't be used in 'await' expression
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/fsm/middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/handlers/user_commands.py", line 27, in find
+    pair = await room.try_create_room(queue=queue)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 46, in try_create_room
+    pair = await queue.get_pair()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 18, in get_pair
+    pair_iterator = await self.storage.scan_iter(count=2, match='user_*')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object async_generator can't be used in 'await' expression
+WARNING:aiogram.dispatcher:Received SIGINT signal
+INFO:aiogram.dispatcher:Polling stopped for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.dispatcher:Polling stopped
+config ~$ [ INFO ](2024-01-07 22:34:22,457) - .env file was loaded successfully
+__main__ ~$ [ INFO ](2024-01-07 22:34:22,519) - Redis running on localhost:6379
+__main__ ~$ [ INFO ](2024-01-07 22:34:22,655) - Bot was created successfully
+__main__ ~$ [ INFO ](2024-01-07 22:34:23,051) - Starting polling
+INFO:aiogram.dispatcher:Start polling
+INFO:aiogram.dispatcher:Run polling for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+my_queue.my_queue ~$ [ INFO ](2024-01-07 22:34:24,794) - <async_generator object AsyncScanCommands.scan_iter at 0x7f3874327be0>
+INFO:aiogram.event:Update id=25805005 is not handled. Duration 4 ms by bot id=6208787170
+ERROR:aiogram.event:Cause exception while process update id=25805005 by bot id=6208787170
+StopAsyncIteration: 
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/fsm/middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/handlers/user_commands.py", line 27, in find
+    pair = await room.try_create_room(queue=queue)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 50, in try_create_room
+    pair = await queue.get_pair()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 27, in get_pair
+    user1, user2 = await anext(pair_iterator), await anext(pair_iterator)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopAsyncIteration
+my_queue.my_queue ~$ [ INFO ](2024-01-07 22:34:30,123) - <async_generator object AsyncScanCommands.scan_iter at 0x7f3874327d00>
+INFO:aiogram.event:Update id=25805006 is not handled. Duration 348 ms by bot id=6208787170
+ERROR:aiogram.event:Cause exception while process update id=25805006 by bot id=6208787170
+StopAsyncIteration: 
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/fsm/middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/handlers/user_commands.py", line 27, in find
+    pair = await room.try_create_room(queue=queue)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 50, in try_create_room
+    pair = await queue.get_pair()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 27, in get_pair
+    user1, user2 = await anext(pair_iterator), await anext(pair_iterator)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopAsyncIteration
+my_queue.my_queue ~$ [ INFO ](2024-01-07 22:34:31,967) - <async_generator object AsyncScanCommands.scan_iter at 0x7f3874327be0>
+INFO:aiogram.event:Update id=25805007 is not handled. Duration 200 ms by bot id=6208787170
+ERROR:aiogram.event:Cause exception while process update id=25805007 by bot id=6208787170
+StopAsyncIteration: 
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/fsm/middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/handlers/user_commands.py", line 27, in find
+    pair = await room.try_create_room(queue=queue)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 50, in try_create_room
+    pair = await queue.get_pair()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 27, in get_pair
+    user1, user2 = await anext(pair_iterator), await anext(pair_iterator)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopAsyncIteration
+my_queue.my_queue ~$ [ INFO ](2024-01-07 22:34:35,587) - <async_generator object AsyncScanCommands.scan_iter at 0x7f3874327d00>
+INFO:aiogram.event:Update id=25805008 is not handled. Duration 101 ms by bot id=6208787170
+ERROR:aiogram.event:Cause exception while process update id=25805008 by bot id=6208787170
+StopAsyncIteration: 
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/fsm/middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/handlers/user_commands.py", line 27, in find
+    pair = await room.try_create_room(queue=queue)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 50, in try_create_room
+    pair = await queue.get_pair()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 27, in get_pair
+    user1, user2 = await anext(pair_iterator), await anext(pair_iterator)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopAsyncIteration
+WARNING:aiogram.dispatcher:Received SIGINT signal
+INFO:aiogram.dispatcher:Polling stopped for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.dispatcher:Polling stopped
+config ~$ [ INFO ](2024-01-07 22:35:59,387) - .env file was loaded successfully
+DEBUG:asyncio:Using selector: EpollSelector
+__main__ ~$ [ INFO ](2024-01-07 22:35:59,459) - Redis running on localhost:6379
+__main__ ~$ [ INFO ](2024-01-07 22:35:59,593) - Bot was created successfully
+__main__ ~$ [ INFO ](2024-01-07 22:35:59,969) - Starting polling
+INFO:aiogram.dispatcher:Start polling
+INFO:aiogram.dispatcher:Run polling for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.event:Update id=25805009 is not handled. Duration 7 ms by bot id=6208787170
+ERROR:aiogram.event:Cause exception while process update id=25805009 by bot id=6208787170
+StopAsyncIteration: 
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/fsm/middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/handlers/user_commands.py", line 27, in find
+    pair = await room.try_create_room(queue=queue)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 50, in try_create_room
+    pair = await queue.get_pair()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 26, in get_pair
+    user1, user2 = await anext(pair_iterator), await anext(pair_iterator)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopAsyncIteration
+INFO:aiogram.event:Update id=25805010 is not handled. Duration 568 ms by bot id=6208787170
+ERROR:aiogram.event:Cause exception while process update id=25805010 by bot id=6208787170
+StopAsyncIteration: 
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/fsm/middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/handlers/user_commands.py", line 27, in find
+    pair = await room.try_create_room(queue=queue)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 50, in try_create_room
+    pair = await queue.get_pair()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 26, in get_pair
+    user1, user2 = await anext(pair_iterator), await anext(pair_iterator)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopAsyncIteration
+INFO:aiogram.event:Update id=25805011 is not handled. Duration 162 ms by bot id=6208787170
+ERROR:aiogram.event:Cause exception while process update id=25805011 by bot id=6208787170
+StopAsyncIteration: 
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/fsm/middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/handlers/user_commands.py", line 27, in find
+    pair = await room.try_create_room(queue=queue)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 50, in try_create_room
+    pair = await queue.get_pair()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 26, in get_pair
+    user1, user2 = await anext(pair_iterator), await anext(pair_iterator)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopAsyncIteration
+WARNING:aiogram.dispatcher:Received SIGINT signal
+INFO:aiogram.dispatcher:Polling stopped for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.dispatcher:Polling stopped
+config ~$ [ INFO ](2024-01-07 22:36:50,754) - .env file was loaded successfully
+DEBUG:asyncio:Using selector: EpollSelector
+__main__ ~$ [ INFO ](2024-01-07 22:36:50,815) - Redis running on localhost:6379
+__main__ ~$ [ INFO ](2024-01-07 22:36:50,944) - Bot was created successfully
+__main__ ~$ [ INFO ](2024-01-07 22:36:51,185) - Starting polling
+INFO:aiogram.dispatcher:Start polling
+INFO:aiogram.dispatcher:Run polling for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.event:Update id=25805012 is not handled. Duration 4 ms by bot id=6208787170
+ERROR:aiogram.event:Cause exception while process update id=25805012 by bot id=6208787170
+StopAsyncIteration: 
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/fsm/middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/handlers/user_commands.py", line 27, in find
+    pair = await room.try_create_room(queue=queue)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 51, in try_create_room
+    pair = await queue.get_pair()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 27, in get_pair
+    user1, user2 = await anext(pair_iterator), await anext(pair_iterator)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopAsyncIteration
+INFO:aiogram.event:Update id=25805013 is not handled. Duration 323 ms by bot id=6208787170
+ERROR:aiogram.event:Cause exception while process update id=25805013 by bot id=6208787170
+StopAsyncIteration: 
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/fsm/middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/handlers/user_commands.py", line 27, in find
+    pair = await room.try_create_room(queue=queue)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 51, in try_create_room
+    pair = await queue.get_pair()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 27, in get_pair
+    user1, user2 = await anext(pair_iterator), await anext(pair_iterator)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopAsyncIteration
+INFO:aiogram.event:Update id=25805014 is not handled. Duration 199 ms by bot id=6208787170
+ERROR:aiogram.event:Cause exception while process update id=25805014 by bot id=6208787170
+StopAsyncIteration: 
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/fsm/middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/handlers/user_commands.py", line 27, in find
+    pair = await room.try_create_room(queue=queue)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 51, in try_create_room
+    pair = await queue.get_pair()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 27, in get_pair
+    user1, user2 = await anext(pair_iterator), await anext(pair_iterator)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopAsyncIteration
+WARNING:aiogram.dispatcher:Received SIGINT signal
+INFO:aiogram.dispatcher:Polling stopped for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.dispatcher:Polling stopped
+config ~$ [ INFO ](2024-01-07 22:37:35,057) - .env file was loaded successfully
+DEBUG:asyncio:Using selector: EpollSelector
+__main__ ~$ [ INFO ](2024-01-07 22:37:35,177) - Redis running on localhost:6379
+__main__ ~$ [ INFO ](2024-01-07 22:37:35,321) - Bot was created successfully
+__main__ ~$ [ INFO ](2024-01-07 22:37:35,694) - Starting polling
+INFO:aiogram.dispatcher:Start polling
+INFO:aiogram.dispatcher:Run polling for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+my_queue.my_queue ~$ [ DEBUG ](2024-01-07 22:37:37,988) - start iter - get pair
+INFO:aiogram.event:Update id=25805015 is not handled. Duration 4 ms by bot id=6208787170
+ERROR:aiogram.event:Cause exception while process update id=25805015 by bot id=6208787170
+StopAsyncIteration: 
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/fsm/middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/handlers/user_commands.py", line 27, in find
+    pair = await room.try_create_room(queue=queue)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 51, in try_create_room
+    pair = await queue.get_pair()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 27, in get_pair
+    user1, user2 = await anext(pair_iterator), await anext(pair_iterator)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopAsyncIteration
+WARNING:aiogram.dispatcher:Received SIGINT signal
+INFO:aiogram.dispatcher:Polling stopped for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.dispatcher:Polling stopped
+config ~$ [ INFO ](2024-01-07 22:38:57,711) - .env file was loaded successfully
+DEBUG:asyncio:Using selector: EpollSelector
+__main__ ~$ [ INFO ](2024-01-07 22:38:57,770) - Redis running on localhost:6379
+__main__ ~$ [ INFO ](2024-01-07 22:38:57,903) - Bot was created successfully
+__main__ ~$ [ INFO ](2024-01-07 22:38:58,140) - Starting polling
+INFO:aiogram.dispatcher:Start polling
+INFO:aiogram.dispatcher:Run polling for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+my_queue.my_queue ~$ [ DEBUG ](2024-01-07 22:38:59,934) - start iter - get pair
+my_queue.my_queue ~$ [ ERROR ](2024-01-07 22:38:59,936) - 
+INFO:aiogram.event:Update id=25805016 is handled. Duration 303 ms by bot id=6208787170
+my_queue.my_queue ~$ [ DEBUG ](2024-01-07 22:39:10,011) - start iter - get pair
+my_queue.my_queue ~$ [ ERROR ](2024-01-07 22:39:10,015) - 
+INFO:aiogram.event:Update id=25805017 is handled. Duration 235 ms by bot id=6208787170
+WARNING:aiogram.dispatcher:Received SIGINT signal
+INFO:aiogram.dispatcher:Polling stopped for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.dispatcher:Polling stopped
+config ~$ [ INFO ](2024-01-07 22:40:27,217) - .env file was loaded successfully
+DEBUG:asyncio:Using selector: EpollSelector
+__main__ ~$ [ INFO ](2024-01-07 22:40:27,276) - Redis running on localhost:6379
+__main__ ~$ [ INFO ](2024-01-07 22:40:27,397) - Bot was created successfully
+__main__ ~$ [ INFO ](2024-01-07 22:40:27,629) - Starting polling
+INFO:aiogram.dispatcher:Start polling
+INFO:aiogram.dispatcher:Run polling for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+my_queue.my_queue ~$ [ DEBUG ](2024-01-07 22:40:29,355) - start iter - get pair
+INFO:aiogram.event:Update id=25805019 is not handled. Duration 3 ms by bot id=6208787170
+ERROR:aiogram.event:Cause exception while process update id=25805019 by bot id=6208787170
+StopAsyncIteration: 
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/fsm/middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/handlers/user_commands.py", line 27, in find
+    pair = await room.try_create_room(queue=queue)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 51, in try_create_room
+    pair = await queue.get_pair()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 28, in get_pair
+    await self.storage.delete(await user1, await user2)
+                                           ^^^^^^^^^^^
+StopAsyncIteration
+my_queue.my_queue ~$ [ DEBUG ](2024-01-07 22:40:31,251) - start iter - get pair
+INFO:aiogram.event:Update id=25805020 is not handled. Duration 410 ms by bot id=6208787170
+ERROR:aiogram.event:Cause exception while process update id=25805020 by bot id=6208787170
+StopAsyncIteration: 
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/fsm/middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/handlers/user_commands.py", line 27, in find
+    pair = await room.try_create_room(queue=queue)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 51, in try_create_room
+    pair = await queue.get_pair()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 28, in get_pair
+    await self.storage.delete(await user1, await user2)
+                                           ^^^^^^^^^^^
+StopAsyncIteration
+my_queue.my_queue ~$ [ DEBUG ](2024-01-07 22:40:33,590) - start iter - get pair
+INFO:aiogram.event:Update id=25805021 is not handled. Duration 98 ms by bot id=6208787170
+ERROR:aiogram.event:Cause exception while process update id=25805021 by bot id=6208787170
+StopAsyncIteration: 
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/fsm/middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/handlers/user_commands.py", line 27, in find
+    pair = await room.try_create_room(queue=queue)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 51, in try_create_room
+    pair = await queue.get_pair()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/my_queue/my_queue.py", line 28, in get_pair
+    await self.storage.delete(await user1, await user2)
+                                           ^^^^^^^^^^^
+StopAsyncIteration
+WARNING:aiogram.dispatcher:Received SIGINT signal
+INFO:aiogram.dispatcher:Polling stopped for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.dispatcher:Polling stopped
+config ~$ [ INFO ](2024-01-07 22:41:51,480) - .env file was loaded successfully
+DEBUG:asyncio:Using selector: EpollSelector
+__main__ ~$ [ INFO ](2024-01-07 22:41:51,564) - Redis running on localhost:6379
+__main__ ~$ [ INFO ](2024-01-07 22:41:51,732) - Bot was created successfully
+__main__ ~$ [ INFO ](2024-01-07 22:41:52,212) - Starting polling
+INFO:aiogram.dispatcher:Start polling
+INFO:aiogram.dispatcher:Run polling for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.event:Update id=25805024 is handled. Duration 328 ms by bot id=6208787170
+my_queue.my_queue ~$ [ DEBUG ](2024-01-07 22:41:56,328) - start iter - get pair
+my_queue.my_queue ~$ [ DEBUG ](2024-01-07 22:41:56,330) - 
+INFO:aiogram.event:Update id=25805025 is handled. Duration 122 ms by bot id=6208787170
+my_queue.my_queue ~$ [ DEBUG ](2024-01-07 22:42:14,279) - start iter - get pair
+my_queue.my_queue ~$ [ DEBUG ](2024-01-07 22:42:14,283) - 
+INFO:aiogram.event:Update id=25805026 is handled. Duration 463 ms by bot id=6208787170
+WARNING:aiogram.dispatcher:Received SIGINT signal
+INFO:aiogram.dispatcher:Polling stopped for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.dispatcher:Polling stopped
+bot.config ~$ [ INFO ](2024-01-07 22:45:50,720) - .env file was loaded successfully
+DEBUG:asyncio:Using selector: EpollSelector
+bot.config ~$ [ INFO ](2024-01-07 22:46:07,562) - .env file was loaded successfully
+DEBUG:asyncio:Using selector: EpollSelector
+config ~$ [ INFO ](2024-01-07 22:47:21,314) - .env file was loaded successfully
+DEBUG:asyncio:Using selector: EpollSelector
+__main__ ~$ [ INFO ](2024-01-07 22:47:21,380) - Redis running on localhost:6379
+__main__ ~$ [ INFO ](2024-01-07 22:47:21,511) - Bot was created successfully
+__main__ ~$ [ INFO ](2024-01-07 22:47:25,099) - Starting polling
+INFO:aiogram.dispatcher:Start polling
+INFO:aiogram.dispatcher:Run polling for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.event:Update id=25805028 is handled. Duration 2369 ms by bot id=6208787170
+INFO:aiogram.event:Update id=25805029 is handled. Duration 12599 ms by bot id=6208787170
+INFO:aiogram.event:Update id=25805030 is not handled. Duration 10030 ms by bot id=6208787170
+ERROR:aiogram.event:Cause exception while process update id=25805030 by bot id=6208787170
+TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Name or service not known]
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiohttp/connector.py", line 1173, in _create_direct_connection
+    hosts = await asyncio.shield(host_resolved)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiohttp/connector.py", line 884, in _resolve_host
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiohttp/resolver.py", line 33, in resolve
+    infos = await self._loop.getaddrinfo(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 878, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -2] Name or service not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/client/session/aiohttp.py", line 171, in make_request
+    async with session.post(
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiohttp/client.py", line 1187, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiohttp/client.py", line 574, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiohttp/connector.py", line 544, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiohttp/connector.py", line 911, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiohttp/connector.py", line 1187, in _create_direct_connection
+    raise ClientConnectorError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Name or service not known]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/fsm/middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/bot/handlers/user_commands.py", line 25, in find
+    await message.reply('You arelready in search') if in_search else ...
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/methods/base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/client/bot.py", line 441, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/client/session/base.py", line 257, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imcocos/Documents/Director/Git_projects/Nude_Chat/env/lib/python3.12/site-packages/aiogram/client/session/aiohttp.py", line 178, in make_request
+    raise TelegramNetworkError(method=method, message=f"{type(e).__name__}: {e}")
+aiogram.exceptions.TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Name or service not known]
+WARNING:aiogram.dispatcher:Received SIGINT signal
+INFO:aiogram.dispatcher:Polling stopped for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.dispatcher:Polling stopped
+config ~$ [ INFO ](2024-01-07 22:49:35,141) - .env file was loaded successfully
+DEBUG:asyncio:Using selector: EpollSelector
+__main__ ~$ [ INFO ](2024-01-07 22:49:35,202) - Redis running on localhost:6379
+__main__ ~$ [ INFO ](2024-01-07 22:49:35,347) - Bot was created successfully
+__main__ ~$ [ INFO ](2024-01-07 22:49:36,352) - Starting polling
+INFO:aiogram.dispatcher:Start polling
+INFO:aiogram.dispatcher:Run polling for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+my_queue.my_queue ~$ [ DEBUG ](2024-01-07 22:49:38,535) - stop async iter
+INFO:aiogram.event:Update id=25805037 is handled. Duration 652 ms by bot id=6208787170
+my_queue.my_queue ~$ [ DEBUG ](2024-01-07 22:49:42,150) - stop async iter
+INFO:aiogram.event:Update id=25805038 is handled. Duration 173 ms by bot id=6208787170
+my_queue.my_queue ~$ [ DEBUG ](2024-01-07 22:49:44,740) - stop async iter
+INFO:aiogram.event:Update id=25805039 is handled. Duration 348 ms by bot id=6208787170
+INFO:aiogram.event:Update id=25805040 is handled. Duration 154 ms by bot id=6208787170
+WARNING:aiogram.dispatcher:Received SIGINT signal
+INFO:aiogram.dispatcher:Polling stopped for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.dispatcher:Polling stopped
+config ~$ [ INFO ](2024-01-07 22:55:54,531) - .env file was loaded successfully
+DEBUG:asyncio:Using selector: EpollSelector
+__main__ ~$ [ INFO ](2024-01-07 22:55:54,592) - Redis running on localhost:6379
+__main__ ~$ [ INFO ](2024-01-07 22:55:54,731) - Bot was created successfully
+__main__ ~$ [ INFO ](2024-01-07 22:55:55,051) - Starting polling
+INFO:aiogram.dispatcher:Start polling
+INFO:aiogram.dispatcher:Run polling for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+WARNING:aiogram.dispatcher:Received SIGINT signal
+INFO:aiogram.dispatcher:Polling stopped for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.dispatcher:Polling stopped
+config ~$ [ INFO ](2024-01-07 22:59:41,629) - .env file was loaded successfully
+DEBUG:asyncio:Using selector: EpollSelector
+__main__ ~$ [ INFO ](2024-01-07 22:59:41,631) - Redis running on localhost:6379
+__main__ ~$ [ INFO ](2024-01-07 22:59:41,815) - Bot was created successfully
+__main__ ~$ [ INFO ](2024-01-07 22:59:42,040) - Starting polling
+INFO:aiogram.dispatcher:Start polling
+INFO:aiogram.dispatcher:Run polling for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.event:Update id=25805041 is handled. Duration 330 ms by bot id=6208787170
+INFO:aiogram.event:Update id=25805042 is handled. Duration 215 ms by bot id=6208787170
+INFO:aiogram.event:Update id=25805043 is handled. Duration 416 ms by bot id=6208787170
+INFO:aiogram.event:Update id=25805044 is handled. Duration 215 ms by bot id=6208787170
+WARNING:aiogram.dispatcher:Received SIGINT signal
+INFO:aiogram.dispatcher:Polling stopped for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.dispatcher:Polling stopped
+bot.config ~$ [ INFO ](2024-01-07 23:10:27,057) - .env file was loaded successfully
+DEBUG:asyncio:Using selector: EpollSelector
+bot.config ~$ [ INFO ](2024-01-07 23:10:52,599) - .env file was loaded successfully
+DEBUG:asyncio:Using selector: EpollSelector
+__main__ ~$ [ INFO ](2024-01-07 23:10:52,601) - Redis running on localhost:6379
+__main__ ~$ [ INFO ](2024-01-07 23:10:52,786) - Bot was created successfully
+ERROR:asyncio:Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7fb7c4cdf140>
+bot.config ~$ [ INFO ](2024-01-07 23:11:31,975) - .env file was loaded successfully
+DEBUG:asyncio:Using selector: EpollSelector
+__main__ ~$ [ INFO ](2024-01-07 23:11:31,978) - Redis running on localhost:6379
+__main__ ~$ [ INFO ](2024-01-07 23:11:32,190) - Bot was created successfully
+__main__ ~$ [ INFO ](2024-01-07 23:11:32,970) - Starting polling
+INFO:aiogram.dispatcher:Start polling
+INFO:aiogram.dispatcher:Run polling for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.event:Update id=25805046 is handled. Duration 2167 ms by bot id=6208787170
+INFO:aiogram.event:Update id=25805047 is handled. Duration 657 ms by bot id=6208787170
+INFO:aiogram.event:Update id=25805048 is handled. Duration 168 ms by bot id=6208787170
+INFO:aiogram.event:Update id=25805049 is handled. Duration 355 ms by bot id=6208787170
+INFO:aiogram.event:Update id=25805050 is handled. Duration 1612 ms by bot id=6208787170
+INFO:aiogram.event:Update id=25805051 is handled. Duration 214 ms by bot id=6208787170
+INFO:aiogram.event:Update id=25805052 is handled. Duration 2562 ms by bot id=6208787170
+INFO:aiogram.event:Update id=25805053 is handled. Duration 3684 ms by bot id=6208787170
+WARNING:aiogram.dispatcher:Received SIGINT signal
+INFO:aiogram.dispatcher:Polling stopped for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.dispatcher:Polling stopped

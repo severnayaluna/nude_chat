@@ -8,11 +8,11 @@ def get_logger(name: str) -> logging.Logger:
     logging.basicConfig(
         filename = 'bot.log',
         filemode = 'a',
-        level = logging.INFO,
+        level = logging.DEBUG,
         datefmt = '%m/%d/%Y %I:%M:%S %p')
 
 
-    logger: logging.Logger = logging.Logger(name, level=logging.INFO)
+    logger: logging.Logger = logging.Logger(name, level=logging.DEBUG)
 
     formatter: logging.Formatter = logging.Formatter(
         '%(name)s ~$ [ %(levelname)s ](%(asctime)s) - %(message)s')

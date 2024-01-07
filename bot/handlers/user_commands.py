@@ -2,9 +2,9 @@ from aiogram import Router, Bot, F
 from aiogram.types import Message
 from aiogram.filters import CommandStart, Command
 
-from my_queue.my_queue import Queue, Room
+from ..my_queue.my_queue import Queue, Room
 
-from log import get_logger
+from ..log import get_logger
 
 
 logger = get_logger(__name__)
@@ -17,14 +17,14 @@ async def start(message: Message) -> None:
 
 
 @router.message(Command('find'))
-async def start(message: Message, redis_storage, bot: Bot) -> None:
+async def find(message: Message, redis_storage, bot: Bot) -> None:
     queue = Queue(redis_storage)
     room = Room(redis_storage)
 
-    in_search = queue.add_user(message.from_user.id)
-    await message.reply('You are already in search') if in_search else ...
+    in_search = await queue.add_user(message.from_user.id)
+    if in_search: await message.reply('You arelready in search')
 
-    pair = room.try_create_room(queue=queue)
+    pair = await room.try_create_room(queue=queue)
 
     if pair:
         await bot.send_message(pair[0], text=f'You are with {pair[1]} now!')
@@ -37,8 +37,9 @@ async def start(message: Message, redis_storage, bot: Bot) -> None:
 @router.message(Command('exit', 'exit_queue'))
 async def exit_queue(message: Message, redis_storage, bot: Bot) -> None:
     queue = Queue(redis_storage)
-    if queue.user_in(id_:=message.from_user.id):
-        queue.remove_user(id_)
+
+    if await queue.user_in(id_:=message.from_user.id):
+        await queue.remove_user(id_)
         await message.reply('You exited queue')
     else:
         await message.reply('You aren\'t in queue yet')
@@ -47,8 +48,9 @@ async def exit_queue(message: Message, redis_storage, bot: Bot) -> None:
 @router.message(Command('leave', 'leave_room'))
 async def leave_room(message: Message, redis_storage, bot: Bot) -> None:
     room = Room(redis_storage)
-    if room.user_in(id_:=message.from_user.id):
-        id2 = room.redirect_from(id_)
+
+    if await room.user_in(id_:=message.from_user.id):
+        id2 = await room.redirect_from(id_)
         await message.reply('You leaved room')
         await bot.send_message(id2, text=f'Your opponent leaved')
     else:
@@ -57,11 +59,10 @@ async def leave_room(message: Message, redis_storage, bot: Bot) -> None:
 
 @router.message()
 async def echo(message: Message, redis_storage, bot: Bot) -> None:
-    logger.info('echo')
     room = Room(redis_storage)
-    to_user_id = room.redirect_from(message.from_user.id)
+
+    to_user_id = await room.redirect_from(message.from_user.id)
     if to_user_id:
         await bot.send_message(to_user_id, text=message.text)
         return
-    logger.info('no pair')
-    await message.reply('You are not in queue yet')
+    await message.reply('You are not in room yet')
