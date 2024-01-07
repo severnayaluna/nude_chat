@@ -4860,3 +4860,45 @@ INFO:aiogram.event:Update id=25805053 is handled. Duration 3684 ms by bot id=620
 WARNING:aiogram.dispatcher:Received SIGINT signal
 INFO:aiogram.dispatcher:Polling stopped for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
 INFO:aiogram.dispatcher:Polling stopped
+bot.config ~$ [ INFO ](2024-01-07 23:26:48,501) - .env file was loaded successfully
+bot.config ~$ [ ERROR ](2024-01-07 23:26:48,501) - Bot_token_test was not founded in .env file!
+bot.config ~$ [ INFO ](2024-01-07 23:27:28,512) - .env file was loaded successfully
+bot.config ~$ [ ERROR ](2024-01-07 23:27:28,512) - Bot_token_test was not founded in .env file!
+bot.config ~$ [ INFO ](2024-01-07 23:28:46,454) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-07 23:28:46,454) - Loading .env/Bot_token_test
+bot.config ~$ [ ERROR ](2024-01-07 23:28:46,455) - Bot_token_test was not founded in .env file!
+bot.config ~$ [ INFO ](2024-01-07 23:29:18,034) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-07 23:29:18,035) - Loading .env/Bot_token_test
+bot.config ~$ [ ERROR ](2024-01-07 23:29:18,035) - Bot_token_test was not founded in .env file!
+bot.config ~$ [ INFO ](2024-01-07 23:29:57,188) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-07 23:29:57,189) - Loading .env/BOT_TOKEN_TEST
+bot.config ~$ [ INFO ](2024-01-07 23:29:57,189) - Loading .env/REDIS_HOST_TEST
+bot.config ~$ [ INFO ](2024-01-07 23:29:57,190) - Loading .env/REDIS_PORT_TEST
+DEBUG:asyncio:Using selector: EpollSelector
+__main__ ~$ [ INFO ](2024-01-07 23:29:57,192) - Redis running on localhost:6379
+__main__ ~$ [ INFO ](2024-01-07 23:29:57,375) - Bot was created successfully
+__main__ ~$ [ INFO ](2024-01-07 23:30:45,508) - Starting polling
+INFO:aiogram.dispatcher:Start polling
+INFO:aiogram.dispatcher:Run polling for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.event:Update id=25805055 is handled. Duration 1031 ms by bot id=6208787170
+WARNING:aiogram.dispatcher:Received SIGINT signal
+INFO:aiogram.dispatcher:Polling stopped for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.dispatcher:Polling stopped
+DEBUG:asyncio:Using selector: EpollSelector
+bot.config ~$ [ INFO ](2024-01-07 23:32:34,530) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-07 23:32:34,530) - Loading .env/BOT_TOKEN_TEST
+bot.config ~$ [ INFO ](2024-01-07 23:32:34,531) - Loading .env/REDIS_HOST_TEST
+bot.config ~$ [ INFO ](2024-01-07 23:32:34,531) - Loading .env/REDIS_PORT_TEST
+__main__ ~$ [ INFO ](2024-01-07 23:32:34,532) - Redis running on localhost:6379
+__main__ ~$ [ INFO ](2024-01-07 23:32:34,726) - Bot was created successfully
+__main__ ~$ [ INFO ](2024-01-07 23:32:35,261) - Starting polling
+INFO:aiogram.dispatcher:Start polling
+INFO:aiogram.dispatcher:Run polling for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+WARNING:aiogram.dispatcher:Received SIGINT signal
+INFO:aiogram.dispatcher:Polling stopped for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.dispatcher:Polling stopped
+DEBUG:asyncio:Using selector: EpollSelector
+bot.config ~$ [ INFO ](2024-01-07 23:32:55,413) - .env file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-07 23:32:55,413) - Loading .env/BOT_TOKEN_PROD
+bot.config ~$ [ INFO ](2024-01-07 23:32:55,413) - Loading .env/REDIS_HOST_PROD
+bot.config ~$ [ ERROR ](2024-01-07 23:32:55,413) - REDIS_HOST_PROD was not founded in .env file!

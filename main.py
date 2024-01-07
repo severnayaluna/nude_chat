@@ -1,3 +1,5 @@
+import sys
+
 import asyncio
 
 from aiogram import Bot, Dispatcher
@@ -6,7 +8,7 @@ from redis.asyncio import Redis
 
 from bot.handlers import user_commands
 
-from bot import config
+from bot.config import Config
 from bot.log import get_logger
 
 
@@ -14,6 +16,13 @@ logger = get_logger(__name__)
 
 
 async def main():
+    try:
+        config = Config(sys.argv[1])
+    except IndexError:
+        config = Config('test')
+    finally:
+        config = Config('test')
+
     redis_storage = Redis(host=config.REDIS_HOST, port=config.REDIS_PORT, decode_responses=True)
     logger.info(f'Redis running on {config.REDIS_HOST}:{config.REDIS_PORT}')
     await redis_storage.flushall()
