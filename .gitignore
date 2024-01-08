@@ -19,6 +19,8 @@ media/
 .env.local
 .env.prod
 
+*.env*
+
 *.db
 *.db-shm
 *.db-wal
