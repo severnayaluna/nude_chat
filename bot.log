@@ -4902,3 +4902,113 @@ bot.config ~$ [ INFO ](2024-01-07 23:32:55,413) - .env file was loaded successfu
 bot.config ~$ [ INFO ](2024-01-07 23:32:55,413) - Loading .env/BOT_TOKEN_PROD
 bot.config ~$ [ INFO ](2024-01-07 23:32:55,413) - Loading .env/REDIS_HOST_PROD
 bot.config ~$ [ ERROR ](2024-01-07 23:32:55,413) - REDIS_HOST_PROD was not founded in .env file!
+DEBUG:asyncio:Using selector: EpollSelector
+bot.config ~$ [ ERROR ](2024-01-08 18:22:27,460) - prod file was not loaded!
+DEBUG:asyncio:Using selector: EpollSelector
+bot.config ~$ [ ERROR ](2024-01-08 18:23:11,229) - prod file was not loaded!
+DEBUG:asyncio:Using selector: EpollSelector
+bot.config ~$ [ INFO ](2024-01-08 18:24:20,354) - .env.local file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-08 18:24:20,354) - Loading .env.local:BOT_TOKEN
+bot.config ~$ [ INFO ](2024-01-08 18:24:20,354) - Loading .env.local:REDIS_HOST
+bot.config ~$ [ INFO ](2024-01-08 18:24:20,355) - Loading .env.local:REDIS_PORT
+__main__ ~$ [ INFO ](2024-01-08 18:24:20,355) - Redis running on localhost:6379
+__main__ ~$ [ INFO ](2024-01-08 18:24:20,688) - Bot was created successfully
+__main__ ~$ [ INFO ](2024-01-08 18:24:20,933) - Starting polling
+INFO:aiogram.dispatcher:Start polling
+INFO:aiogram.dispatcher:Run polling for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+WARNING:aiogram.dispatcher:Received SIGINT signal
+INFO:aiogram.dispatcher:Polling stopped for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.dispatcher:Polling stopped
+DEBUG:asyncio:Using selector: EpollSelector
+bot.config ~$ [ INFO ](2024-01-08 18:27:32,233) - .env.local file was loaded successfully
+bot.config ~$ [ INFO ](2024-01-08 18:27:32,234) - Loading .env.local:BOT_TOKEN
+bot.config ~$ [ INFO ](2024-01-08 18:27:32,234) - Loading .env.local:REDIS_HOST
+bot.config ~$ [ INFO ](2024-01-08 18:27:32,234) - Loading .env.local:REDIS_PORT
+__main__ ~$ [ INFO ](2024-01-08 18:27:32,235) - Redis running on localhost:6379
+__main__ ~$ [ INFO ](2024-01-08 18:27:32,412) - Bot was created successfully
+__main__ ~$ [ INFO ](2024-01-08 18:27:37,668) - Starting polling
+INFO:aiogram.dispatcher:Start polling
+INFO:aiogram.dispatcher:Run polling for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+bot.handlers.user_commands ~$ [ DEBUG ](2024-01-08 18:27:50,294) - Start
+INFO:aiogram.event:Update id=25805073 is handled. Duration 306 ms by bot id=6208787170
+WARNING:aiogram.dispatcher:Received SIGINT signal
+INFO:aiogram.dispatcher:Polling stopped for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.dispatcher:Polling stopped
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:asyncio:Using selector: EpollSelector
+bot.config:[ INFO ](2024-01-08 18:38:22,099)$ .env.local file was loaded successfully
+bot.config:[ INFO ](2024-01-08 18:38:22,099)$ Loading .env.local:BOT_TOKEN
+bot.config:[ INFO ](2024-01-08 18:38:22,100)$ Loading .env.local:REDIS_HOST
+bot.config:[ INFO ](2024-01-08 18:38:22,100)$ Loading .env.local:REDIS_PORT
+__main__:[ INFO ](2024-01-08 18:38:22,101)$ Redis running on localhost:6379
+__main__:[ INFO ](2024-01-08 18:38:22,293)$ Bot was created successfully
+__main__:[ INFO ](2024-01-08 18:38:22,561)$ Starting polling
+bot.handlers.user_commands:[ DEBUG ](2024-01-08 18:38:45,477)$ Start
+bot.log:[ INFO ](2024-01-08 18:40:06,462)$ .env.local file was loaded successfully
+bot.log:[ INFO ](2024-01-08 18:40:06,462)$ .env.local file was loaded successfully
+bot.log:[ INFO ](2024-01-08 18:40:06,462)$ .env.local file was loaded successfully
+bot.log:[ INFO ](2024-01-08 18:40:06,462)$ .env.local file was loaded successfully
+INFO:bot.log:.env.local file was loaded successfully
+bot.log:[ INFO ](2024-01-08 18:40:06,464)$ Loading .env.local:BOT_TOKEN
+bot.log:[ INFO ](2024-01-08 18:40:06,464)$ Loading .env.local:BOT_TOKEN
+bot.log:[ INFO ](2024-01-08 18:40:06,464)$ Loading .env.local:BOT_TOKEN
+bot.log:[ INFO ](2024-01-08 18:40:06,464)$ Loading .env.local:BOT_TOKEN
+INFO:bot.log:Loading .env.local:BOT_TOKEN
+bot.log:[ INFO ](2024-01-08 18:40:06,464)$ Loading .env.local:REDIS_HOST
+bot.log:[ INFO ](2024-01-08 18:40:06,464)$ Loading .env.local:REDIS_HOST
+bot.log:[ INFO ](2024-01-08 18:40:06,464)$ Loading .env.local:REDIS_HOST
+bot.log:[ INFO ](2024-01-08 18:40:06,464)$ Loading .env.local:REDIS_HOST
+INFO:bot.log:Loading .env.local:REDIS_HOST
+bot.log:[ INFO ](2024-01-08 18:40:06,465)$ Loading .env.local:REDIS_PORT
+bot.log:[ INFO ](2024-01-08 18:40:06,465)$ Loading .env.local:REDIS_PORT
+bot.log:[ INFO ](2024-01-08 18:40:06,465)$ Loading .env.local:REDIS_PORT
+bot.log:[ INFO ](2024-01-08 18:40:06,465)$ Loading .env.local:REDIS_PORT
+INFO:bot.log:Loading .env.local:REDIS_PORT
+bot.log:[ INFO ](2024-01-08 18:40:06,466)$ Redis running on localhost:6379
+bot.log:[ INFO ](2024-01-08 18:40:06,466)$ Redis running on localhost:6379
+bot.log:[ INFO ](2024-01-08 18:40:06,466)$ Redis running on localhost:6379
+bot.log:[ INFO ](2024-01-08 18:40:06,466)$ Redis running on localhost:6379
+INFO:bot.log:Redis running on localhost:6379
+bot.log:[ INFO ](2024-01-08 18:40:06,663)$ Bot was created successfully
+bot.log:[ INFO ](2024-01-08 18:40:06,663)$ Bot was created successfully
+bot.log:[ INFO ](2024-01-08 18:40:06,663)$ Bot was created successfully
+bot.log:[ INFO ](2024-01-08 18:40:06,663)$ Bot was created successfully
+INFO:bot.log:Bot was created successfully
+bot.log:[ INFO ](2024-01-08 18:40:06,914)$ Starting polling
+bot.log:[ INFO ](2024-01-08 18:40:06,914)$ Starting polling
+bot.log:[ INFO ](2024-01-08 18:40:06,914)$ Starting polling
+bot.log:[ INFO ](2024-01-08 18:40:06,914)$ Starting polling
+INFO:bot.log:Starting polling
+INFO:aiogram.dispatcher:Start polling
+INFO:aiogram.dispatcher:Run polling for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.event:Update id=25805076 is handled. Duration 422 ms by bot id=6208787170
+WARNING:aiogram.dispatcher:Received SIGINT signal
+INFO:aiogram.dispatcher:Polling stopped for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+INFO:aiogram.dispatcher:Polling stopped
+bot.log:[ INFO ](01/08/2024 06:42:56 PM)$ .env.local file was loaded successfully
+bot.log:[ INFO ](01/08/2024 06:42:56 PM)$ Loading .env.local:BOT_TOKEN
+bot.log:[ INFO ](01/08/2024 06:42:56 PM)$ Loading .env.local:REDIS_HOST
+bot.log:[ INFO ](01/08/2024 06:42:56 PM)$ Loading .env.local:REDIS_PORT
+bot.log:[ INFO ](01/08/2024 06:42:56 PM)$ Redis running on localhost:6379
+bot.log:[ INFO ](01/08/2024 06:42:56 PM)$ Bot was created successfully
+bot.log:[ INFO ](01/08/2024 06:42:56 PM)$ Starting polling
+aiogram.dispatcher:[ INFO ](01/08/2024 06:42:56 PM)$ Start polling
+aiogram.dispatcher:[ INFO ](01/08/2024 06:42:56 PM)$ Run polling for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+aiogram.event:[ INFO ](01/08/2024 06:43:06 PM)$ Update id=25805077 is handled. Duration 577 ms by bot id=6208787170
+aiogram.dispatcher:[ WARNING ](01/08/2024 06:43:09 PM)$ Received SIGINT signal
+aiogram.dispatcher:[ INFO ](01/08/2024 06:43:09 PM)$ Polling stopped for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+aiogram.dispatcher:[ INFO ](01/08/2024 06:43:09 PM)$ Polling stopped
+bot.log:[ INFO ](01/08/2024 06:43:25 PM)$ .env.local file was loaded successfully
+bot.log:[ INFO ](01/08/2024 06:43:25 PM)$ Loading .env.local:BOT_TOKEN
+bot.log:[ INFO ](01/08/2024 06:43:25 PM)$ Loading .env.local:REDIS_HOST
+bot.log:[ INFO ](01/08/2024 06:43:25 PM)$ Loading .env.local:REDIS_PORT
+bot.log:[ INFO ](01/08/2024 06:43:25 PM)$ Redis running on localhost:6379
+bot.log:[ INFO ](01/08/2024 06:43:25 PM)$ Bot was created successfully
+bot.log:[ INFO ](01/08/2024 06:43:26 PM)$ Starting polling
+aiogram.dispatcher:[ INFO ](01/08/2024 06:43:26 PM)$ Start polling
+aiogram.dispatcher:[ INFO ](01/08/2024 06:43:26 PM)$ Run polling for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+bot.log:[ DEBUG ](01/08/2024 06:43:29 PM)$ Start
+aiogram.event:[ INFO ](01/08/2024 06:43:29 PM)$ Update id=25805078 is handled. Duration 324 ms by bot id=6208787170
+aiogram.dispatcher:[ WARNING ](01/08/2024 06:43:37 PM)$ Received SIGINT signal
+aiogram.dispatcher:[ INFO ](01/08/2024 06:43:37 PM)$ Polling stopped for bot @nn_chat_roulete_bot id=6208787170 - 'NudeChat'
+aiogram.dispatcher:[ INFO ](01/08/2024 06:43:37 PM)$ Polling stopped

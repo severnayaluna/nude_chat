@@ -2,6 +2,8 @@ import sys
 
 import asyncio
 
+import logging
+
 from aiogram import Bot, Dispatcher
 
 from redis.asyncio import Redis
@@ -16,12 +18,19 @@ logger = get_logger(__name__)
 
 
 async def main():
-    try:
-        config = Config(sys.argv[1])
-    except IndexError:
-        config = Config('test')
-    finally:
-        config = Config('test')
+    env_path, log_level = sys.argv[1:]
+
+    logging.basicConfig(
+        level = log_level,
+        datefmt = '%m/%d/%Y %I:%M:%S %p',
+        format='%(name)s:[ %(levelname)s ](%(asctime)s)$ %(message)s',
+        handlers=(
+            logging.StreamHandler(),
+            logging.FileHandler(filename = 'bot.log', mode='a')
+        ),
+    )
+
+    config = Config(env_path)
 
     redis_storage = Redis(host=config.REDIS_HOST, port=config.REDIS_PORT, decode_responses=True)
     logger.info(f'Redis running on {config.REDIS_HOST}:{config.REDIS_PORT}')

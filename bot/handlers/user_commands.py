@@ -13,6 +13,7 @@ router = Router()
 
 @router.message(CommandStart())
 async def start(message: Message) -> None:
+    logger.debug('Start')
     await message.reply(f'Hi, it\'s NoNudeChatRouletteBot.\nType /help to get available commands.')
 
 
