@@ -11,9 +11,14 @@ A telegram-based chat-roulette bot, that filters content via neural-nework.
 
 ```shell
 sudo apt install redis
+
 git clone --branch main https://github.com/severnayaluna/nude_chat.git
+
 cd nude_chat
-touch .env
+
+cp .env.example .env.local
+cp .env.example .env.prod
+
 python3 -m venv env
 source env/bin/activate
 pip install -r requirements.txt
@@ -23,33 +28,34 @@ pip install -r requirements.txt
 
 ```shell
 git clone --branch main https://github.com/severnayaluna/nude_chat.git
+
 cd nude_chat
-copy NUL .env
+
+copy .env.example .env.local
+copy .env.example .env.prod
+
 python3 -m venv env
 .\env\Scripts\activate
 pip install -r requirements.txt
 ```
 
 # Running
-
 > [!IMPORTANT]
-> **.env file requiered!**
->
-> **~/.../nude_chat/.env**:
-> ```
-> export BOT_TOKEN=1234567890
-> ```
+> FIll thet .env.local or .env.prod files!
 
 ## Linux
 
 ```shell
 source env/bin/activate
-python src/main.py
+python main.py <.env file name> <logging level>
 ```
 
 ## Windows
 
+> [!IMPORTANT]
+> You must have redis installed on your system!
+
 ```shell
 .\env\Scripts\activate
-python src/main.py
+python main.py <.env file name> <logging level>
 ```
