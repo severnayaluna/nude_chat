@@ -11,7 +11,7 @@ from redis.asyncio import Redis
 from bot.handlers import user_commands
 
 from bot.config import Config
-from bot.log import get_logger
+from bot.log import get_logger, configurate
 
 
 logger = get_logger(__name__)
@@ -20,15 +20,7 @@ logger = get_logger(__name__)
 async def main():
     env_path, log_level = sys.argv[1:]
 
-    logging.basicConfig(
-        level = log_level,
-        datefmt = '%m/%d/%Y %I:%M:%S %p',
-        format='%(name)s:[ %(levelname)s ](%(asctime)s)$ %(message)s',
-        handlers=(
-            logging.StreamHandler(),
-            logging.FileHandler(filename = 'bot.log', mode='a')
-        ),
-    )
+    configurate(log_level, 'bot.log', 'w')
 
     config = Config(env_path)
 

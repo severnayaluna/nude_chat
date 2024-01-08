@@ -27,7 +27,7 @@ media/
 
 *.pyc
 
-*.log
+*.log*
 
 .obsidian
 *.obsidian
