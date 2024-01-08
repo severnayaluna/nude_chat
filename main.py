@@ -11,24 +11,16 @@ from redis.asyncio import Redis
 from bot.handlers import user_commands
 
 from bot.config import Config
-from bot.log import get_logger
+from bot.log import get_logger, configurate
 
 
 logger = get_logger(__name__)
 
 
-async def main():
-    env_path, log_level = sys.argv[1:]
+async def main() -> None:
+    env_path, log_level = sys.argv[1], sys.argv[2]
 
-    logging.basicConfig(
-        level = log_level,
-        datefmt = '%m/%d/%Y %I:%M:%S %p',
-        format='%(name)s:[ %(levelname)s ](%(asctime)s)$ %(message)s',
-        handlers=(
-            logging.StreamHandler(),
-            logging.FileHandler(filename = 'bot.log', mode='a')
-        ),
-    )
+    configurate(log_level, 'bot.log', 'w')
 
     config = Config(env_path)
 
@@ -40,16 +32,15 @@ async def main():
     logger.info('Bot was created successfully')
 
     dp = Dispatcher(redis_storage=redis_storage)
-    # dp['redis_storage'] = redis_storage
-
     dp.include_routers(
         user_commands.router,
     )
 
     await bot.delete_webhook(drop_pending_updates=True)
-    logger.info('Starting polling')
-
+    logger.warning('Start polling')
     await dp.start_polling(bot)
+    logger.warning('Stop polling')
+
     await redis_storage.aclose()
 
 
