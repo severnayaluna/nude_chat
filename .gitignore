@@ -16,7 +16,8 @@ __pycache__/
 
 media/
 
-.env
+.env.local
+.env.prod
 
 *.db
 *.db-shm
