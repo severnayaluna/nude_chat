@@ -19,20 +19,23 @@ async def start(message: Message) -> None:
 
 @router.message(Command('find'))
 async def find(message: Message, redis_storage, bot: Bot) -> None:
+    try:
+        count = int(message.text.split('/find')[-1])
+    except ValueError:
+        count = 2
     queue = Queue(redis_storage)
     room = Room(redis_storage)
 
     in_search = await queue.add_user(message.from_user.id)
     if in_search: await message.reply('You arelready in search')
 
-    pair = await room.try_create_room(queue=queue)
+    users = await room.try_create_room(queue=queue, people_count=count)
 
-    if pair:
-        await bot.send_message(pair[0], text=f'You are with {pair[1]} now!')
-        await bot.send_message(pair[1], text=f'You are with {pair[0]} now!')
+    if users:
+        [await bot.send_message(id_, 'You are with:\n' + '\n'.join(await room.redirect_from(id_))) for id_ in users]
         return None
     else:
-        await message.reply('Finding room...')
+        await message.reply(f'Finding room with {count} peoples...')
 
 
 @router.message(Command('exit', 'exit_queue'))

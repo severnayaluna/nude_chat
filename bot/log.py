@@ -8,7 +8,7 @@ def configurate(log_level, filename: str, mode: str) -> None:
         format='%(name)s:[ %(levelname)s ](%(asctime)s)$ %(message)s',
         handlers=(
             logging.StreamHandler(),
-            logging.FileHandler(filename = 'bot.log', mode='a')
+            logging.FileHandler(filename = 'bot.log', mode='w')
         ),
     )
 
