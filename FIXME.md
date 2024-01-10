@@ -2,7 +2,7 @@ FIXME
  - написать доки к функциям и классам
  - написать аннотации
  - исправить траблы с .env-ами на гите
- - добавить [debug.py]() в .gitignore
+ - добавить [debug.py](https://github.com/severnayaluna/nude_chat/blob/dev-ImCocos%283.x%29/debug.py) в .gitignore
  - исправить ненужные list comprehension на for
  - исправить функцию user_in - существует EXISTS в рэдис
  - исправить ошибки в сообщениях(англ.я.)
