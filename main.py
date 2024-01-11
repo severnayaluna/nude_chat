@@ -28,7 +28,10 @@ async def main() -> None:
     logger.info(f'Redis running on {config.REDIS_HOST}:{config.REDIS_PORT}')
     await redis_storage.flushall()
 
-    bot = Bot(token=config.BOT_TOKEN, parse_mode='HTML')
+    bot = Bot(
+        token=config.BOT_TOKEN,
+        # parse_mode='HTML',
+    )
     logger.info('Bot was created successfully')
 
     dp = Dispatcher(redis_storage=redis_storage)

@@ -5,7 +5,7 @@ def configurate(log_level, filename: str, mode: str) -> None:
     logging.basicConfig(
         level = log_level,
         datefmt = '%m/%d/%Y %I:%M:%S %p',
-        format='%(name)s:[ %(levelname)s ](%(asctime)s)$ %(message)s',
+        format='[ %(levelname)s ](%(asctime)s):%(name)s$ %(message)s',
         handlers=(
             logging.StreamHandler(),
             logging.FileHandler(filename = 'bot.log', mode='w')
