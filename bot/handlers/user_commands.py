@@ -5,6 +5,7 @@ from aiogram.filters import CommandStart, Command, CommandObject
 from ..my_queue.my_queue import Queue, Room
 
 # from ..middlewares.acess_middleware import AcessMiddleware
+from ..middlewares.user_middleware import UserMiddleware
 
 from logging import getLogger, Logger
 
@@ -13,11 +14,12 @@ from logging import getLogger, Logger
 logger = getLogger(__name__)
 router = Router()
 
-# router.message.middleware(
+router.message.middleware(
     # AcessMiddleware([
-        # 2021855860,
-    # ])
-# )
+    #     2021855860,
+    # ]),
+    UserMiddleware(),
+)
 
 
 @router.message(CommandStart())

@@ -2,7 +2,7 @@ import sys
 
 import asyncio
 
-import logging
+# import logging
 
 from aiogram import Bot, Dispatcher
 
@@ -13,20 +13,28 @@ from bot.handlers import user_commands
 from bot.config import Config
 from bot.log import get_logger, configurate
 
+from sqlalchemy.ext.asyncio import create_async_engine
+
 
 logger = get_logger(__name__)
 
 
 async def main() -> None:
+
+    engine = create_async_engine(
+        "postgresql+asyncpg://scott:tiger@localhost/test",
+        echo=True,
+    )
+
     env_path, log_level = sys.argv[1], sys.argv[2]
 
     configurate(log_level, 'bot.log', 'w')
 
     config = Config(env_path)
 
-    redis_storage = Redis(host=config.REDIS_HOST, port=config.REDIS_PORT, decode_responses=True)
+    # redis_storage = Redis(host=config.REDIS_HOST, port=config.REDIS_PORT, decode_responses=True)
     logger.info(f'Redis running on {config.REDIS_HOST}:{config.REDIS_PORT}')
-    await redis_storage.flushall()
+    # await redis_storage.flushall()
 
     bot = Bot(
         token=config.BOT_TOKEN,
@@ -34,7 +42,10 @@ async def main() -> None:
     )
     logger.info('Bot was created successfully')
 
-    dp = Dispatcher(redis_storage=redis_storage)
+    dp = Dispatcher(
+        # redis_storage=redis_storage,
+        db=engine,
+    )
     dp.include_routers(
         user_commands.router,
     )
@@ -44,7 +55,7 @@ async def main() -> None:
     await dp.start_polling(bot)
     logger.warning('Stop polling')
 
-    await redis_storage.aclose()
+    # await redis_storage.aclose()
 
 
 if __name__ == '__main__':
